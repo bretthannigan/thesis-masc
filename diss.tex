@@ -170,6 +170,40 @@
 \usepackage{url}
 \urlstyle{sf}	% typeset urls in sans-serif
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% My Packages
+%%
+% Mathematics and Symbols
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage[electronic]{ifsym}
+% Time and Units
+\usepackage{datetime2}
+\usepackage{siunitx}
+\sisetup{detect-all}
+% Tables
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{multirow}
+% Page Formatting
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+% Graphics and Drawing
+\usepackage[dvipsnames]{xcolor}
+\graphicspath{ {img/} }	
+\usepackage{tikz}
+\usetikzlibrary{arrows, positioning, dsp, chains, fit, calc, matrix}
+\usepackage[american]{circuitikz}
+\usepackage{pgfplots}
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=./}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -254,6 +288,8 @@
 \fi}}
 
 
+
+
 %% The following uses most defaults, which causes hyperlinks to be
 %% surrounded by colourful boxes; the colours are only visible in
 %% PDFs and don't show up when printed:
@@ -302,36 +338,35 @@
 %% Document meta-data: be sure to also change the \hypersetup information
 %%
 
-\title{On the Use of the \texttt{ubcdiss} Template}
+\title{On the Design of Stable, High Performance Sigma Delta Modulators}
 %\subtitle{If you want a subtitle}
 
-\author{Johnny Canuck}
-\previousdegree{B. Basket Weaving, University of Illustrious Arts, 1991}
-\previousdegree{M. Silly Walks, Another University, 1994}
+\author{Brett Christopher Hannigan}
+\previousdegree{B.A.Sc (Hons), Simon Fraser University, 2015}
 
 % What is this dissertation for?
-\degreetitle{Doctor of Philosophy}
+\degreetitle{Master of Applied Science}
 
 \institution{The University of British Columbia}
 \campus{Vancouver}
 
-\faculty{The Faculty of XXX}
-\department{Basket Weaving}
-\submissionmonth{April}
-\submissionyear{2192}
+\faculty{The Faculty of Graduate Studies}
+\department{Biomedical Engineering}
+\submissionmonth{November}
+\submissionyear{2018}
 
 % details of your examining committee
-\examiningcommittee{John Smith, Materials Engineering}{Supervisor}
-\examiningcommittee{Mary Maker, Materials Engineering}%
-    {Supervisory Committee Member}
-\examiningcommittee{Nebulous Name, Department}{Supervisory Committee Member}
-\examiningcommittee{Magnus Monolith, Other Department}{Additional Examiner}
+\examiningcommittee{Guy Dumont, Electrical and Computer Engineering}{Supervisor}
+%\examiningcommittee{Mary Maker, Materials Engineering}%
+%    {Supervisory Committee Member}
+%\examiningcommittee{Nebulous Name, Department}{Supervisory Committee Member}
+%\examiningcommittee{Magnus Monolith, Other Department}{Additional Examiner}
 
 % details of your supervisory committee
-\supervisorycommittee{Ira Crater, Materials Engineering}%
-    {Supervisory Committee Member}
-\supervisorycommittee{Adeline Long, \textsc{CEO} of Aerial Machine
-    Transportation, Inc.}{Supervisory Committee Member}
+%\supervisorycommittee{Ira Crater, Materials Engineering}%
+%    {Supervisory Committee Member}
+%\supervisorycommittee{Adeline Long, \textsc{CEO} of Aerial Machine
+%    Transportation, Inc.}{Supervisory Committee Member}
 
 %% hyperref package provides support for embedding meta-data in .PDF
 %% files
@@ -431,7 +466,8 @@
 \begin{singlespace}
 \raggedright
 \bibliographystyle{abbrvnat}
-\bibliography{biblio}
+\bibliography{C:/Users/bhannigan/Documents/Mendel\string~1/library} % Windows
+%\bibliography{/Users/brett/Documents/Mendeley_Desktop/BibTeX/library} % OS X
 \end{singlespace}
 
 \appendix
