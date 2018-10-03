@@ -1,0 +1,3 @@
+[submodule "ubcdiss"]
+	path = ubcdiss
+	url = https://github.com/briandealwis/ubcdiss.git
