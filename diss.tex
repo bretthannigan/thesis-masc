@@ -125,11 +125,14 @@
 %%   hyperref otherwise.  See Section 5.2 in the ``LaTeX 2e for Class
 %%   and Package Writers Guide'' (clsguide.pdf) for details.
 \usepackage[printonlyused,nohyperlinks]{acronym}
+\usepackage[acronym,nonumberlist,toc]{glossaries}
+\makeglossaries
+
 %% The ubcdiss.cls loads the `textcase' package which provides commands
 %% for upper-casing and lower-casing text.  The following causes
 %% the acronym package to typeset acronyms in small-caps
 %% as recommended by Bringhurst.
-\renewcommand{\acsfont}[1]{{\scshape \MakeTextLowercase{#1}}}
+%\renewcommand{\acsfont}[1]{{\scshape \MakeTextLowercase{#1}}}
 
 %% color: add support for expressing colour models.  Grey can be used
 %% to great effect to emphasize other parts of a graphic or text.
@@ -204,6 +207,8 @@
 \usepackage{pgfplots}
 \usepackage{epstopdf}
 \epstopdfsetup{outdir=./}
+% Files
+\usepackage{filecontents}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -286,9 +291,6 @@
 \else
 \(\rightarrow\) pages #2%
 \fi}}
-
-
-
 
 %% The following uses most defaults, which causes hyperlinks to be
 %% surrounded by colourful boxes; the colours are only visible in

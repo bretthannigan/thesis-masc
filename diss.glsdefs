@@ -1,0 +1,330 @@
+\ifglsentryexists{T}{}%
+{%
+\gls@defglossaryentry{T}%
+{%
+name={TT},%
+sort={TT},%
+type={acronym},%
+first={Test\glsspace (TT)},%
+firstplural={Tests\glsspace (TTs)},%
+text={TT},%
+plural={TTs},%
+description={Test},%
+descriptionplural={Test\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Test},%
+longplural={Tests},%
+short={TT},%
+shortplural={TTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{A/D}{}%
+{%
+\gls@defglossaryentry{A/D}%
+{%
+name={A/D},%
+sort={A/D},%
+type={acronym},%
+first={analog-to-digital\glsspace (A/D)},%
+firstplural={analog-to-digitals\glsspace (A/Ds)},%
+text={A/D},%
+plural={A/Ds},%
+description={analog-to-digital},%
+descriptionplural={analog-to-digital\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={analog-to-digital},%
+longplural={analog-to-digitals},%
+short={A/D},%
+shortplural={A/Ds},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{D/A}{}%
+{%
+\gls@defglossaryentry{D/A}%
+{%
+name={D/A},%
+sort={D/A},%
+type={acronym},%
+first={digital-to-analog\glsspace (D/A)},%
+firstplural={digital-to-analogs\glsspace (D/As)},%
+text={D/A},%
+plural={D/As},%
+description={digital-to-analog},%
+descriptionplural={digital-to-analog\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={digital-to-analog},%
+longplural={digital-to-analogs},%
+short={D/A},%
+shortplural={D/As},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CT}{}%
+{%
+\gls@defglossaryentry{CT}%
+{%
+name={CT},%
+sort={CT},%
+type={acronym},%
+first={continuous-time\glsspace (CT)},%
+firstplural={continuous-times\glsspace (CTs)},%
+text={CT},%
+plural={CTs},%
+description={continuous-time},%
+descriptionplural={continuous-time\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={continuous-time},%
+longplural={continuous-times},%
+short={CT},%
+shortplural={CTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DT}{}%
+{%
+\gls@defglossaryentry{DT}%
+{%
+name={DT},%
+sort={DT},%
+type={acronym},%
+first={discrete-time\glsspace (DT)},%
+firstplural={discrete-times\glsspace (DTs)},%
+text={DT},%
+plural={DTs},%
+description={discrete-time},%
+descriptionplural={discrete-time\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={discrete-time},%
+longplural={discrete-times},%
+short={DT},%
+shortplural={DTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{EEG}{}%
+{%
+\gls@defglossaryentry{EEG}%
+{%
+name={EEG},%
+sort={EEG},%
+type={acronym},%
+first={electroencephalography\glsspace (EEG)},%
+firstplural={electroencephalographys\glsspace (EEGs)},%
+text={EEG},%
+plural={EEGs},%
+description={electroencephalography},%
+descriptionplural={electroencephalography\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={electroencephalography},%
+longplural={electroencephalographys},%
+short={EEG},%
+shortplural={EEGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ECG}{}%
+{%
+\gls@defglossaryentry{ECG}%
+{%
+name={ECG},%
+sort={ECG},%
+type={acronym},%
+first={electrocardiography\glsspace (ECG)},%
+firstplural={electrocardiographys\glsspace (ECGs)},%
+text={ECG},%
+plural={ECGs},%
+description={electrocardiography},%
+descriptionplural={electrocardiography\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={electrocardiography},%
+longplural={electrocardiographys},%
+short={ECG},%
+shortplural={ECGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PPG}{}%
+{%
+\gls@defglossaryentry{PPG}%
+{%
+name={PPG},%
+sort={PPG},%
+type={acronym},%
+first={photoplethysmography\glsspace (PPG)},%
+firstplural={photoplethysmographys\glsspace (PPGs)},%
+text={PPG},%
+plural={PPGs},%
+description={photoplethysmography},%
+descriptionplural={photoplethysmography\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={photoplethysmography},%
+longplural={photoplethysmographys},%
+short={PPG},%
+shortplural={PPGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{AAF}{}%
+{%
+\gls@defglossaryentry{AAF}%
+{%
+name={AAF},%
+sort={AAF},%
+type={acronym},%
+first={antialiasing filter\glsspace (AAF)},%
+firstplural={antialiasing filters\glsspace (AAFs)},%
+text={AAF},%
+plural={AAFs},%
+description={antialiasing filter},%
+descriptionplural={antialiasing filter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={antialiasing filter},%
+longplural={antialiasing filters},%
+short={AAF},%
+shortplural={AAFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{OSR}{}%
+{%
+\gls@defglossaryentry{OSR}%
+{%
+name={OSR},%
+sort={OSR},%
+type={acronym},%
+first={oversampling ratio\glsspace (OSR)},%
+firstplural={oversampling ratios\glsspace (OSRs)},%
+text={OSR},%
+plural={OSRs},%
+description={oversampling ratio},%
+descriptionplural={oversampling ratio\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={oversampling ratio},%
+longplural={oversampling ratios},%
+short={OSR},%
+shortplural={OSRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{angelsperarea}{}%
+{%
+\gls@defglossaryentry{angelsperarea}%
+{%
+name={$a$},%
+sort={$a$},%
+type={main},%
+first={$a$},%
+firstplural={$a$s},%
+text={$a$},%
+plural={$a$s},%
+description={The number of angels per unit area},%
+descriptionplural={The number of angels per unit area},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

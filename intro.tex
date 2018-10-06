@@ -4,10 +4,365 @@
 \chapter{Introduction}
 \label{ch:Introduction}
 
-\begin{epigraph}
-    \emph{If I have seen farther it is by standing on the shoulders of
-    Giants.} ---~Sir Isaac Newton (1855)
-\end{epigraph}
+The conversion of signals between analog and digital domanis is an often encountered problem in signal processing. For an analog signal to be represented digitally, it must undergo the processes of sampling and quantization. The former is the conversion from \gls{CT} to \gls{DT} and can be done without loss of information by the Nyquist-Shannon sampling theorem, given a sufficiently high sample rate. The latter is the mapping from an infinite set of possible values to a finite number of quantization levels. Unlike sampling, the process of quantization is non-injective and thus irreversible. The design of signal conversion circuits that minimize the error introduced by quantization is a major problem in mixed signal electronics.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	
+		\node[coordinate] (w) at (0,0) {};
+		\node[coordinate] (n) at (5,1.5) {};
+		\node[coordinate] (s) at (5,-1.5) {};
+		\node[coordinate] (e) at (8.5,0) {};
+		\node[dspsquare] (sh2) at (4,0) {S/H};
+		\node[dspsquare] (q2) at (6,0) {\RaisingEdge};
+		\node[coordinate] (w-up) at ($(w) + (1,0.5)$) {};
+		\node[coordinate] (w-right) at ($(w) + (1.25,0)$) {};
+		\node[coordinate] (w-low) at ($(w) + (1,-0.5)$) {};
+		\node[coordinate] (n-left) at ($(n) + (-1.5,0)$) {};
+		\node[coordinate] (s-left) at  ($(s) + (-1.5,0)$) {};
+		\node[coordinate] (n-right) at ($(n) + (1.25,0)$) {};
+		\node[coordinate] (s-right) at ($(s) + (1.25,0)$) {};
+		\node[coordinate] (mid) at ($(e) + (-1.5,0)$) {};
+		\node[coordinate] (e-left) at ($(e) + (-1.5,0)$) {};
+		
+		\path (w-up) -- (n-left) node[dspsquare,midway,sloped] (sh1) {S/H};
+		\path (w-up) -- (n-left) node[midway,sloped,yshift=20] {Sampling};
+		\path (w-low) -- (s-left) node[dspsquare,midway,sloped] (q1) {\RaisingEdge};
+		\path (w-low) -- (s-left) node[midway,sloped,yshift=-20] {Quantization};
+		
+		\draw[conndspconn] (w-up) -- (sh1);
+		\draw[dspconn] (w-low) -- (q1);
+		\draw[conndspconn] (sh1) -- (n-left);
+		\draw[dspconn] (q1) -- (s-left);		
+		\draw[conndspconn] (w-right) -- (sh2);
+		\draw[conndspconn] (sh2) -- (q2);
+		\draw[dspconn] (q2) -- (mid);
+		
+		% Analog signal.
+		\begin{axis}[
+			at={(w)},
+			anchor=center,
+			grid=major, 
+			x=14mm, y=7mm, 
+			axis x line=center, axis y line*=left, 
+			ymin=-1, ymax=1, 
+			yticklabels={}, xticklabels={},
+			xlabel={$t$}, ylabel={$r(t)$},
+			every axis x label/.style={
+				at={(ticklabel* cs:1.05)},
+				anchor=west
+				},
+			every axis y label/.style={
+				at={(ticklabel* cs:0.5)},
+				anchor=south,
+				rotate=90
+				},
+			]
+		\addplot[domain=-0:1,  smooth,  black]
+		  plot {sin(deg(2*pi*1.33*x))};
+		\end{axis}
+		
+		% Sampled plot.
+		\begin{axis}[
+			at={(n)},
+			anchor=center,
+			grid=major, 
+			x=14mm, y=7mm, 
+			axis x line=center, axis y line*=left, 
+			ymin=-1, ymax=1, 
+			yticklabels={}, xticklabels={}, 
+			xlabel={$k$}, ylabel={$r[kT_s]$},
+			every axis x label/.style={
+				at={(ticklabel* cs:1.05)},
+				anchor=west
+				},
+			every axis y label/.style={
+				at={(ticklabel* cs:0.5)},
+				anchor=south,
+				rotate=90
+				},
+			]
+		\addplot[ycomb, domain=-0:1,  samples=11, solid,  black, mark=*, mark size=1.5pt] 
+		  plot {sin(deg(2*pi*1.33*x))};
+		\end{axis}
+		
+		% Quantized plot.
+		\begin{axis}[
+			at={(s)},
+			anchor=center,
+			grid=major, 
+			x=14mm, y=7mm, 
+			axis x line=center, axis y line*=left, 
+			ymin=-1, ymax=1, 
+			yticklabels={}, xticklabels={}, 
+			xlabel={$t$}, ylabel={$r_q(t)$},
+			every axis x label/.style={
+				at={(ticklabel* cs:1.05)},
+				anchor=west
+				},
+			every axis y label/.style={
+				at={(ticklabel* cs:0.5)},
+				anchor=south,
+				rotate=90
+				},
+			]
+		\addplot[domain=-0:1, black]
+		 coordinates {(0,0) (0.030,0) (0.030,0.5) (0.101,0.5) (0.101,1) (0.274,1) (0.274,0.5) (0.345,0.5) (0.345,0) (0.406,0) (0.406,-0.5) (0.477,-0.5) (0.477,-1) (0.650,-1) (0.650,-0.5) (0.721,-0.5) (0.721,0) (0.782,0) (0.782,0.5) (0.853,0.5) (0.853,1) (1,1)};
+		 \end{axis}
+		
+		% Sampled and quantized plot.
+		\begin{axis}[
+			at={(e)},
+			anchor=center,
+			grid=major, 
+			x=14mm, y=7mm, 
+			axis x line=center, axis y line*=left, 
+			ymin=-1, ymax=1, 
+			yticklabels={}, xticklabels={}, 
+			xlabel={$k$}, ylabel={$r_q[kT_s]$},
+			every axis x label/.style={
+				at={(ticklabel* cs:1.05)},
+				anchor=west
+				},
+			every axis y label/.style={
+				at={(ticklabel* cs:0.5)},
+				anchor=south,
+				rotate=90
+				},
+			]
+		\addplot[ycomb, domain=-0:1, solid, black, mark=*, mark size=1.5pt]
+		 coordinates {(0,0) (0.1,0.5) (0.2,1) (0.3,0.5) (0.4,0) (0.5,-1) (0.6,-1) (0.7,-0.5) (0.8,0.5) (0.9,1) (1,1)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{A continuous-time, continuous-value signal $r(t)$ is sampled to produce a discrete-time, continuous-value signal $r[kT_s]$. $r(t)$ independently undergoes quantization to yield a continuous-time, discrete-value signal $r_q(t)$. When both processes are applied in sequence, a discrete-time, discrete-value signal $r_q[kT_s]$ is the result.}
+	\label{fig:samp-quant}
+\end{figure}
+
+Sigma delta modulation is a widely used technique for \gls{A/D} and \gls{D/A} conversion of signals that provides high resolution through the techniques of oversampling and noise shaping. Oversampling trades throughput for resolution, thus the sigma delta modulator generally lies between integrating converters, which are specialized for near-dc signals, and high-speed architectures, such as successive approximation and flash. The sigma delta quantization scheme is especially applicable to signals with low to moderate frequency content. Signals with these properties include most biosignals such as those recorded electrically (\gls{EEG}, \gls{ECG}) or through other means using transducers (\gls{PPG}), as well as audio signals.
+
+\section{Oversampling and Noise Shaping}
+\label{sec:os-ns}
+
+Oversampling is simply the process where the analog signal is sampled at a rate higher than what the sampling theorem would dictate for perfect reconstruction, expressed as the \gls{OSR} relative to the Nyquist frequency. It may seem that this does not have a direct benefit \emph{per se}, but it allows a less demanding analog \gls{AAF} to be used, saving circuit area. It also permits the quantization error to be spread across a larger bandwidth, reducing the in-band quantization noise power by a factor directly proportional to \gls{OSR}. These two advantages --- reducing analog circuit complexity and increasing resolution --- are common goals in sigma delta modulator design.
+
+It may appear that oversampling alone quickly becomes impractical because one must approach very high sampling frequencies to increase the \gls{SQNR} substantially. However, this assumes that the quantization noise is evenly distributed across the spectrum. Noise shaping is the use of a filter operating on the oversampled signal to push quantization noise out of the signal band implemented by wrapping the quantizer in a feedback loop. 
+
+\begin{figure}
+\noindent\makebox[\textwidth]{
+	\centering
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+		\node[coordinate] (g1) at (-2,2.5) {};
+		% Place nodes using a matrix
+		\matrix (m0) at (0,5) [row sep=0mm, column sep=5mm, matrix anchor=north west]
+		{
+			%--------------------------------------------------------------------------------------------------------------------------------
+			\node[coordinate]						(m0-00) {};							\&
+			\node[coordinate]						(m0-01) {};							\&
+			\node[coordinate,label={above:$f_s$}]		(m0-02) {};							\& \\
+			%--------------------------------------------------------------------------------------------------------------------------------
+			\node[coordinate]						(m0-10) {};							\&
+			\node[dspsquare,label={above:AAF}]			(m0-11) {};							\&
+			\node[dspsquare]						(m0-12) {S/H};						\&
+			\node[dspsquare]						(m0-13) {\RaisingEdge};					\& \\
+			%--------------------------------------------------------------------------------------------------------------------------------
+		};
+		
+		\draw[->] (m0-02) -- (m0-12);
+		\draw[dspconn] (m0-10) -- (m0-11);
+		\draw[dspconn] (m0-11) -- (m0-12);
+		\draw[dspconn] (m0-12) -- (m0-13);
+		\pgfplotsset{width=2.25cm,height=2.25cm,xmin=0.1,xmax=1000000,ymin=0.0001,ymax=10}
+		\begin{loglogaxis}[
+				at={($(m0-11) + (-9,-9)$)},
+				ticks=none,
+				axis x line*=bottom,
+				axis y line*=left
+			 ]
+			\addplot[domain=1:100000]  {(60*x+10000)/(x*x + 60*x+10000)};
+		\end{loglogaxis}
+		
+		\matrix (m1) at (0,2.5) [row sep=0mm, column sep=5mm, matrix anchor=north west]
+		{
+			%--------------------------------------------------------------------------------------------------------------------------------
+			\node[coordinate]						(m1-00) {};							\&
+			\node[coordinate]						(m1-01) {};							\&
+			\node[coordinate,label={above:$OSR\cdot f_s$}]	(m1-02) {};							\& \\
+			%--------------------------------------------------------------------------------------------------------------------------------
+			\node[dspnodefull]						(m1-10) {};							\&
+			\node[dspsquare,label={above:AAF}]			(m1-11) {};							\&
+			\node[dspsquare]						(m1-12) {S/H};						\&
+			\node[dspsquare]						(m1-13) {\RaisingEdge};					\&
+			\node[dspsquare,label={above:DRF}]			(m1-14) {};							\&
+			\node[dspfilter]						(m1-15) {$\downarrow OSR$};				\& \\
+			%--------------------------------------------------------------------------------------------------------------------------------
+		};
+		
+		\draw[->] (m1-02) -- (m1-12);
+		\draw[dspconn] (m1-10) -- (m1-11);
+		\draw[dspconn] (m1-11) -- (m1-12);
+		\draw[dspconn] (m1-12) -- (m1-13);
+		\draw[dspconn] (m1-13) -- (m1-14);
+		\draw[dspconn] (m1-14) -- (m1-15);
+		\pgfplotsset{width=2.25cm,height=2.25cm,xmin=0.1,xmax=1000000,ymin=0.0001,ymax=10}
+		\begin{loglogaxis}[
+				at={($(m1-11) + (-9,-9)$)},
+				ticks=none,
+				axis x line*=bottom,
+				axis y line*=left
+			 ]
+			\addplot[domain=1:100000]  {(60*x+10000)/(x*x + 60*x+10000)};
+		\end{loglogaxis}
+		\pgfplotsset{width=2.25cm,height=2.25cm,xmin=0.1,xmax=1000000,ymin=0.0001,ymax=10}
+		\begin{loglogaxis}[
+				at={($(m1-14) + (-9,-9)$)},
+				ticks=none,
+				axis x line*=bottom,
+				axis y line*=left
+			 ]
+			\addplot[domain=1:100000]  {(60*x+10000)/(x*x + 60*x+10000)};
+		\end{loglogaxis}
+		
+		\matrix (m2) at (0,0) [row sep=0mm, column sep=5mm, matrix anchor=north west]
+		{
+			%--------------------------------------------------------------------------------------------------------------------------------
+			\node[coordinate]						(m2-00) {};							\&
+			\node[coordinate]						(m2-01) {};							\&
+			\node[coordinate,label={above:$OSR\cdot f_s$}]	(m2-02) {};							\& \\
+			%--------------------------------------------------------------------------------------------------------------------------------
+			\node[coordinate]						(m2-10) {};							\&
+			\node[dspsquare,label={above:AAF}]			(m2-11) {};							\&
+			\node[dspsquare]						(m2-12) {S/H};						\&
+			\node[dspadder,label={below left:$-$}]		(m2-13) {};							\&
+			\node[dspsquare,label={above:LF}]			(m2-14) {$\int$};						\&
+			\node[dspsquare]						(m2-15) {\RaisingEdge};					\&
+			\node[dspnodefull]						(m2-16) {};							\&
+			\node[dspsquare,label={above:DRF}]			(m2-17) {};							\&
+			\node[dspfilter]						(m2-18) {$\downarrow OSR$};				\&
+			\node[dspnodeopen,dsp/label=right]			(m2-19) {$y_3[k]$};						\& \\
+			%--------------------------------------------------------------------------------------------------------------------------------
+			\node[coordinate]						(m2-20) {};							\&
+			\node[coordinate]						(m2-21) {};							\&
+			\node[coordinate]						(m2-22) {};							\&
+			\node[coordinate]						(m2-23) {};							\&
+			\node[coordinate]						(m2-24) {};							\&
+			\node[coordinate]						(m2-25) {};							\&
+			\node[coordinate]						(m2-26) {};							\& \\
+		};
+		
+		\draw[->] (m2-02) -- (m2-12);
+		\draw[dspconn] (m2-10) -- (m2-11);
+		\draw[dspconn] (m2-11) -- (m2-12);
+		\draw[dspconn] (m2-12) -- (m2-13);
+		\draw[dspconn] (m2-13) -- (m2-14);
+		\draw[dspconn] (m2-14) -- (m2-15);
+		\draw[dspline] (m2-15) -- (m2-16);
+		\draw[dspconn] (m2-16) -- (m2-17); 
+		\draw[dspconn] (m2-17) -- (m2-18);
+		\draw[dspconn] (m2-18) -- (m2-19);
+		\draw[dspline] (m2-16) -- (m2-26);
+		\draw[dspline] (m2-26) -- (m2-23);
+		\draw[dspconn] (m2-23) -- (m2-13);
+		\pgfplotsset{width=2.25cm,height=2.25cm,xmin=0.1,xmax=1000000,ymin=0.0001,ymax=10}
+		\begin{loglogaxis}[
+				at={($(m2-11) + (-9,-9)$)},
+				ticks=none,
+				axis x line*=bottom,
+				axis y line*=left
+			 ]
+			\addplot[domain=1:100000]  {(60*x+10000)/(x*x + 60*x+10000)};
+		\end{loglogaxis}
+		\pgfplotsset{width=2.25cm,height=2.25cm,xmin=0.1,xmax=1000000,ymin=0.0001,ymax=10}
+		\begin{loglogaxis}[
+				at={($(m2-17) + (-9,-9)$)},
+				ticks=none,
+				axis x line*=bottom,
+				axis y line*=left
+			 ]
+			\addplot[domain=1:100000]  {(60*x+10000)/(x*x + 60*x+10000)};
+		\end{loglogaxis}
+		
+		\draw[dspline] (m0-10) -- (m1-10);
+		\draw[dspline] (m1-10) -- (m2-10);
+		\node[dspnodeopen,dsp/label=left] (r) at ($(m1-10) + (-0.5cm, 0)$) {$r(t)$};
+		\draw[dspline] (r) -- (m1-10);
+		
+		\node[coordinate] (g-y2) at ($(m2-19) + (4cm,0)$) {};
+		\coordinate (g-y1) at (g-y2 |- m1-15);
+		\coordinate (g-y0) at (g-y2 |- m0-13);
+		\node[dspnodeopen,dsp/label=right] (y1) at (m2-19 |- m1-15) {$y_2[k]$};
+		\node[dspnodeopen,dsp/label=right] (y0) at (m2-19 |- m0-13) {$y_1[k]$};
+		
+		\draw[dspconn] (m0-13) -- (y0);
+		\draw[dspconn] (m1-15) -- (y1);
+		
+		\begin{axis}[
+			at={($(r) + (-3cm,0)$)},
+			anchor=center,
+			width=6cm, height=3.75cm,
+			anchor=center, 
+			xmin=0, xmax=4,
+			ymin=-100, ymax=300,
+			axis x line=bottom, axis y line=left, axis line style={-},
+			xticklabels={0,1,2,3,\SI{4}{\second}}, xtick={0,1,2,3,4},
+			yticklabels={, 0, \SI{300}{\micro\volt}}, ytick={-100, 0, 300}
+			]
+			\addplot[solid,black] table [x=t, y=r, col sep=comma] {data/comparison-r.csv};
+		\end{axis}
+		
+		\begin{axis}[
+			at={(g-y0)},
+			anchor=center,
+			width=6cm, height=3.75cm,
+			anchor=center, 
+			xmin=0, xmax=4,
+			ymin=-100, ymax=300,
+			axis x line=none, axis y line=left, axis line style={-},
+			xticklabels={0,1,2,3,\SI{4}{\second}}, xtick={0,1,2,3,4},
+			yticklabels={, 0, \SI{300}{\micro\volt}}, ytick={-100, 0, 300}
+			]
+			\addplot[solid,black] table [x=t, y=y, col sep=comma] {data/comparison-y0.csv};
+		\end{axis}
+		
+		\begin{axis}[
+			at={(g-y1)},
+			anchor=center,
+			width=6cm, height=3.75cm,
+			anchor=center, 
+			xmin=0, xmax=4,
+			ymin=-100, ymax=300,
+			axis x line=none, axis y line=left, axis line style={-},
+			xticklabels={0,1,2,3,\SI{4}{\second}}, xtick={0,1,2,3,4},
+			yticklabels={, 0, \SI{300}{\micro\volt}}, ytick={-100, 0, 300}
+			]
+			\addplot[solid,black] table [x=t, y=y, col sep=comma] {data/comparison-y1.csv};
+		\end{axis}
+		
+		\begin{axis}[
+			at={(g-y2)},
+			anchor=center,
+			width=6cm, height=3.75cm,
+			anchor=center, 
+			xmin=0, xmax=4,
+			ymin=-100, ymax=300,
+			axis x line=bottom, axis y line=left, axis line style={-},
+			xticklabels={0,1,2,3,\SI{4}{\second}}, xtick={0,1,2,3,4},
+			yticklabels={, 0, \SI{300}{\micro\volt}}, ytick={-100, 0, 300}
+			]
+			\addplot[solid,black] table [x=t, y=y, col sep=comma] {data/comparison-y2.csv};
+		\end{axis}
+		
+	\end{tikzpicture}}
+	\caption{A comparison between na\"{i}ve quantization (top), 10 times oversampled quantization (middle), and first order sigma delta modulation (bottom). The graphs on the right show the increasing quality of an \gls{EEG} signal sampled to a final rate of \SI{100}{\hertz} and quantized to 5 bits by each scheme.}
+	\label{fig:samp-quant}
+\end{figure}
+
+\section{Related Works}
+
+\section{Organization of this Thesis}
+\label{sec:org}
+
+\gls{angelsperarea}
 
 This document provides a quick set of instructions for using the
 \class{ubcdiss} class to write a dissertation in \LaTeX. 
@@ -44,7 +399,7 @@ We conclude with pointers to additional sources of information in
 \section{Suggested Thesis Organization}
 \label{sec:SuggestedThesisOrganization}
 
-The \acs{UBC} \acf{GPS} specifies a particular arrangement of the
+The specifies a particular arrangement of the
 components forming a thesis.\footnote{See
     \url{http://www.grad.ubc.ca/current-students/dissertation-thesis-preparation/order-components}}
 This template reflects that arrangement.
@@ -137,7 +492,7 @@ references, such as books, articles, items in a conference proceedings,
 chapters, technical reports, manuals, dissertations, and unpublished
 manuscripts. 
 A reference may include attributes such as the authors,
-the title, the page numbers, the \ac{DOI}, or a \ac{URL}.  A reference
+the title, the page numbers, t.  A reference
 can also be augmented with personal attributes, such as a rating,
 notes, or keywords.
 

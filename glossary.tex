@@ -1,41 +1,31 @@
 %% The following is a directive for TeXShop to indicate the main file
 %%!TEX root = diss.tex
 
-\chapter{Glossary}
+% Acronyms
+\newacronym{T}{TT}{Test}
+\newacronym{A/D}{A/D}{analog-to-digital}
+\newacronym{D/A}{D/A}{digital-to-analog}
+\newacronym{CT}{CT}{continuous-time}
+\newacronym{DT}{DT}{discrete-time}
 
-This glossary uses the handy \latexpackage{acroynym} package to automatically
-maintain the glossary.  It uses the package's \texttt{printonlyused}
-option to include only those acronyms explicitly referenced in the
-\LaTeX\ source.
+\newacronym{EEG}{EEG}{electroencephalography}
+\newacronym{ECG}{ECG}{electrocardiography}
+\newacronym{PPG}{PPG}{photoplethysmography}
 
-% use \acrodef to define an acronym, but no listing
-\acrodef{UI}{user interface}
-\acrodef{UBC}{University of British Columbia}
+\newacronym{AAF}{AAF}{antialiasing filter}
+\newacronym{LF}{LF}{loop filter}
+\newacronym{OSR}{OSR}{oversampling ratio}
+\newacronym{SQNR}{SQNR}{signal-to-quantization-noise ratio}
 
-% The acronym environment will typeset only those acronyms that were
-% *actually used* in the course of the document
-\begin{acronym}[ANOVA]
-\acro{ANOVA}[ANOVA]{Analysis of Variance\acroextra{, a set of
-  statistical techniques to identify sources of variability between groups}}
-\acro{API}{application programming interface}
-\acro{CTAN}{\acroextra{The }Common \TeX\ Archive Network}
-\acro{DOI}{Document Object Identifier\acroextra{ (see
-    \url{http://doi.org})}}
-\acro{GPS}[GPS]{Graduate and Postdoctoral Studies}
-\acro{PDF}{Portable Document Format}
-\acro{RCS}[RCS]{Revision control system\acroextra{, a software
-    tool for tracking changes to a set of files}}
-\acro{TLX}[TLX]{Task Load Index\acroextra{, an instrument for gauging
-  the subjective mental workload experienced by a human in performing
-  a task}}
-\acro{UML}{Unified Modelling Language\acroextra{, a visual language
-    for modelling the structure of software artefacts}}
-\acro{URL}{Unique Resource Locator\acroextra{, used to describe a
-    means for obtaining some resource on the world wide web}}
-\acro{W3C}[W3C]{\acroextra{the }World Wide Web Consortium\acroextra{,
-    the standards body for web technologies}}
-\acro{XML}{Extensible Markup Language}
-\end{acronym}
+% Symbols
+\newglossaryentry{angelsperarea}{
+  name = $a$ ,
+  description = The number of angels per unit area,
+}
+
+\renewcommand{\glsnamefont}[1]{{\scshape \MakeTextLowercase{#1}}}
+\printglossary[title=List of Symbols]
+\printglossary[type=\acronymtype,title=Glossary]
 
 % You can also use \newacro{}{} to only define acronyms
 % but without explictly creating a glossary
