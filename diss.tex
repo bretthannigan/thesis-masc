@@ -125,7 +125,8 @@
 %%   hyperref otherwise.  See Section 5.2 in the ``LaTeX 2e for Class
 %%   and Package Writers Guide'' (clsguide.pdf) for details.
 \usepackage[printonlyused,nohyperlinks]{acronym}
-\usepackage[acronym,nonumberlist,toc]{glossaries}
+\usepackage[acronym,nonumberlist,toc,acronymlists={hidden}]{glossaries}
+\newglossary[algh]{hidden}{acrh}{acnh}{Hidden Acronyms}
 \makeglossaries
 
 %% The ubcdiss.cls loads the `textcase' package which provides commands
@@ -448,7 +449,7 @@
 % Body of Thesis (not all sections may apply)
 \mainmatter
 
-\acresetall	% reset all acronyms used so far
+\glsresetall	% reset all acronyms used so far
 
 %    1. Introduction
 \include{intro}
@@ -456,10 +457,15 @@
 %    2. Main body
 % Generally recommended to put each chapter into a separate file
 %\include{relatedwork}
-%\include{model}
-%\include{impl}
-%\include{discussion}
-%\include{conclusions}
+\include{model}
+
+\include{stab}
+
+\include{optim}
+
+\include{ex}
+
+\include{conclusions}
 
 %    3. Notes
 %    4. Footnotes

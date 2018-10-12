@@ -1,3 +1,63 @@
+\ifglsentryexists{UBC}{}%
+{%
+\gls@defglossaryentry{UBC}%
+{%
+name={UBC},%
+sort={UBC},%
+type={hidden},%
+first={University of British Columbia\glsspace (UBC)},%
+firstplural={University of British Columbias\glsspace (UBCs)},%
+text={UBC},%
+plural={UBCs},%
+description={University of British Columbia},%
+descriptionplural={University of British Columbia\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={University of British Columbia},%
+longplural={University of British Columbias},%
+short={UBC},%
+shortplural={UBCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GPS}{}%
+{%
+\gls@defglossaryentry{GPS}%
+{%
+name={GPS},%
+sort={GPS},%
+type={hidden},%
+first={graduate and postdoctoral studies\glsspace (GPS)},%
+firstplural={graduate and postdoctoral studiess\glsspace (GPSs)},%
+text={GPS},%
+plural={GPSs},%
+description={graduate and postdoctoral studies},%
+descriptionplural={graduate and postdoctoral studies\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={graduate and postdoctoral studies},%
+longplural={graduate and postdoctoral studiess},%
+short={GPS},%
+shortplural={GPSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{A/D}{}%
 {%
 \gls@defglossaryentry{A/D}%
