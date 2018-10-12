@@ -2,7 +2,6 @@
 %%!TEX root = diss.tex
 
 % Acronyms
-\newacronym{T}{TT}{Test}
 \newacronym{A/D}{A/D}{analog-to-digital}
 \newacronym{D/A}{D/A}{digital-to-analog}
 \newacronym{CT}{CT}{continuous-time}
@@ -12,15 +11,64 @@
 \newacronym{ECG}{ECG}{electrocardiography}
 \newacronym{PPG}{PPG}{photoplethysmography}
 
-\newacronym{AAF}{AAF}{antialiasing filter}
-\newacronym{LF}{LF}{loop filter}
 \newacronym{OSR}{OSR}{oversampling ratio}
 \newacronym{SQNR}{SQNR}{signal-to-quantization-noise ratio}
 
+\newacronym{AAF}{AAF}{antialiasing filter}
+\newacronym{LF}{LF}{loop filter}
+\newacronym{DRF}{DRF}{digital reconstruction filter}
+\newacronym{LF}{LF}{loop filter}
+
+\newacronym[description={noise transfer function, equivalent to the sensitivity function}]{NTF}{NTF}{noise transfer function}
+\newacronym[description={signal transfer function, equivalent to the complementary sensitivity function}]{STF}{STF}{signal transfer function}
+
+\newacronym{CLANS}{CLANS}{closed-loop analysis of noise shaper}
+\newacronym{LMI}{LMI}{linear matrix inequality}
+\newacronym{GKYP}{GKYP}{generalized Kalman-Yakubovi\v{c}-Popov}
+\newacronym{FIR}{FIR}{finite impulse response}
+\newacronym{IIR}{IIR}{infinite impulse response}
+
+
 % Symbols
-\newglossaryentry{angelsperarea}{
-  name = $a$ ,
-  description = The number of angels per unit area,
+\newglossaryentry{pq}{
+	name = $P_Q$ ,
+	description = In-band quantization noise power
+}
+\newglossaryentry{delta}{
+	name = $\Delta$ ,
+	description = Quantization step size
+}
+\newglossaryentry{order}{
+	name = $n$,
+	description = Filter order
+}
+\newglossaryentry{r}{
+	name = $r$,
+	description = Analog reference input signal
+}
+\newglossaryentry{e}{
+	name = $e$,
+	description = Feedback error signal
+}
+\newglossaryentry{u}{
+	name = $u$,
+	description = Quantizer input signal
+}
+\newglossaryentry{y}{
+	name = $y$,
+	description = Digital bitstream output signal
+}
+\newglossaryentry{S}{
+	name = $S(\lambda)$,
+	description = Sensitivity function
+}
+\newglossaryentry{T}{
+	name = $T(\lambda)$,
+	description = Complementary sensitivity function
+}
+\newglossaryentry{sorz}{
+	name = $\lambda$,
+	description = Placeholder for the continuous-time Laplace variable $s$ or discrete-time $z$-transformation variable $z$
 }
 
 \renewcommand{\glsnamefont}[1]{{\scshape \MakeTextLowercase{#1}}}

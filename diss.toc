@@ -1,0 +1,37 @@
+\contentsline {chapter}{Abstract}{iii}{chapter*.1}
+\contentsline {chapter}{Lay Summary}{iv}{chapter*.2}
+\contentsline {chapter}{Preface}{v}{chapter*.3}
+\contentsline {chapter}{Table of Contents}{vi}{chapter*.4}
+\contentsline {chapter}{List of Tables}{viii}{chapter*.5}
+\contentsline {chapter}{List of Figures}{ix}{chapter*.6}
+\contentsline {chapter}{List of Symbols}{x}{section*.7}
+\contentsline {chapter}{Glossary}{xi}{section*.9}
+\contentsline {chapter}{Acknowledgments}{xiii}{chapter*.11}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Oversampling and Noise Shaping}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Basic Structure}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Discrete-Time Modulator}{4}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Continuous-Time Modulator}{4}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.3}Loop Filter}{5}{section.1.3}
+\contentsline {section}{\numberline {1.4}Related Works}{7}{section.1.4}
+\contentsline {section}{\numberline {1.5}Organization of this Thesis}{8}{section.1.5}
+\contentsline {section}{\numberline {1.6}Suggested Thesis Organization}{9}{section.1.6}
+\contentsline {section}{\numberline {1.7}Making Cross-References}{9}{section.1.7}
+\contentsline {section}{\numberline {1.8}Managing Bibliographies with BibT\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m {}}{10}{section.1.8}
+\contentsline {subsection}{\numberline {1.8.1}Describing References}{10}{subsection.1.8.1}
+\contentsline {subsection}{\numberline {1.8.2}Citing References}{11}{subsection.1.8.2}
+\contentsline {subsection}{\numberline {1.8.3}Formatting Cited References}{12}{subsection.1.8.3}
+\contentsline {section}{\numberline {1.9}Typesetting Tables}{12}{section.1.9}
+\contentsline {section}{\numberline {1.10}Figures, Graphics, and Special Characters}{13}{section.1.10}
+\contentsline {section}{\numberline {1.11}Special Characters and Symbols}{14}{section.1.11}
+\contentsline {section}{\numberline {1.12}Changing Page Widths and Heights}{15}{section.1.12}
+\contentsline {subsection}{\numberline {1.12.1}The \texttt {geometry} Package}{15}{subsection.1.12.1}
+\contentsline {subsection}{\numberline {1.12.2}Changing Page Layout Values By Hand}{16}{subsection.1.12.2}
+\contentsline {subsection}{\numberline {1.12.3}Making Temporary Changes to Page Layout}{16}{subsection.1.12.3}
+\contentsline {section}{\numberline {1.13}Keeping Track of Versions with Revision Control}{17}{section.1.13}
+\contentsline {section}{\numberline {1.14}Recommended Packages}{17}{section.1.14}
+\contentsline {subsection}{\numberline {1.14.1}Typesetting}{17}{subsection.1.14.1}
+\contentsline {subsection}{\numberline {1.14.2}Figures, Tables, and Document Extracts}{18}{subsection.1.14.2}
+\contentsline {subsection}{\numberline {1.14.3}Bibliography Related Packages}{18}{subsection.1.14.3}
+\contentsline {section}{\numberline {1.15}Moving On}{19}{section.1.15}
+\contentsline {chapter}{\numberline {A}Supporting Materials}{20}{appendix.A}
