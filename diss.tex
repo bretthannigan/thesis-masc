@@ -179,6 +179,8 @@
 %%
 %% My Packages
 %%
+% Text
+\usepackage{titlecaps}
 % Mathematics and Symbols
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -206,6 +208,8 @@
 \usetikzlibrary{arrows, positioning, dsp, chains, fit, calc, matrix}
 \usepackage[american]{circuitikz}
 \usepackage{pgfplots}
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
 \usepackage{epstopdf}
 \epstopdfsetup{outdir=./}
 % Files

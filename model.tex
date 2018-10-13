@@ -3,3 +3,167 @@
 
 \chapter{Modelling the Sigma Delta Modulator}
 \label{ch:Modelling}
+
+In order to apply an optimization framework to the design of the \gls{LF}, the system from Figures \ref{fig:basic-struct-dt} and \ref{fig:basic-struct-ct} must be placed in a form that allows tractable application of the desired performance and stability targets. This includes omission of blocks that have minimal or no effect on the loop as well as linearization of the quantizer. The \gls{AAF} (when present) can be considered as a pre-filter operating on the input signal. The filter $H_0(\lambda)$ serves as an additional degree of freedom for the \gls{STF} can be set to unity for the purposes of the model. These two filters are not required in stabilitiy analysis, because the \gls{NTF} depends only on $H_1(\lambda)$ as seen in \autoref{eq:t}. After noise rejection performance has been optimized, $H_0(\lambda)$ can be tuned as necessary to ensure that the combined gain of the \gls{AAF} and \gls{LF} is close to unity in the signal band. In a similar way, the \gls{DSP} in the output path serves only to filter out the signal and decimate to the original sampling frequency which may be dealt with separately without impacting loop stability.
+
+\section{Linearization of the Quantizer Element}
+
+Next, the nonlinear nature of the quantizer is dealt with. As mentioned before, a common linearization approach is to replace the quantizer with an additive noise source \gls{d}. Furthermore, the linear model can incorporate a variable gain \gls{K}. The inclusion of \gls{K} has uses in linearization, stability, and performance that will be expanded upon in \autoref{ch:Stability}. After these simplifications, we obtain the block diagram in \autoref{fig:sdm-model} which is applicable to \gls{DT} or \gls{CT} designs. In the \gls{DT} case, the loop is operating entirely in the oversampled domain and the \gls{S/H} block is not shown. In the \gls{CT} case, the \gls{S/H} block in the loop is neglected so that \gls{S} and \gls{T} are \gls{CT} transfer functions.
+
+\begin{figure}
+	\centering
+	% General Sigma Delta Modulator
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	
+		% Place nodes using a matrix
+		\matrix (m1) [row sep=2.5mm, column sep=5mm]
+		{
+			%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			\node[coordinate]											(m01) {};							\&
+			\node[coordinate]											(m02) {};							\&
+			\node[coordinate]											(m03) {};							\&
+			\node[coordinate]											(m04) {};							\&
+			\node[dspnodeopen,dsp/label=above]								(m05) {$d$};							\& \\
+			%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			\node[dspnodeopen,dsp/label=left]								(m11) {$r$};							\&
+			\node[dspadder,label={below left:$-$}]							(m12) {};							\&
+			\node[dspfilter]											(m13) {$H_1(\lambda)$};					\&
+			\node[dspgain,fill=white,label={[align=center,yshift=-5]below:Linearized\\Gain}]	(m14) {$K$};							\&
+			\node[dspsquare,label={below:Quantizer}]							(m15) {\RaisingEdge};					\&
+			\node[dspnodefull]											(m16) {};							\&
+			\node[dspnodeopen,dsp/label=right]								(m17) {$y$};							\& \\
+			%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			\node[coordinate]											(m21) {};							\&
+			\node[coordinate]											(m22) {};							\& 
+			\node[coordinate]											(m23) {};							\& 
+			\node[coordinate]											(m24) {};							\& 
+			\node[coordinate]											(m25) {};							\& 
+			\node[coordinate]											(m26) {};							\& 
+			\node[coordinate]											(m27) {};							\& \\
+			%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		};
+	
+		\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m05.north)+(-0.5, 0.7)$) ($(m15.south)+(0.5, -0.6)$)},label={[align=center]above:Linear Model}] {};
+		%\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m02.north west)+(-0.25, 0.25)$) ($(m13.south east)+(0.4, -0.5)$)},label=below:{Loop Filter $H(\lambda)$}] {};
+	
+		\begin{pgfonlayer}{bg}
+			\draw[->]		($(m14) + (-0.5,-0.5)$) -- ($(m14) + (0.5,0.5)$);
+		\end{pgfonlayer}
+		\draw[dspconn] 	(m11) -- (m12);
+		\draw[dspconn] 	(m12) -- (m13);
+		\draw[dspconn] 	(m13) -- node[midway,above] {$u$} (m14);
+		\draw[dspconn]	(m14) -- (m15);
+		\draw[dspconn] 	($(m14.east)+(6pt, 0)$) -- (m15);
+		\draw[dspline]	(m15) -- (m16);
+		\draw[dspconn] 	(m16) -- (m17);
+		\draw[dspline] 	(m16) -- (m26);
+		\draw[dspline] 	(m26) -- (m22);
+		\draw[dspconn]	(m22) -- (m12);
+		\draw[dspconn] 	(m12) -- node[midway,above] {$e$} (m13);
+		\draw[dspconn] 	(m05) -- (m15);
+		\draw[OliveGreen, ->, out=40, in=90, looseness=0.85] ($(m11)+(0, 0.4)$) to node[below, xshift=-22pt, yshift=-5pt] {$T(\lambda)$} ($(m17)+(0.35, 0.4)$);
+		\draw[RedOrange, ->, out=-45, in=135, looseness=1] ($(m05)+(0.35, 0.25)$) to node[above, xshift=5pt] {$S(\lambda)$} ($(m17)+(0.25, 0.35)$);
+	
+	\end{tikzpicture}
+	\caption{The linearized sigma delta loop block diagram with omission of extraneous filters and the quantizer replaced by a variable gain and additive quantization noise signal.}  \label{fig:sdm-model}
+\end{figure}
+
+\section{Well-Posedness and Internal Stability}
+
+The meaningful application of feedback to reduce an uncertainty (in this case, error introduced by the nonlinear quantizer) reqiures that the system be well-posed. Taking \autoref{fig:sdm-model} and mainpulating the block diagram into the standard feedback form with signals \gls{r}, \gls{e}, \gls{d}, and \gls{y} results in the loop shown in \autoref{fig:sdm-stdf}.
+
+\begin{figure}[h]
+	\centering
+	% General Sigma Delta Modulator
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	
+		% Place nodes using a matrix
+		\matrix (m1) [row sep=2.5mm, column sep=5mm]
+		{
+			%--------------------------------------------------------------------------------
+			\node[coordinate]					(m00) {};		\&
+			\node[coordinate]					(m01) {};		\&
+			\node[dspfilter]					(m02) {$-K$};	\&
+			\node[dspadder]					(m03) {};		\&
+			\node[dspnodeopen,dsp/label=right]		(m04) {$r$};		\& \\
+			%--------------------------------------------------------------------------------
+			\node[dspnodeopen,dsp/label=left]		(m10) {$d$};		\&
+			\node[dspadder]					(m11) {};		\&
+			\node[dspfilter]					(m12) {$H_1$};	\&
+			\node[coordinate]					(m13) {};		\& \\
+			%--------------------------------------------------------------------------------
+		};
+	
+		\draw[dspconn]	(m01) -- (m02);
+		\draw[dspconn] 	(m02) -- (m03);
+		\draw[dspconn] 	(m04) -- (m03);
+		\draw[dspline] 	(m01) -- (m11);
+		\draw[dspline]	(m03) to node[midway,right] {$e$} (m13);
+		\draw[dspconn] 	(m10) to node[midway,left] {$y$} (m11);
+		\draw[dspconn]	(m12) -- (m11);
+		\draw[dspconn]	(m13) -- (m12);
+	
+	\end{tikzpicture}
+	\caption{The linearized model converted into standard feedback form.}  \label{fig:sdm-stdf}
+\end{figure}
+
+The equations describing this loop are:
+
+\begin{equation}
+	\begin{bmatrix}
+		r \\
+		d
+	\end{bmatrix} =
+	\begin{bmatrix}
+		I & K \\
+		-H_1 & I
+	\end{bmatrix}
+	\begin{bmatrix}
+		e \\
+		y
+	\end{bmatrix}. \label{eq:stdf}
+\end{equation}
+
+A feedback system is considered well-posed if the inverse of the feedback matrix in \autoref{eq:stdf} exists, namely:\
+
+\begin{equation}
+	\begin{bmatrix}
+		e \\
+		y
+	\end{bmatrix} =
+	\begin{bmatrix}
+		\frac{1}{1 + KH_1} & \frac{-K}{1 + KH_1} \\
+		\frac{H_1}{1 + KH_1} & \frac{1}{1 + KH_1}
+	\end{bmatrix}
+	\begin{bmatrix}
+		r \\
+		d
+	\end{bmatrix}. \label{eq:stdf-inv}
+\end{equation}
+
+In the nominal case where $K = 1$, this simplifes to the expression in \autoref{eq:stdf-inv-nok}.
+
+\begin{equation}
+	\begin{bmatrix}
+		e \\
+		y
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		S & -S \\
+		T & S
+	\end{bmatrix}
+	\begin{bmatrix}
+		r \\
+		d
+	\end{bmatrix} \label{eq:stdf-inv-nok}
+\end{equation}
+
+\section{Modelling Uncertain Quantizer Gain}
+
+\section{Extraction of Performance and Stability Channels}
+
+\section{Constraints on the \titlecap{\glsentrylong{NTF}}}
+
+Most prior work in the area performs optimization directly on the \gls{NTF} of the system. This is effective because it is a relatively accurate model of the noise shaping performance. In addition, it is accepting of the constraints necessary to make the closed loop system realizable.
+
+The first constraint on the \gls{NTF} is that the feedback system must be well-posed. We begin by manipulating the feedback loop into the standard form shown in \autoref{fig:fb-std}.

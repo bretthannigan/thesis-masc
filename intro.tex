@@ -399,7 +399,7 @@ We introduce the basic block diagram of a sigma delta modulator and nomenclature
 			\node[dspfilter]								(m1-04) {$H_0(z)$};		\&
 			\node[coordinate]								(m1-05) {};				\&
 			\node[coordinate]								(m1-06) {};				\&
-			\node[dspnodeopen,dsp/label=above]					(m1-07) {$d[k]$};			\& \\
+			\node[coordinate]								(m1-07) {};				\& \\
 			%------------------------------------------------------------------------------------------------------------------------
 			\node[coordinate]								(m2-00) {};				\&
 			\node[coordinate]								(m2-01) {};				\&
@@ -428,7 +428,7 @@ We introduce the basic block diagram of a sigma delta modulator and nomenclature
 			%------------------------------------------------------------------------------------------------------------------------
 		};
 	
-		\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m1-07.north)+(-0.5, 0.7)$) ($(m2-07.south)+(0.5, -0.6)$)},label={[align=center]above:Linear Model}] {};
+		%\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m1-07.north)+(-0.5, 0.7)$) ($(m2-07.south)+(0.5, -0.6)$)},label={[align=center]above:Linear Model}] {};
 		\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m1-04.north west)+(-0.5, 0.3)$) ($(m2-05.south east)+(0.4, -0.5)$)},label=above:{Loop Filter $H(z)$}] {};
 
 		\draw[->]		(m0-02) -- (m1-02);
@@ -445,11 +445,11 @@ We introduce the basic block diagram of a sigma delta modulator and nomenclature
 		\draw[dspline]	(m3-03) -- (m2-03);
 		\draw[dspconn] 	(m2-03) -- (m2-04);
 		\draw[dspconn] 	(m2-04) to node[midway,above] {$e[k]$} (m2-05);
-		\draw[dspconn] 	(m1-07) -- (m2-07);
+		%\draw[dspconn] 	(m1-07) -- (m2-07);
 		\draw[dspconn]	(m2-10) -- (m2-11);
 		\draw[dspconn]	(m2-11) -- (m2-12);
-		\draw[OliveGreen, ->, out=40, in=90, looseness=0.85] ($(m1-03)+(0, 0.8)$) to node[below, xshift=-22pt] {$T(z)$} ($(m2-09)+(0.1, 0.8)$);
-		\draw[RedOrange, ->, out=-45, in=135, looseness=1] ($(m1-07)+(0.35, 0.25)$) to node[above, xshift=5pt] {$S(z)$} ($(m2-09)+(0, 0.75)$);
+		\draw[OliveGreen, ->, out=30, in=105, looseness=0.85] ($(m1-03)+(0, 0.8)$) to node[below, xshift=-22pt] {$T(z)$} ($(m2-09)+(0.1, 0.8)$);
+		\draw[RedOrange, ->, out=-45, in=135, looseness=1] ($(m1-03)+(0, -0.2)$) to node[below, xshift=-5pt] {$S(z)$} ($(m2-04)+(0.8, 0.75)$);
 		
 		\pgfplotsset{width=2.25cm,height=2.25cm,xmin=0.1,xmax=1000000,ymin=0.0001,ymax=10}
 		\begin{loglogaxis}[
@@ -473,9 +473,9 @@ We introduce the basic block diagram of a sigma delta modulator and nomenclature
 	\caption{The basic block diagram of a \glsentryshort{DT} sigma delta \glsentryshort{A/D} converter.} \label{fig:basic-struct-dt}
 \end{figure}
 
-For the \gls{DT} class of modulators, we reference \autoref{fig:basic-struct-dt}. The analog front-end includes the \gls{AAF} and sample-and-hold block. This subsystem conditions the input signal $r_0(t)$ and samples it outside the loop to produce \gls{DT} signal $r[k]$. In the modulator loop, the 2-input 1-output \gls{LF} operates on $r[k]$ and the feedback signal, producing intermediate signal $u[k]$ with shaped noise. Then, $u[k]$ undergoes quantization, which is modelled as the addition of an error signal $d[k]$ producing quantizer output $y[k]$. The quantizer output is fed back to the \gls{LF} and also passed along. The final subsystem filters the signal from the shaped noise in the digital domain with a downsampling \gls{DRF} to yield the final digital output $y[m]$. 
+For the \gls{DT} class of modulators, we reference \autoref{fig:basic-struct-dt}. The analog front-end includes the \gls{AAF} and sample-and-hold block. This subsystem conditions the input signal $r_0(t)$ and samples it outside the loop to produce \gls{DT} signal $r[k]$. In the modulator loop, the 2-input 1-output \gls{LF} operates on $r[k]$ and the feedback signal, producing intermediate signal $u[k]$ with shaped noise. Then, $u[k]$ undergoes quantization producing discrete-value output $y[k]$. The quantizer output is fed back to the \gls{LF} and also passed along. The final subsystem filters the signal from the shaped noise in the digital domain with a downsampling \gls{DRF} to yield the final digital output $y[m]$. 
 
-From a control systems perspective, there are a couple of transfer functions that will be used to analyze and synthesize loop filters. The sensitivity function \gls{S}, where \gls{sorz}$=z$, is known as the \gls{NTF} of the modulator because it shows how the quantization noise is filtered in the linearized model. The complementary sensitivity function \gls{T} is known as the \gls{STF} of the modulator and shows how the signal is transformed by the modulator loop.
+From a control systems perspective, there are a couple of transfer functions that will be used to analyze and synthesize loop filters. The sensitivity function \gls{S}, where \gls{sorz}$=z$, is known as the \gls{NTF} of the modulator because it shows how the quantization error is filtered in the linearized model. The complementary sensitivity function \gls{T} is known as the \gls{STF} of the modulator and shows how the signal is transformed by the modulator loop.
 
 \subsection{Continuous-Time Modulator}
 \label{sec:in-ctm}
@@ -496,7 +496,7 @@ From a control systems perspective, there are a couple of transfer functions tha
 			\node[dspfilter]								(m1-04) {$H_0(s)$};		\&
 			\node[coordinate]								(m1-05) {};				\&
 			\node[coordinate,label={above:\PulseHigh \ $OSR \cdot f_s$}]	(m1-06) {};				\&
-			\node[dspnodeopen,dsp/label=above]					(m1-07) {$d[k]$};			\& \\
+			\node[coordinate]								(m1-07) {};				\& \\
 			%------------------------------------------------------------------------------------------------------------------------
 			\node[coordinate]								(m2-02) {};				\&
 			\node[coordinate]								(m2-03) {};				\&
@@ -521,7 +521,7 @@ From a control systems perspective, there are a couple of transfer functions tha
 			%------------------------------------------------------------------------------------------------------------------------
 		};
 	
-		\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m1-07.north)+(-0.5, 0.7)$) ($(m2-07.south)+(0.5, -0.6)$)},label={[align=center]above:Linear Model}] {};
+		%\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m1-07.north)+(-0.5, 0.7)$) ($(m2-07.south)+(0.5, -0.6)$)},label={[align=center]above:Linear Model}] {};
 		\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m1-04.north west)+(-0.5, 0.3)$) ($(m2-05.south east)+(0.4, -0.5)$)},label=above:{Loop Filter $H(s)$}] {};
 
 		\draw[dspconn] 	(m1-02) -- (m1-04);
@@ -538,11 +538,12 @@ From a control systems perspective, there are a couple of transfer functions tha
 		\draw[dspline]	(m3-03) -- (m2-03);
 		\draw[dspconn] 	(m2-03) -- (m2-04);
 		\draw[dspconn] 	(m2-04) to node[midway,above] {$e(t)$} (m2-05);
-		\draw[dspconn] 	(m1-07) -- (m2-07);
+		%\draw[dspconn] 	(m1-07) -- (m2-07);
 		\draw[dspconn]	(m2-10) -- (m2-11);
 		\draw[dspconn]	(m2-11) -- (m2-12);
-		\draw[OliveGreen, ->, out=40, in=90, looseness=0.85] ($(m1-02)+(-0.1, 0.3)$) to node[below, xshift=-22pt] {$T(s)$} ($(m2-09)+(0.1, 0.8)$);
-		\draw[RedOrange, ->, out=-45, in=135, looseness=1] ($(m1-07)+(0.35, 0.25)$) to node[above, xshift=5pt] {$S(s)$} ($(m2-09)+(0, 0.75)$);
+		\draw[OliveGreen, ->, out=30, in=105, looseness=0.85] ($(m1-02)+(-0.4, 0.4)$) to node[below, xshift=-22pt] {$T(s)$} ($(m2-09)+(0.1, 0.8)$);
+		%\draw[RedOrange, ->, out=-45, in=135, looseness=1] ($(m1-07)+(0.35, 0.25)$) to node[above, xshift=5pt] {$S(s)$} ($(m2-09)+(0, 0.75)$);
+		\draw[RedOrange, ->, out=-45, in=135, looseness=1] ($(m1-02)+(-0.4, -0.3)$) to node[below, xshift=5pt] {$S(z)$} ($(m2-04)+(0.7, 0.7)$);
 		
 		\pgfplotsset{width=2.25cm,height=2.25cm,xmin=0.1,xmax=1000000,ymin=0.0001,ymax=10}
 		\begin{loglogaxis}[
@@ -559,7 +560,7 @@ From a control systems perspective, there are a couple of transfer functions tha
 
 For the \gls{CT} class of modulators, we reference \autoref{fig:basic-struct-ct}. The structure is similar except the \gls{LF} operates directly on analog input $r(t)$ in the \gls{CT} domain and sampling is done inside the loop. The \gls{AAF} is no longer necessary in most cases as the \gls{LF} precedes the sampling block and implicitly attenuates components of the signal that would result in aliasing. Finally, signal $y[k]$ must undergo \gls{D/A} conversion during feedback, modelled witht the pulse transfer function $P(s)$. 
 
-The \gls{NTF} and \gls{STF} of a \gls{CT} sigma delta modulator are more difficult to define because they are transfer functions involving both \gls{CT} and \gls{DT} signals. The \gls{DT} equivalence principle states that there is a \gls{DT} modulator model that exactly describes the \gls{CT} design at the sampling instants, because the modulator is overall a sampled data system \cite[Sec. 3.2]{Ortmanns2005}. Thus, \gls{DT} transfer functions can be derived for this purpose. However, these equivalent transfer functions may be difficult to manipulate due to their dependence on $P(s)$. For the purposes of this thesis, we omit the sampling block during design and use the simplification that \gls{S} and \gls{T} are \gls{CT} (\gls{sorz}$=s$) transfer functions mapping $d(t) \rightarrow y(t)$ and $r(t) \rightarrow y(t)$, respectively.
+The \gls{NTF} and \gls{STF} of a \gls{CT} sigma delta modulator are more difficult to define because they are transfer functions involving both \gls{CT} and \gls{DT} signals. The \gls{DT} equivalence principle states that there is a \gls{DT} modulator model that exactly describes the \gls{CT} design at the sampling instants, because the modulator is overall a sampled data system \cite[Sec. 3.2]{Ortmanns2005}. Thus, \gls{DT} transfer functions can be derived for this purpose. However, these equivalent transfer functions may be difficult to manipulate due to their dependence on $P(s)$. For the purposes of this thesis, we omit the sampling block during design and use the simplification that \gls{S} and \gls{T} are \gls{CT} (\gls{sorz}$=s$) transfer functions mapping $t(t) \rightarrow e(t)$ and $r(t) \rightarrow y(t)$, respectively.
 
 \section{Loop Filter}
 \label{sec:in-lf}
@@ -568,10 +569,10 @@ Together, quantization and noise shaping permit a coarser quantizer element to b
 
 The design of the noise shaping loop filter is the focus of this thesis. Modelling the loop filter as a 2-input 1-output system as shown in \autoref{sec:in-bs} allows the \gls{NTF} to be determined by $H_1(\lambda)$ alone while the \gls{STF} can be modified independently with filter $H_0(\lambda)$, without loss of generality:
 
-\begin{align*}
+\begin{align}
 	S(\lambda) = \frac{1}{1 - H_1(\lambda)} \\
-	T(\lambda) = \frac{H_0(\lambda)}{1 - H_1(\lambda)}.
-\end{align*}
+	T(\lambda) = \frac{H_0(\lambda)}{1 - H_1(\lambda)}. \label{eq:t}
+\end{align}
 
 We desire an \gls{NTF} that results in a stable linear model, rejects noise in the signal band as much as possible, and has low gain in the out-of-band region to promote stability. The \gls{STF} is less important as $H_0(\lambda)$ can be interpreted as a pre-filter to modify the \gls{STF}, but we prefer unity gain in the signal band.
 
