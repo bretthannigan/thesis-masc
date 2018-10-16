@@ -99,7 +99,7 @@ An early theoretical treatment of nonlinear control is the circle criterion, whi
 	\end{enumerate}
 \end{thm}
 
-The graphical interpretation for the circle criterion\footnote{The circle criterion has different graphical interpretations for the cases where $k_1 < 0$ and where $H_1(s)$ has zeros in the open right half-plane, but these are omitted because they are not valid quantizer transfer curves or because nonminimum phase $H_1(s)$ are not considered here (see \cite[Sec. 7.1.1]{Khalil2002} for more details).} is that the Nyquist plot of $H_1(s)$ does not enter the disk passing through the points $-\frac{1}{k_1} + j0$ and $-\frac{1}{k_2} + j0$ if $0 < k_1 < k_2$. When $0 = k_1 < k_2$, the Nyquist plot must lie to the right of the vertical line $\Re\{s\} = -\frac{1}{k_2}$. If a single-bit quantizer is used as is the scope of this thesis, the sector bounds include the entire first and third quadrants. Case~\ref{it:circle-1} from Theorem~\ref{thm:circle} then applies and the Nyquist plot of $H_1(s)$ must lie entirely in the right half-plane. The optimization framework presented in \autoref{ch:Optimization} may be used with the circle criterion although with a single-bit quantizer, the method is too restrictive for practical use.
+The graphical interpretation for the circle criterion\footnote{The circle criterion has different graphical interpretations for the cases where $k_1 < 0$ and where $H_1(s)$ has zeros in the open right half-plane, but these are omitted because they are not valid quantizer transfer curves or because nonminimum phase $H_1(s)$ are not considered here (see \cite[Sec. 7.1.1]{Khalil2002} for a full treatment).} is that the Nyquist plot of $H_1(s)$ does not enter the disk passing through the points $-\frac{1}{k_1} + j0$ and $-\frac{1}{k_2} + j0$ if $0 < k_1 < k_2$. When $0 = k_1 < k_2$, the Nyquist plot must lie to the right of the vertical line $\Re\{s\} = -\frac{1}{k_2}$. If a single-bit quantizer is used as is the scope of this thesis, the sector bounds include the entire first and third quadrants. Case~\ref{it:circle-1} from Theorem~\ref{thm:circle} then applies and the Nyquist plot of $H_1(s)$ must lie entirely in the right half-plane. The optimization framework presented in \autoref{ch:Optimization} may be used with the circle criterion although with a single-bit quantizer, the method is too restrictive for practical use.
 
 The Popov criterion in Theorem~\ref{thm:popov} is a slightly less conservative approach that restricts the problem to time-invariant nonlinearities. 
 
@@ -138,11 +138,15 @@ The \gls{DT} version is the Tsypkin criterion, which has cases valid for time-va
  
 The $\mathcal{H}_\infty$ stability criterion, commonly known as Lee's rule, is a heuristic predictor of stability which states that a modulator is likely to be stable if the \gls{NTF} out-of-band gain, or $||S(\lambda)||_\infty$, does not exceed a benchmark value. The rule was initially based on the empirical study of a fourth-order \gls{DT} sigma delta modulator with single-bit quantization \cite{Chao1990}. The criterion is not necessary nor sufficient for stability and must be verified with extensive simulations. Despite this, the rationale for its use as a suggestion of stability comes from the Bode sensitivity integral shown in \autoref{eq:bodeint-dt} for Schur stable $H_1(z)$ \cite[Thm. 1]{Zhao2015}.
 
-\begin{equation} \label{eq:bodeint-dt}
-	\frac{1}{2\pi}\int_{-\pi}^{\pi} \log \left| \det\left(S(\omega)\right)\right|d\omega = 0
+\begin{equation} 
+	\frac{1}{2\pi}\int_{-\pi}^{\pi} \log \left| \det\left(S(\omega)\right)\right|d\omega = 0 \label{eq:bodeint-dt}
 \end{equation}
 
-The integral enforces that the total area under the curve of the \gls{NTF} log-magnitude versus frequency is equal to zero. Applied to the sigma delta linear model, if the sensitivity of the closed-loop system to the quantization error is suppressed in the signal band, it must be compensated for by an equal area of amplified sensitivity outside the signal band. Because the quantization error is nonlinear and signal dependent, the higher the gain of the sensitivity function, the greater chance there is for a limit cycle at that frequency to destabilize the loop. Thus, the Lee's rule is a indicator of the performance-stability tradeoff. In practice, $||S(z)||_\infty \leq 2$ is often used, but this has been found to be conservative for low-order and inadequate for high-order designs \cite{Schreier1993}. However, the criterion is used extensively as a starting point for practical design due to its inclusion in popular software tools. It is easy to formulate as part of an optimization problem as it may be applied with an $\mathcal{H}_\infty$ constraint on the $r \rightarrow e$ channel of \autoref{eq:aug}.
+The integral enforces that the total area under the curve of the \gls{NTF} log-magnitude versus frequency is equal to zero. Applied to the sigma delta linear model, if the sensitivity of the closed-loop system to the quantization error is suppressed in the signal band, it must be compensated for by an equal area of amplified sensitivity outside the signal band. Because the quantization error is nonlinear and signal dependent, the higher the gain of the sensitivity function, the greater chance there is for a limit cycle at that frequency to destabilize the loop. Thus, the Lee's rule is a indicator of the performance-stability tradeoff. In practice, $||S(z)||_\infty \leq 2$ is often used, but this has been found to be conservative for low-order and inadequate for high-order designs \cite{Schreier1993}. However, the criterion is used extensively as a starting point for practical design due to its inclusion in popular software tools.A recent extension of Lee's rule produces a more complex $\mathcal{H}_\infty$ bound based on empirical results that may also be used as the design stability goal \cite{Neitola2017}. It is easy to formulate as part of an optimization problem as it may be applied with an $\mathcal{H}_\infty$ constraint on the $r \rightarrow e$ channel of \autoref{eq:aug}:
+
+\begin{equation}
+	||G_{er}(\lambda)||_\infty \leq \gamma_\infty. \label{eq:hinf}
+\end{equation}
  
 \subsection{Describing Function Approximation and Root Locus Stability}
 \label{sec:stab-rl}
@@ -157,7 +161,7 @@ Two closely related stability methods are the describing function approximation 
 		{
 			%-----------------------------------------------------------------------------------------------
 			\node[coordinate]					(m0-0) {};				\&
-			\node[dspsquare,dsp/label={above:$\psi$}]					(m0-1) {\RaisingEdge};		\&
+			\node[dspsquare,dsp/label={above:$\psi$}]	(m0-1) {\RaisingEdge};		\&
 			\node[dspnodeopen,dsp/label=right]		(m0-2) {$y$};			\& \\
 			%-----------------------------------------------------------------------------------------------
 		};
@@ -270,10 +274,77 @@ In the open loop the describing function method approximated the quantizer as a 
 	\end{bmatrix}  \label{eq:lft-range}
 \end{equation}
 
-The root locus stability criterion may be used in robust control fashion by choosing a range for $K$, e.g. $[k_l, k_h] = [1/||u||_\infty, \infty]$, then constraining the $\mathcal{H}_\infty$ norm to unity for the $z \rightarrow w$ channel. This ensures that the linearized model is stable for the selected gain values.
+The root locus stability criterion may be used in robust control fashion by choosing a range for $K$, e.g. $[k_l, k_h] = [1/||u||_\infty, \infty]$, then constraining the $\mathcal{H}_\infty$ norm to unity for the $z \rightarrow w$ channel as seen in \autoref{eq:rl}. This ensures that the linearized model is stable for the selected gain values.
+ 
+ \begin{equation}
+ 	||G_{zw}(\lambda)||_\infty \leq 1. \label{eq:rl}
+ \end{equation}
  
  \subsection{$\mathcal{H}_2$ Stability Criterion}
  \label{sec:stab-h2}
+ 
+ \begin{figure}
+	\centering
+	% Augmented Plant
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	
+		% Place nodes using a matrix
+		\matrix (m1) at (0,0) [row sep=2.5mm, column sep=5mm, matrix anchor=center]
+		{
+			%-----------------------------------------------------------------------------------------------
+			\node[coordinate]						(m00) {};			\&
+			\node[coordinate]						(m01) {};			\&
+			\node[coordinate]						(m02) {};			\&
+			\node[dspnodeopen,dsp/label=above]			(m03) {$\mu_u$};		\&
+			\node[coordinate]						(m04) {};			\&
+			\node[dspnodeopen,dsp/label=above]			(m05) {$d[k]$};		\&
+			\node[dspnodeopen,dsp/label=above]			(m06) {$\mu_y$};		\&
+			\node[coordinate]						(m07) {};			\& \\
+			%-----------------------------------------------------------------------------------------------
+			\node[dspnodeopen,dsp/label=left]			(m10) {$r[k]$};		\&
+			\node[dspadder,label={below left:$-$}]		(m11) {};			\&
+			\node[dspfilter]						(m12) {$H_1(z)$};		\&
+			\node[dspadder,label={above right:$-$}]		(m13) {};			\&
+			\node[dspgain,fill=white]					(m14) {$K$};			\&
+			\node[dspadder]						(m15)	{};			\&
+			\node[dspadder]						(m16)	{};			\&
+			\node[dspnodefull]						(m17) {};			\&
+			\node[dspnodeopen,dsp/label=right]			(m18)	{$y[k]$};		\& \\
+			%-----------------------------------------------------------------------------------------------
+			\node[coordinate]						(m20) {};			\&
+			\node[coordinate]						(m21) {};			\&
+			\node[coordinate]						(m22) {};			\&
+			\node[coordinate]						(m23) {};			\&
+			\node[coordinate]						(m24) {};			\&
+			\node[coordinate]						(m25) {};			\&
+			\node[coordinate]						(m26) {};			\&
+			\node[coordinate]						(m27) {};			\& \\
+			%-----------------------------------------------------------------------------------------------
+		};
+		
+		\begin{pgfonlayer}{bg}
+			\draw[->]	($(m14) + (-0.5,-0.5)$) -- ($(m14) + (0.5,0.5)$);
+		\end{pgfonlayer}
+		
+		\draw[dspconn]	(m03) -- (m13);
+		\draw[dspconn] 	(m05) -- (m15);
+		\draw[dspconn] 	(m06) -- (m16);
+		\draw[dspconn] 	(m10) -- (m11);
+		\draw[dspconn]	(m11) to node[midway,above] {$e[k]$} (m12);
+		\draw[dspconn] 	(m12) to node[midway,above] {$u[k]$} (m13);
+		\draw[dspconn] 	(m13) -- (m14);
+		\draw[dspconn] 	(m14) -- (m15);
+		\draw[dspconn] 	(m15) -- (m16);
+		\draw[dspconn] 	(m16) -- (m18);
+		\draw[dspline] 	(m17) -- (m27);
+		\draw[dspline] 	(m27) -- (m21);
+		\draw[dspconn] 	(m21) -- (m11);
+		
+		\draw[RedOrange, ->, out=45, in=135, looseness=1] ($(m05)+(0.35, 0.55)$) to node[above, xshift=5pt] {$S(z)$} ($(m18)+(0.25, 0.35)$);
+		
+	\end{tikzpicture}
+	\caption{The block diagram for the $\mathcal{H}_2$ stability criterion.} \label{fig:h2-block}
+\end{figure}
  
  Previously, the quantizer was replaced by an additive noise source and some performance estimations were presented assuming that the quantization noise was uncorrelated with input had a white spectrum. The white noise model is only a close approximation if the following hold \cite[Ch. 6]{Gray1990}:
  
@@ -283,28 +354,163 @@ The root locus stability criterion may be used in robust control fashion by choo
  	\item The \gls{PDF} of input samples is smooth.
  \end{enumerate}
  
- In reality, especially with single-bit quantization, the approximation does not hold. The $\mathcal{H}_2$ stability criterion, sometimes called the power gain rule, uses a statistical look at the quantizer input \cite{Risbo1994}. The output $y[k]$ of a single-bit quantizer may be considered the superposition of three signals: a DC component $\mu_y$, AC component amplified by the quantizer gain $K\left(u[k] - \mu_u\right)$, and the quantization noise $d[k]$. With these additional degrees of freedom, one can enforce that $d[k]$ is white and uncorrelated with the quantizer input $u[k]$ by setting $K$ to that in \autoref{eq:h2-k}.
+ In reality, especially with single-bit quantization, the approximation does not hold. The $\mathcal{H}_2$ stability criterion, sometimes called the power gain rule, uses a statistical look at the quantizer input \cite{Risbo1994}. The output $y[k]$ of a single-bit quantizer may be considered the superposition of three signals: a DC component $\mu_y$, AC component amplified by the quantizer gain $K\left(u[k] - \mu_u\right)$, and the quantization noise $d[k]$, as seen in \autoref{fig:h2-block}. With these additional degrees of freedom, one can enforce that $d[k]$ is zero mean, white, and uncorrelated with the quantizer input $u[k]$ by setting $K$ to that in \autoref{eq:h2-k1}.
  
  \begin{equation}
- 	K = \frac{\cov\{u[k], y[k]\}}{\sigma_u^2} \label{eq:h2-k}
+ 	K = \frac{\cov\{u[k], y[k]\}}{\sigma_u^2} \label{eq:h2-k1} \\
  \end{equation}
  
- The gain $K$ is now entirely dependent on $\mu_y$ and the distribution of $u$.
+ The gain $K$ is now entirely dependent on $\mu_y$ and the distribution of $u$. Due to the fact that $y[k]$ has bounded output power (equal to one with $\Delta_Q=2$ single-bit quantization), the variance at the output may be calculated:
+ 
+ \begin{equation}
+ 	\sigma_y^2 = K^2\sigma_u^2 + \sigma_d^2.
+ \end{equation} 
+ 
+Functions relating $\mu_y$ to $\sigma_q^2$ have been derived for the Gaussian \cite[Eq. 26]{Ardalan1987}, uniform, and triangular \cite[Eq. 6.16, 6.17]{Risbo1994} distributions. Once a distribution has been chosen, the only free variable remaining is $\mu_y$. 
+
+With reference to \autoref{fig:h2-block}, the \gls{NTF} is the gain from quantization noise to the output. Because the $\mathcal{H}_2$ norm is a power gain, $||S(z)||_2^2$ is the amplification of $\sigma_q^2$ to $\sigma_y^2$. Altogether, $\mu_y$ defines $\sigma_q^2$, so for bounded output power, a maximum $||S(z)||_2$ is established. The $\mathcal{H}_2$ stability criterion can be applied by choosing a quantizer input signal distribution,which sets the relationship between $\mu_y$ and $||S(z)||_2$. Because the \gls{STF} gain is near one in the signal band, $\mu_y$ tracks input $r$ and thus can be seen as the \gls{MSIA} for that value of $||S(z)||_2$. The maximum permitted \gls{MSIA} for a given $\mathcal{H}_2$ norm is shown in \autoref{fig:h2-criterion} for the three probability density functions mentioned. None of the cases guarantee stability because the actual \gls{PDF} of the quantizer input is not known. However, the Gaussian \gls{PDF} has been shown to be a close approximation for high-order designs \cite{Risbo1994} despite being more conservative than the others. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=2.5in]{h2-criterion}
+	\caption{The choice of \glsentryshort{PDF} for the quantizer input signal places bounds on the squared $\mathcal{H}_2$ norm of the \gls{NTF} for a given \glsentryshort{MSIA} \cite{Risbo1994}.} \label{fig:h2-criterion}
+\end{figure}
+
+To employ this stability criterion, the $\mathcal{H}_2$ norm of the sensitivity function, or $r \rightarrow e$ channel of \autoref{eq:aug}, is constrained to a value dependent on the desired \gls{MSIA} $||u||_\infty$ and the choice of \gls{PDF}. This criterion is seen in \autoref{eq:h2} and is only applicable to \gls{DT} designs because the \gls{CT} sensitivity function has infinite $\mathcal{H}_2$ norm.
+
+\begin{equation}
+	||G_{er}(z)||_2 \leq \gamma_2. \label{eq:h2}
+\end{equation}
  
  \subsection{$\ell_1$ Stability Criterion}
  \label{sec:stab-l1}
+ 
+ The $\ell_1$ stability criterion (also known as the Anastassiou's stability criterion) is best understood when the modulator is transformed into the equivalent error feedback structure shown in \autoref{fig:ef-model}. This form is primarily of theoretical importance because its implementation is extremely sensitive to filter coefficient values in the feedback path \cite{Schreier1997}. The advantage for analysis is that the \gls{NTF} and \gls{STF} are shown in independent blocks. We can use this structure to define the $\ell_1$ norm stability criterion by writing the equations for signals $u$ and $y$ as follows:
+ 
+ \begin{figure}
+ 	\centering
+	% Error Feedback Sigma Delta Modulator
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	
+		% Place nodes using a matrix
+		\matrix (m1) [row sep=2.5mm, column sep=5mm]
+		{
+			%------------------------------------------------------------------------------------------------------------------------
+			\node[dspnodeopen,dsp/label=left]					(m10) {$r$};				\&
+			\node[dspfilter,label={below:$T(\lambda)$}]				(m11) {$\frac{H_0(\lambda)}{1-H_1(\lambda)}$};	\&
+			\node[dspadder]								(m12) {};				\&
+			\node[coordinate]								(m13) {};				\&
+			\node[dspnodefull,label={above:$u$}]					(m14) {};				\&
+			\node[dspsquare,label={below:Quantizer}]				(m15) {\RaisingEdge};		\&
+			\node[dspnodefull]								(m16) {};				\&
+			\node[dspnodeopen,dsp/label=right]					(m17) {$y$};				\& \\
+			%------------------------------------------------------------------------------------------------------------------------
+			\node[coordinate]								(m20) {};				\&
+			\node[coordinate]								(m21) {};				\&
+			\node[coordinate]								(m22) {};				\&
+			\node[dspfilter,label={below:$S(\lambda) - 1$}]			(m23) {$-\frac{H_1}{1 - H_1}$};	\&
+			\node[dspadder,label={above left:$-$}]				(m24) {};				\&
+			\node[coordinate]								(m25) {};				\&
+			\node[coordinate]								(m26) {};				\& \\
+			%------------------------------------------------------------------------------------------------------------------------
+		};
+	
+		%\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m05.north)+(-0.5, 0.7)$) ($(m15.south)+(0.5, -0.6)$)},label={[align=center]below:Linear Model}] {};
+	
+		\draw[dspconn] 	(m10) -- (m11);
+		\draw[dspconn] 	(m11) -- (m12);
+		\draw[dspline] 	(m12) -- (m14);
+		\draw[dspconn] 	(m14) -- (m15);
+		\draw[dspline] 	(m15) -- (m16);
+		\draw[dspconn]	(m16) -- (m17);
+		\draw[dspline] 	(m16) -- (m26);
+		\draw[dspconn] 	(m26) -- (m24);
+		\draw[dspconn] 	(m24) -- node[midway,above] {$e$} (m23);
+		\draw[dspline] 	(m23) -- (m22);
+		\draw[dspconn] 	(m22) -- (m12);
+		\draw[dspconn]	(m14) -- (m24);
+	
+	\end{tikzpicture}
+	\caption{The block diagram of the error feedback form of a sigma delta modulator.}  \label{fig:ef-model}
+\end{figure}
 
-%Neitola2017
+\begin{align}
+	u &= rT(\lambda) + e\left(S(\lambda) - 1\right) \label{eq:l1-u} \\
+	y &= e + u \nonumber \\
+	&= rT(\lambda) + eS(\lambda). \nonumber
+\end{align}
+
+In the time domain, the input to the quantizer from \autoref{eq:l1-u} can be bounded by the following (the \gls{DT} version is shown):
+
+\begin{equation}
+	\left|u[k]\right| \leq \left|\sum_{i=1}^{\infty} t[i]r[t - i]\right| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)e[t - i]\right|, \label{eq:l1-bound1}
+\end{equation}
+
+Where $t[k]$ is the impulse response of the \gls{STF} and $s[k]$ is the impulse response of the \gls{NTF}. Because the \gls{STF} only operates on the input as a pre-filter, we can assume $T(\lambda) = 1$ and \autoref{eq:l1-bound1} simplifes to:
+
+\begin{equation}
+	\left|u[k]\right| \leq |r[k]| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)e[t - i]\right|. \label{eq:l1-bound2}
+\end{equation}
+
+With a single-bit quantizer, the output $y$ is quantized to $\{-1, 1\}$ so the quantization error signal is bounded to within $[0, \frac{\Delta_Q}{2}]$ if $|u[k]| \leq 2$, where \gls{delta} is the quantization step size, in this case 2.
+
+\begin{equation} 
+	\left|u[k]\right| \leq |r[k]| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)\right|\frac{\Delta_Q}{2} \label{eq:l1-bound3}
+\end{equation}
+
+Taken over all time, the maximum magnitude of each signal is the $\ell_\infty$ norm and the summation over the impulse response of $S(\lambda) - 1$ in Equation \ref{eq:l1-bound3} is its $\ell_1$ norm. Substituting this into \autoref{eq:l1-bound3} and simplifying $\frac{\Delta_Q}{2} = 1$ gives:
+
+\begin{align*}
+	||u||_\infty &\leq ||r||_\infty + ||S(\lambda) - 1||_1 \\
+	&\leq ||r||_\infty + ||S(\lambda)||_1 - 1	
+\end{align*}
+
+Assuming a worst case quantizer input magnitude of $||u||_\infty = 2$, the expression for $\ell_1$ stability based on maximum input magnitude is shown in Equation \ref{eq:l1-bound5} \cite{Anastassiou1989}.
+
+\begin{equation} 
+	 ||S(\lambda)||_1 \leq 3 - ||r||_\infty \label{eq:l1-bound5}
+\end{equation}
+
+Thus, a modulator with a single-bit quantizer is guaranteed to be stable for inputs of magnitude less than three minus the $\ell_1$ norm of the NTF. If this value is negative, the modulator is not proven stable by this criterion, for any input. The $\ell_1$ criterion is powerful because it is a sufficient condition of \gls{BIBO} stability but it is very conservative as it assumes the worst-case input to the loop filter which may be impossible or extremely unlikely. Like the $\mathcal{H}_2$ and $\mathcal{H}_\infty$ cases, the $\ell_1$ stability criterion may be applied to the $r \rightarrow e$ system in \autoref{eq:aug} by the following:
+
+\begin{equation}
+	||G_{er}(\lambda)||_1 \leq \gamma_1. \label{eq:l1}
+\end{equation}
+
+\subsection{Scale Invariance of the Single-Bit Quantizer}
+
+Here an important result is mentioned that reduces conservatism in the stability criteria from \autoref{sec:stab-h2} and \autoref{sec:stab-l1} that are derived from a norm constraint on the \gls{NTF}. If $K$ is interpreted not a a time-varying gain that models the quantizer but as a fixed design variable, it is obvious that the value of $K$ has no effect if it precedes the single-bit quantizer. The filter $H_1(\lambda)$ in expression for the \gls{NTF} from \autoref{eq:s} may be substituted by the filter and gain in series, yielding:
+
+\begin{equation}
+	S_K(\lambda) = \frac{1}{1 - KH_1(\lambda)}. \label{eq:scale-invariance}
+\end{equation}
+
+The fictitious gain may be swept in the region $(0, \infty)$ in a nonlinear search to minimize the norm of interest. Because all these \gls{NTF}s are equivalent, the smallest achieved value $\min_K ||S_K(\lambda)||_p$ can be used in place of $||S(\lambda)||_p, p = 1, 2$ as a less conservative stability criterion.
 
 \section{Stability Concepts Not Used by this Optimization Framework}
 \label{sec:stab-notused}
 
+It may be worthwhile to introduce further methods of designing sigma delta modulators that are likely stable. The method in this section are presented for a greater understanding of ways to promote stability but are not able to be used in the optimization framework for the given reasons.
+
 \subsection{Methods Ensuring Bounded States}
 
-A different way of ensuring stability of a modulator system is the positive invariant set ap
+A different way of ensuring stability of a modulator system is the positive invariant set approach. This is a mixed analytical and simulation-based method to find positive invariant sets in the state-space of the system. These are regions of \gls{order}-dimensional space for which, once entered, the states of the system $x$ remain inside under given input conditions. The method is computationally intesive and relies on sampling to expand or contract the set bounds \cite{Schreier1997}, which is not rigorous. However, given a random enough input, it may be a very close approximation to the actual positive invariant sets. A simpler version of this technique uses hypercubes as set boundaries and can be combined with the $\ell_1$ rule to ensure stability \cite{Yagyu2004a}. The method is a good analysis of predicted stability because it also captures the integrator state values of the system which are important for the actual circuit implementation. However, it is not easy to apply as a design method.
 
 \subsection{Diagonal Modulators}
+
+It is shown in \cite{Steiner1997} that many modulator topologies can be converted into a state-space diagonal representation of the loop filter. In these cases, an \gls{order}th order modulator decomposes into \gls{order} parallel 1st-order modulators interacting only through the quantizer nonlinearity. By examining the stability of the 1st-order modulator using its fixed points \cite{Steiner1996}, the parallel modulators can be shown as a ``shifted'' version, where the shift indicates an offset at the quantizer input due to the other parallel paths. The equations for the fixed points are rearranged to form constraints on the system's poles, inputs, and output matrix coefficients. The downside of this method is that the loop filter is restricted to a specific form and the mathematics become diffcult when complex conjugate poles are introduced \cite{Mladenov2013}.
 
 \section{Performance Goals}
 \label{sec:stab-perf}
 
+The performance goal for the design of sigma delta modulators is simply the attenuation of quantization error in the signal band. In a signals and systems context, this can be made solvable by the minimization of the $\mathcal{H}_\infty$ norm of the noise transfer function within the signal band. In the sigma delta literature, this is sometimes called min-max optmization and has some advantages in contrast to minimization of the power using the $\mathcal{H}_2$ norm \cite{Nagahara2012}. To frame the problem, one must first specify a frequency range of interest. In the \gls{DT} case, this is equal to $\frac{\pi}{OSR}$ and in the \gls{CT} case, this is equal to the actual signal band. Using the \gls{GKYP} expression, the $\mathcal{H}_\infty$ norm of the \gls{NTF} in the signal band is minimized to either below a target value (feasibility problem) or as low as possible (optimization problem), subject to any of the above stability constraints. With reference to the augmented system in \autoref{eq:aug}, the \gls{GKYP} constraint is placed on the $r \rightarrow e$ channel that exposes the sensitivity function:
+
+\begin{equation}
+	\min_{\lambda \in [\omega_l, \omega_h]} ||G_{er}(\lambda)||_\infty \label{eq:perf}
+\end{equation}
+
+In \gls{DT} designs, the Bode integral (\ref{eq:bodeint-dt}) combined with the performance goal sets the roll-off of the \gls{NTF}. For \gls{CT} designs, the performance goal and any stability constraint does not capture the effect of the quantizer sampling frequency because the \gls{S/H} block was omitted in \autoref{sec:in-ctm}. This leads to designs with very low roll-off. To rectify this and force high roll-off, the constraint in \ref{eq:ct-constraint-stf} is added for \gls{CT} designs. This forces high roll-off by reducing the $\mathcal{H}_\infty$ norm of the complementary sensitivity function (\gls{STF}) just outside the signal band. The appearance of this constraint also shows evidence of the implicit antialiasing feature of \gls{CT} loop filters.
+
+\begin{equation}
+	||G_{yr}(j\omega)||_\infty \leq \gamma_{T} \quad \forall \omega \in [\omega_h, f_s] \label{eq:ct-constraint-stf}
+\end{equation}

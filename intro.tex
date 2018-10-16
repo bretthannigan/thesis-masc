@@ -570,7 +570,7 @@ Together, quantization and noise shaping permit a coarser quantizer element to b
 The design of the noise shaping loop filter is the focus of this thesis. Modelling the loop filter as a 2-input 1-output system as shown in \autoref{sec:in-bs} allows the \gls{NTF} to be determined by $H_1(\lambda)$ alone while the \gls{STF} can be modified independently with filter $H_0(\lambda)$, without loss of generality:
 
 \begin{align}
-	S(\lambda) &= \frac{1}{1 - H_1(\lambda)} \\
+	S(\lambda) &= \frac{1}{1 - H_1(\lambda)} \label{eq:s} \\
 	T(\lambda) &= \frac{H_0(\lambda)}{1 - H_1(\lambda)}. \label{eq:t}
 \end{align}
 
