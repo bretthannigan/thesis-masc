@@ -178,6 +178,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{S/H}{}%
+{%
+\gls@defglossaryentry{S/H}%
+{%
+name={S/H},%
+sort={S/H},%
+type={acronym},%
+first={sample-and-hold\glsspace (S/H)},%
+firstplural={sample-and-holds\glsspace (S/Hs)},%
+text={S/H},%
+plural={S/Hs},%
+description={sample-and-hold},%
+descriptionplural={sample-and-hold\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={sample-and-hold},%
+longplural={sample-and-holds},%
+short={S/H},%
+shortplural={S/Hs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{EEG}{}%
 {%
 \gls@defglossaryentry{EEG}%
@@ -658,6 +688,96 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{DSP}{}%
+{%
+\gls@defglossaryentry{DSP}%
+{%
+name={DSP},%
+sort={DSP},%
+type={acronym},%
+first={digital signal processing\glsspace (DSP)},%
+firstplural={digital signal processings\glsspace (DSPs)},%
+text={DSP},%
+plural={DSPs},%
+description={digital signal processing},%
+descriptionplural={digital signal processing\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={digital signal processing},%
+longplural={digital signal processings},%
+short={DSP},%
+shortplural={DSPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{BIBO}{}%
+{%
+\gls@defglossaryentry{BIBO}%
+{%
+name={BIBO},%
+sort={BIBO},%
+type={acronym},%
+first={bounded-input bounded-output\glsspace (BIBO)},%
+firstplural={bounded-input bounded-outputs\glsspace (BIBOs)},%
+text={BIBO},%
+plural={BIBOs},%
+description={bounded-input bounded-output},%
+descriptionplural={bounded-input bounded-output\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={bounded-input bounded-output},%
+longplural={bounded-input bounded-outputs},%
+short={BIBO},%
+shortplural={BIBOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LFT}{}%
+{%
+\gls@defglossaryentry{LFT}%
+{%
+name={LFT},%
+sort={LFT},%
+type={acronym},%
+first={linear fractional transformation\glsspace (LFT)},%
+firstplural={linear fractional transformations\glsspace (LFTs)},%
+text={LFT},%
+plural={LFTs},%
+description={linear fractional transformation},%
+descriptionplural={linear fractional transformation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={linear fractional transformation},%
+longplural={linear fractional transformations},%
+short={LFT},%
+shortplural={LFTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{pq}{}%
 {%
 \gls@defglossaryentry{pq}%
@@ -692,13 +812,13 @@ parent={},%
 {%
 \gls@defglossaryentry{delta}%
 {%
-name={$\Delta $},%
-sort={$\Delta $},%
+name={$\Delta _Q$},%
+sort={$\Delta _Q$},%
 type={main},%
-first={$\Delta $},%
-firstplural={$\Delta $s},%
-text={$\Delta $},%
-plural={$\Delta $s},%
+first={$\Delta _Q$},%
+firstplural={$\Delta _Q$s},%
+text={$\Delta _Q$},%
+plural={$\Delta _Q$s},%
 description={Quantization step size},%
 descriptionplural={Quantization step size},%
 symbol={\relax },%
@@ -851,6 +971,66 @@ text={$y$},%
 plural={$y$s},%
 description={Digital bitstream output signal},%
 descriptionplural={Digital bitstream output signal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{d}{}%
+{%
+\gls@defglossaryentry{d}%
+{%
+name={$d$},%
+sort={$d$},%
+type={main},%
+first={$d$},%
+firstplural={$d$s},%
+text={$d$},%
+plural={$d$s},%
+description={Quantization noise source (linearized model)},%
+descriptionplural={Quantization noise source (linearized model)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{K}{}%
+{%
+\gls@defglossaryentry{K}%
+{%
+name={$K$},%
+sort={$K$},%
+type={main},%
+first={$K$},%
+firstplural={$K$s},%
+text={$K$},%
+plural={$K$s},%
+description={Variable quantizer gain (linearized model)},%
+descriptionplural={Variable quantizer gain (linearized model)},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%

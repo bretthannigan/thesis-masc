@@ -193,9 +193,11 @@
 \sisetup{detect-all}
 % Tables
 \usepackage{tabularx}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}} % ragged-right version of "p" column type
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage{diagbox}
+\usepackage{threeparttable}
 % Page Formatting
 \usepackage{rotating}
 \usepackage{pdflscape}
@@ -209,12 +211,25 @@
 \usetikzlibrary{arrows, positioning, dsp, chains, fit, calc, matrix}
 \usepackage[american]{circuitikz}
 \usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
 \pgfdeclarelayer{bg}    % declare background layer
 \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
 \usepackage{epstopdf}
 \epstopdfsetup{outdir=./}
 % Files
 \usepackage{filecontents}
+
+% https://tex.stackexchange.com/questions/348714/customization-of-theorem-lemma-definition-in-ieeeconf
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}{Corollary}
+\newtheorem{conj}{Conjecture}[section]
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{rem}{Remark}
+\newtheorem{prb}{Problem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -228,6 +243,9 @@
   \let\@ifnextchar\new@ifnextchar
   \array{#1}}
 \makeatother
+
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\cov}{cov}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

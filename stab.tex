@@ -4,9 +4,307 @@
 \chapter{Stability Criteria and Performance Goals}
 \label{ch:Stability}
 
-\section{Stability Concepts Not Used by this Optimization Framework}
+Due to the nonlinear effects of the quantizer, the stability of the sigma delta feedback loop is difficult to prove. An excellent exploration into the mechanisms of instability may be found in \cite{Risbo1994}. There are no known necessary conditions for stability of sigma delta modulators but there are several heuristic and sufficient conditions with various degrees of conservativenenss. In \autoref{sec:stab-nl}, some theory from relay feedback control is introduced to establish formal methods for ensuring stability. There are some shortcomings of these methods when applied to practical sigma delta modulator design, therefore Sections~\ref{sec:stab-hinf} to \ref{sec:stab-l1} describe some stability criteria that may be less robust but allow a greater performance-stability tradeoff. For completeness, additional stability methods of interest that are not compatible with this optimization framework are presented in \autoref{sec:stab-notused}. Finally. the performance goal is discussed in \autoref{sec:stab-perf}.
 
 \section{Stability Criteria Used by this Optimization Framework}
+\label{sec:stab-used}
 
-% white quantization noise assumptions [Ohno2017]
-%it varies depending on the quantizer input with the proportionality constant determined from the describing function of an ideal relay element.
+\subsection{Ideas from Nonlinear Control}
+\label{sec:stab-nl}
+
+An early theoretical treatment of nonlinear control is the circle criterion, which provides a graphical frequency domain method for evaluating the stability of a \gls{CT} Lur'e system. A Lur'e system is a simplified negative feedback loop consisting of a linear plant $L(s)$ with a nonlinear element $\psi(\cdot)$ in the feedback path such as the one shown in \autoref{fig:lure-sys}. The transfer curve of the nonlinear element may be time-varying and even non-monotonic but is bounded by a sector condition, a set of two lines passing through the origin with slopes $k_1$, $k_2$ that bound the curve in each direction.
+
+\begin{figure}
+	\centering
+	% Augmented Plant
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	
+		% Place nodes using a matrix
+		\matrix (m1) at (0,0) [row sep=2.5mm, column sep=5mm, matrix anchor=center]
+		{
+			%-----------------------------------------------------------------------------------------------
+			\node[dspnodeopen,dsp/label=left]			(m00) {$r$};			\&
+			\node[dspadder,label={below left:$-$}]		(m01) {};			\&
+			\node[dspfilter]						(m02) {$H_1$};		\&
+			\node[coordinate]						(m03) {};			\& \\
+			%-----------------------------------------------------------------------------------------------
+			\node[coordinate]						(m10) {};			\&
+			\node[coordinate]						(m11) {};			\&
+			\node[dspsquare,label={above:$\psi(\cdot)$}]	(m12) {\RaisingEdge};	\&
+			\node[coordinate]						(m13) {};			\& \\
+			%-----------------------------------------------------------------------------------------------
+		};
+		
+		\draw[dspconn] 	(m00) -- (m01);
+		\draw[dspconn] 	(m01) to node[midway,above] {$e$} (m02);
+		\draw[dspline] 	(m02) -- (m03);
+		\draw[dspline] 	(m03) to node[midway,right] {$u$} (m13);
+		\draw[dspconn] 	(m13) -- (m12);
+		\draw[dspline] 	(m12) -- (m11);
+		\draw[dspconn]	(m11) to node[midway,left] {$y$} (m01);
+		
+		\node[coordinate,label={left:$\psi(\cdot)$:}] (g0) at (4.6,0) {};
+		\node[coordinate] 	(g1) at (6,-0.5) {};
+		
+		\begin{axis}[
+			at={(g1)},
+			anchor=center,
+			grid=major,
+			x=10mm, y=10mm, 
+			axis x line=center, axis y line=center, 
+			axis line style={latex-latex},
+			ymin=-2, ymax=2, 
+			xmin=-2, xmax=2,
+			domain=-2:2,
+			yticklabels={-2,,,,2}, ytick={-2,-1,0,1,2},
+			xticklabels={-2,,,,2}, xtick={-2,-1,0,1,2},
+			xlabel={$u$}, ylabel={$y$},
+			x label style={at={(axis cs:1.25,0)},anchor=south},
+			y label style={at={(axis cs:0,1.25)},anchor=west},
+			]
+			\addplot[domain=-2:2, solid, thick, black]
+				 coordinates {(-2,-2) (-2,-1.5) (-1,-1.5) (-1,-0.5) (0,-0.5) (0,0.5) (1,0.5) (1,1.5) (2,1.5) (2,2)};
+			\addplot[name path=fl,domain=-4:0,black] {1/2*x};
+			\addplot[name path=fh,domain=0:4,black] {1/2*x};
+			\path[name path=yaxisl] (axis cs:0,-2) -- (axis cs:0,0);
+			\path[name path=yaxish] (axis cs:0,2) -- (axis cs:0,0);
+			\addplot[fill=black,fill opacity=0.15] fill between[of=fl and yaxisl,softclip={domain=-4:0}];
+			\addplot[fill=black,fill opacity=0.15] fill between[of=yaxish and fh,softclip={domain=0:4}];
+			\node[coordinate] (c2) at (axis cs:0,2) {};
+			\node[coordinate] (c1) at (axis cs:2,1) {};
+		\end{axis}
+		
+		\node[coordinate,anchor=south,label={above:$y=k_2 u$}] (l2) at (c2) {};
+		\node[coordinate,anchor=west,label={right:$y=k_1 u$}] (l1) at (c1) {};
+		
+	\end{tikzpicture}
+	\caption{A Lur'e system (left) with the example nonlinear transfer curve of an infinite quantizer ($\Delta=1$) shown with a shaded sector bounded region (right).} \label{fig:lure-sys}
+\end{figure}
+
+\begin{thm}[Circle criterion {\cite[Sec. 7.1.1]{Khalil2002}}] \label{thm:circle}
+	Given the Lur'e feedback system in \autoref{fig:lure-sys} where the denominator of $H_1(s)$ is Hurwitz and $\psi(t, \cdot)$ is a memoryless function sector bounded by $[k_1, k_2]$, the closed-loop system $L(s)$  is globally asymptotically stable if one of the following cases is true:
+	
+	\begin{enumerate}
+		\item Case $\psi \in [k_1, \infty):$ The inequality in \autoref{eq:circle-1} is satisfied. \label{it:circle-1}
+		
+		\begin{equation}
+			\Re\left\{\frac{H_1(s)}{1 + k_1H_1(s)}\right\} > 0 \label{eq:circle-1}
+		\end{equation}
+		
+		\item Case $\psi \in [k_1, k_2], \quad k_2 - k_1 > 0:$ The inequality in \autoref{eq:circle-2} satisfied.
+		
+		\begin{equation}
+			\Re\left\{\frac{1 + k_2H_1(s)}{1 + k_1H_1(s)}\right\} > 0 \label{eq:circle-2}
+		\end{equation}
+	\end{enumerate}
+\end{thm}
+
+The graphical interpretation for the circle criterion\footnote{The circle criterion has different graphical interpretations for the cases where $k_1 < 0$ and where $H_1(s)$ has zeros in the open right half-plane, but these are omitted because they are not valid quantizer transfer curves or because nonminimum phase $H_1(s)$ are not considered here (see \cite[Sec. 7.1.1]{Khalil2002} for more details).} is that the Nyquist plot of $H_1(s)$ does not enter the disk passing through the points $-\frac{1}{k_1} + j0$ and $-\frac{1}{k_2} + j0$ if $0 < k_1 < k_2$. When $0 = k_1 < k_2$, the Nyquist plot must lie to the right of the vertical line $\Re\{s\} = -\frac{1}{k_2}$. If a single-bit quantizer is used as is the scope of this thesis, the sector bounds include the entire first and third quadrants. Case~\ref{it:circle-1} from Theorem~\ref{thm:circle} then applies and the Nyquist plot of $H_1(s)$ must lie entirely in the right half-plane. The optimization framework presented in \autoref{ch:Optimization} may be used with the circle criterion although with a single-bit quantizer, the method is too restrictive for practical use.
+
+The Popov criterion in Theorem~\ref{thm:popov} is a slightly less conservative approach that restricts the problem to time-invariant nonlinearities. 
+
+\begin{thm}[Popov criterion {\cite[Sec. 7.1.2]{Khalil2002}}] \label{thm:popov}
+	Given the Lur'e feedback system in \autoref{fig:lure-sys} where the denominator of $H_1(s)$ is Hurwitz and $\psi(\cdot)$ is a time-invariant memoryless function sector bounded by $[0, k_2]$, the closed-loop system $L(s)$  is globally asymptotically stable if there exists a scalar $\gamma \geq 0$ such that the following inequality is satisfied:
+	
+	\begin{equation}
+		\frac{1}{k_2} + \Re\{H_1(j\omega)\} - \gamma\omega\Im\{H_1(j\omega)\} > 0 \quad \forall \omega \in [0, \infty).
+	\end{equation}
+\end{thm}
+
+The graphical interpretation for this criterion is that the Popov plot of $\omega\Im\{H_1(j\omega)\}$ versus $\Re\{H_1(j\omega)\}$ remains to the right of a line passing through point $-\frac{1}{k_2} + j0$ with slope $\frac{1}{\gamma}$. 
+
+The \gls{DT} version is the Tsypkin criterion, which has cases valid for time-varying and time-invariant nonlinearities. The analog to the circle criterion is shown in Theorem~\ref{thm:tsypkin-1} and the analog to the Popv criterion is shown in Theroem~\ref{thm:tsypkin-2}.
+
+\begin{thm}[Tskypin criterion for time-varying nonlinearities {\cite[Sec. 4.6]{Tsypkin1984}}] \label{thm:tsypkin-1}
+	Given the Lur'e feedback system in \autoref{fig:lure-sys} where the denominator of $H_1(z)$ is Schur and $\psi(t,\cdot)$ is a memoryless function sector bounded by $[0, k_2]$, the closed-loop system $L(z)$  is globally asymptotically stable if the following inequality is satisfied:
+	
+	\begin{equation}
+		\frac{1}{k_2} + \Re\{H_1(z)\}\geq 0 \quad \forall |z| = 1.
+	\end{equation}
+\end{thm}
+
+\begin{thm}[Tskypin criterion for time-invariant nonlinearities {\cite[Sec. 4.7]{Tsypkin1984}}] \label{thm:tsypkin-2}
+	Given the Lur'e feedback system in \autoref{fig:lure-sys} where the denominator of $H_1(z)$ is Schur and $\psi(\cdot)$ is a time-invariant memoryless function sector bounded by $[0, k_2]$, the closed-loop system $L(z)$  is globally asymptotically stable if there exists a scalar $\gamma \geq 0$ such that the following ineqality is satisfied:
+	
+	\begin{equation}
+		\frac{1}{k_2} + \Re\left\{\left(1 + \gamma\left(1 - z^{-1}\right)\right)H_1(z)\right\}\geq 0 \quad \forall |z| = 1.
+	\end{equation}
+\end{thm}
+
+ The Jury-Lee criteria are less strict cases of the Tsypkin criteria requiring that the nonlinearity be slope bounded and monotonic. However, this is not applicable to quantizer feedback, where the slope may go to infinity. The above techniques from nonlinear control are sufficient conditions and are related to important results from passivity theorem.
+ 
+ \subsection{$\mathcal{H}_\infty$ Stability Criterion}
+ \label{sec:stab-hinf}
+ 
+The $\mathcal{H}_\infty$ stability criterion, commonly known as Lee's rule, is a heuristic predictor of stability which states that a modulator is likely to be stable if the \gls{NTF} out-of-band gain, or $||S(\lambda)||_\infty$, does not exceed a benchmark value. The rule was initially based on the empirical study of a fourth-order \gls{DT} sigma delta modulator with single-bit quantization \cite{Chao1990}. The criterion is not necessary nor sufficient for stability and must be verified with extensive simulations. Despite this, the rationale for its use as a suggestion of stability comes from the Bode sensitivity integral shown in \autoref{eq:bodeint-dt} for Schur stable $H_1(z)$ \cite[Thm. 1]{Zhao2015}.
+
+\begin{equation} \label{eq:bodeint-dt}
+	\frac{1}{2\pi}\int_{-\pi}^{\pi} \log \left| \det\left(S(\omega)\right)\right|d\omega = 0
+\end{equation}
+
+The integral enforces that the total area under the curve of the \gls{NTF} log-magnitude versus frequency is equal to zero. Applied to the sigma delta linear model, if the sensitivity of the closed-loop system to the quantization error is suppressed in the signal band, it must be compensated for by an equal area of amplified sensitivity outside the signal band. Because the quantization error is nonlinear and signal dependent, the higher the gain of the sensitivity function, the greater chance there is for a limit cycle at that frequency to destabilize the loop. Thus, the Lee's rule is a indicator of the performance-stability tradeoff. In practice, $||S(z)||_\infty \leq 2$ is often used, but this has been found to be conservative for low-order and inadequate for high-order designs \cite{Schreier1993}. However, the criterion is used extensively as a starting point for practical design due to its inclusion in popular software tools. It is easy to formulate as part of an optimization problem as it may be applied with an $\mathcal{H}_\infty$ constraint on the $r \rightarrow e$ channel of \autoref{eq:aug}.
+ 
+\subsection{Describing Function Approximation and Root Locus Stability}
+\label{sec:stab-rl}
+
+Two closely related stability methods are the describing function approximation and the root locus approach. These both rely on the variable gain $K$ introduced in \autoref{sec:model-linq} but use different interpretations of it to stabilize the sigma delta modulator.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+		% Place nodes using a matrix
+		\matrix (m0) at (0,2) [row sep=2.5mm, column sep=5mm, matrix anchor=west]
+		{
+			%-----------------------------------------------------------------------------------------------
+			\node[coordinate]					(m0-0) {};				\&
+			\node[dspsquare,dsp/label={above:$\psi$}]					(m0-1) {\RaisingEdge};		\&
+			\node[dspnodeopen,dsp/label=right]		(m0-2) {$y$};			\& \\
+			%-----------------------------------------------------------------------------------------------
+		};
+		% Place nodes using a matrix
+		\matrix (m1) at (0,0) [row sep=2.5mm, column sep=5mm, matrix anchor=west]
+		{
+			%-----------------------------------------------------------------------------------------------
+			\node[coordinate]					(m1-0) {};				\&
+			\node[dspgain,fill=white]				(m1-1) {$\frac{2\Delta}{\pi A}$};	\&
+			\node[dspnodeopen,dsp/label=right]		(m1-2) {$\hat{y}$};		\& \\
+			%-----------------------------------------------------------------------------------------------
+		};
+		
+		\begin{pgfonlayer}{bg}
+			\draw[->]	($(m1-1) + (-0.5,-0.5)$) -- ($(m1-1) + (0.5,0.5)$);
+		\end{pgfonlayer}
+		
+		%\draw[dspconn]	(m0-0) -- (m0-1);
+		\draw[dspconn]	(m0-1) -- (m0-2);
+		%\draw[dspconn]	(m1-0) -- (m1-1);
+		\draw[dspconn]	(m1-1) -- (m1-2);
+		\node[rotate=90] at (1.4,1) {$\approx$};
+		\node[coordinate] 	(g0) at (-2.75,1) {};
+		\node[dspnodeopen,label={left:$u$}] 	(g1) at (-1,1) {};
+		\node[coordinate]	(g2) at (0,1) {};
+		\coordinate		(m0-0x) at (g2 |- m0-0);
+		\coordinate 		(m1-0x) at (g2 |- m1-0);
+		\draw[dspline]	(g1) -- (g2);
+		\draw[dspline]	(g2) -- (m0-0x);
+		\draw[dspline]	(g2) -- (m1-0x);
+		\draw[dspconn]	(m0-0x) -- (m0-1);
+		\draw[dspconn]	(m1-0x) -- (m1-1);
+		\node[coordinate]	(g3) at ($(m0-2) + (1.75,0)$) {};
+		
+		% Analog signal.
+		\begin{axis}[
+			at={(g0)},
+			anchor=center,
+			x=12mm, y=6mm, 
+			axis x line=center, axis y line*=left, 
+			ymin=-1, ymax=1, 
+			yticklabels={}, xticklabels={},
+			xlabel={}, ylabel={$A\sin(\omega t)$},
+			x label style={at={(axis cs:1,0)}, anchor=east},
+			y axis line style={draw=none},
+			tick style={draw=none}
+			]
+		\addplot[domain=-0:2,smooth,thick, black]
+			plot {sin(deg(2*pi*x))};
+		\end{axis}
+		
+		% Analog signal.
+		\begin{axis}[
+			at={(g3)},
+			anchor=west,
+			x=12mm, y=6mm, 
+			axis x line=center, axis y line*=left, 
+			ymin=-1, ymax=1, 
+			xticklabels={},
+			yticklabels={$-\frac{\Delta}{2}$,$\frac{\Delta}{2}$}, ytick={-1,1},
+			xlabel={}, ylabel={$\frac{\Delta}{2}\textrm{sign}(u)$},
+			x label style={at={(axis description cs:1,0)}, anchor=east},
+			y axis line style={draw=none},
+			tick style={draw=none}
+			]
+		\addplot[domain=-0:2, thick, black]
+			coordinates{(0,0) (0,1) (0.5,1) (0.5,-1) (1,-1) (1,1) (1.5,1) (1.5,-1) (2,-1) (2,0)};
+		\end{axis}
+		
+	\end{tikzpicture}
+	\caption{An ideal 1-bit quantizer (above) and its describing function approximation (below).} \label{fig:df}
+\end{figure}
+
+The describing function method \cite{Taylor1999} is an approximate technique of linearization often applied to steady-state electrical circuits or nonidealities in mechanical systems. As shown in \autoref{fig:df}, a zero-mean sinusoidal input to the quantizer is assumed: $u(t) = A\sin(\omega t)$. The Fourier series of the output is truncated at the first odd coefficient because the quantizer transfer curve is also an odd function. For a single-bit quantizer, the first coefficients are:
+
+\begin{align}
+	a_1 &= \frac{1}{\pi} \int_0^{2\pi} \psi(t)\cos(\omega t) d(\omega t) \label{eq:fourier-a} \\
+	b_1 &= \frac{1}{\pi} \int_0^{2\pi} \psi(t)\sin(\omega t) d(\omega t), \label{eq:fourier-b}
+\end{align}
+
+Where $\psi(t)$ is the nonlinear quantizer function. Integral~\ref{eq:fourier-a} evaluates to zero while the period of Integral~\ref{eq:fourier-b} may be split into two parts:
+
+\begin{equation*}
+	b_1 = \frac{1}{\pi}\left(\int_0^\pi\psi(t)\sin(\omega t)d(\omega t) + \int_\pi^{2\pi}\psi(t)\sin(\omega t)d(\omega t)\right).
+\end{equation*}
+
+In the interval $\omega t \in (0, \pi)$, the single-bit quantizer outputs $\frac{\Delta}{2}$ whereas in the interval $\omega t \in (\pi, 2\pi)$, the single-bit quantizer outputs $-\frac{\Delta}{2}$. By symmetry, this integral is equal to \autoref{eq:df-derivation}.
+
+\begin{equation}
+	b_1 = \frac{\Delta}{\pi}\int_0^\pi \sin(\omega t)d(\omega t) = \frac{2\Delta}{\pi} \label{eq:df-derivation}
+\end{equation}
+
+Using the Fourier series approximation $\hat{y}(t) \approx y(t)$, the describing function is derived as follows:
+
+\begin{align*}
+	N(A) &= \frac{\hat{y}(t)}{u(t)} \\
+	&= \frac{b_1\sin(\omega t)}{A\sin(\omega t)} \\
+	&= \frac{2\Delta}{\pi A}.
+\end{align*}
+
+Thus, the describing function of the single-bit quantizer is a variable gain $N(A)$ dependent on the quantizer input amplitude. As expected, when the input amplitude approaches zero, the gain approaches infinity and when it approaches the quantizer limit, the gain approaches one. In fact, instability in sigma delta modulators is often associated with low frequency, large amplitude limit cycles where the quantizer gain is low. The describing function method is a good approximation to large signal stability but often fails to predict small limit cycles because the higher harmonics of the output are neglected. The describing function has been applied to the design of sigma delta modulators \cite{Engelen1999} and extended to be dependent on phase in addition to gain to design a sixth-order modulator \cite{VanEngelen1999a}.
+
+In the open loop the describing function method approximated the quantizer as a variable gain. The root locus can determine stability by showing the position of the closed-loop poles as a function of this gain. One method to design stable sigma delta modulators is to position the poles and zeros of the loop filter such that the root locus remains in the stable region of the complex plane when sweeping through valid quantizer gain values \cite{Yang2002, Kuo2006, Kang2014}. Recall the \gls{LFT} used to model the varying gain in \autoref{sec:model-lft}. \autoref{eq:lft-range} defines $M$ when the gain is within a given range $K \in [k_l, k_h]$ with nominal value $k_0$.
+
+\begin{equation}
+	M = 
+	\begin{bmatrix}
+		\frac{k_h - 2k_0 + k_l}{k_h - k_l} & \frac{-2(k_0 - k_h)(k_0 - k_l)}{k_h - k_l} \\
+		1 & k_0
+	\end{bmatrix}  \label{eq:lft-range}
+\end{equation}
+
+The root locus stability criterion may be used in robust control fashion by choosing a range for $K$, e.g. $[k_l, k_h] = [1/||u||_\infty, \infty]$, then constraining the $\mathcal{H}_\infty$ norm to unity for the $z \rightarrow w$ channel. This ensures that the linearized model is stable for the selected gain values.
+ 
+ \subsection{$\mathcal{H}_2$ Stability Criterion}
+ \label{sec:stab-h2}
+ 
+ Previously, the quantizer was replaced by an additive noise source and some performance estimations were presented assuming that the quantization noise was uncorrelated with input had a white spectrum. The white noise model is only a close approximation if the following hold \cite[Ch. 6]{Gray1990}:
+ 
+ \begin{enumerate}
+ 	\item The quantizer is not overloaded,
+ 	\item There are a large number of quantization levels with small \gls{delta}, and
+ 	\item The \gls{PDF} of input samples is smooth.
+ \end{enumerate}
+ 
+ In reality, especially with single-bit quantization, the approximation does not hold. The $\mathcal{H}_2$ stability criterion, sometimes called the power gain rule, uses a statistical look at the quantizer input \cite{Risbo1994}. The output $y[k]$ of a single-bit quantizer may be considered the superposition of three signals: a DC component $\mu_y$, AC component amplified by the quantizer gain $K\left(u[k] - \mu_u\right)$, and the quantization noise $d[k]$. With these additional degrees of freedom, one can enforce that $d[k]$ is white and uncorrelated with the quantizer input $u[k]$ by setting $K$ to that in \autoref{eq:h2-k}.
+ 
+ \begin{equation}
+ 	K = \frac{\cov\{u[k], y[k]\}}{\sigma_u^2} \label{eq:h2-k}
+ \end{equation}
+ 
+ The gain $K$ is now entirely dependent on $\mu_y$ and the distribution of $u$.
+ 
+ \subsection{$\ell_1$ Stability Criterion}
+ \label{sec:stab-l1}
+
+%Neitola2017
+
+\section{Stability Concepts Not Used by this Optimization Framework}
+\label{sec:stab-notused}
+
+\subsection{Methods Ensuring Bounded States}
+
+A different way of ensuring stability of a modulator system is the positive invariant set ap
+
+\subsection{Diagonal Modulators}
+
+\section{Performance Goals}
+\label{sec:stab-perf}
+

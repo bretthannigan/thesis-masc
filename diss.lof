@@ -4,8 +4,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces A continuous-time, continuous-value signal $r(t)$ is sampled to produce a discrete-time, continuous-value signal $r[kT_s]$. $r(t)$ independently undergoes quantization to yield a continuous-time, discrete-value signal $r_q(t)$. When both processes are applied in sequence, a discrete-time, discrete-value signal $r_q[kT_s]$ is the result.\relax }}{2}{figure.caption.12}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces A comparison between na\"{i}ve quantization (top), 10 times oversampled quantization (middle), and first order sigma delta modulation (bottom). The graphs on the right show the increasing quality of an EEG signal \cite {Blankertz2007} sampled to a final rate of \SI {100}{\hertz } and quantized with 5 bits by each scheme.\relax }}{3}{figure.caption.13}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces A comparison between na\"{i}ve quantization (top), 10 times oversampled quantization (middle), and first order sigma delta modulation (bottom). The graphs on the right show the increasing quality of an EEG signal \cite {Blankertz2007} sampled to a final rate of \SI {100}{\hertz } and quantized by Q with 5 bits by each scheme.\relax }}{3}{figure.caption.13}
 \contentsline {figure}{\numberline {1.3}{\ignorespaces The basic block diagram of a DT sigma delta A/D converter.\relax }}{4}{figure.caption.14}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces The basic block diagram of a DT sigma delta A/D converter.\relax }}{5}{figure.caption.15}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Proof of \LaTeX 's amazing abilities\relax }}{14}{figure.caption.17}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces The basic block diagram of a CT sigma delta A/D converter.\relax }}{5}{figure.caption.15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces The linearized sigma delta loop block diagram with omission of extraneous filters and the quantizer replaced by a variable gain and additive quantization noise signal.\relax }}{11}{figure.caption.17}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The linearized model converted into standard feedback form.\relax }}{11}{figure.caption.18}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces The linearized block diagram with the quantizer replaced by a multiplicative uncertainty extracted via LFT.\relax }}{13}{figure.caption.19}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces The augmented plant is derived by setting $H_0(\lambda ) = 1$, taking the LFT of the uncertain gain, extracting the signals of interest, and writing the closed-loop equations.\relax }}{14}{figure.caption.21}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A Lur'e system (left) with the example nonlinear transfer curve of an infinite quantizer ($\Delta =1$) shown with a shaded sector bounded region (right).\relax }}{17}{figure.caption.22}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }

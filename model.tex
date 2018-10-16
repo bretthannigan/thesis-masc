@@ -7,8 +7,9 @@
 In order to apply an optimization framework to the design of the \gls{LF}, the system from Figures \ref{fig:basic-struct-dt} and \ref{fig:basic-struct-ct} must be placed in a form that allows tractable application of the desired performance and stability targets. This includes omission of blocks that have minimal or no effect on the loop as well as linearization of the quantizer. The \gls{AAF} (when present) can be considered as a pre-filter operating on the input signal. The filter $H_0(\lambda)$ serves as an additional degree of freedom for the \gls{STF} can be set to unity for the purposes of the model. These two filters are not required in stabilitiy analysis, because the \gls{NTF} depends only on $H_1(\lambda)$ as seen in \autoref{eq:t}. After noise rejection performance has been optimized, $H_0(\lambda)$ can be tuned as necessary to ensure that the combined gain of the \gls{AAF} and \gls{LF} is close to unity in the signal band. In a similar way, the \gls{DSP} in the output path serves only to filter out the signal and decimate to the original sampling frequency which may be dealt with separately without impacting loop stability.
 
 \section{Linearization of the Quantizer Element}
+\label{sec:model-linq}
 
-Next, the nonlinear nature of the quantizer is dealt with. As mentioned before, a common linearization approach is to replace the quantizer with an additive noise source \gls{d}. Furthermore, the linear model can incorporate a variable gain \gls{K}. The inclusion of \gls{K} has uses in linearization, stability, and performance that will be expanded upon in \autoref{ch:Stability}. After these simplifications, we obtain the block diagram in \autoref{fig:sdm-model} which is applicable to \gls{DT} or \gls{CT} designs. In the \gls{DT} case, the loop is operating entirely in the oversampled domain and the \gls{S/H} block is not shown. In the \gls{CT} case, the \gls{S/H} block in the loop is neglected so that \gls{S} and \gls{T} are \gls{CT} transfer functions\footnote{Note that regarding \autoref{fig:sdm-model} and Figures~\ref{fig:basic-struct-dt}/\ref{fig:basic-struct-ct}, the \gls{NTF} $S(\lambda)$ is the same transfer function whether interpreted from $d \rightarrow y$ or $r \rightarrow e$.}.
+Next, the nonlinear nature of the quantizer is dealt with. As mentioned before, a common linearization approach is to replace the quantizer with an additive noise source \gls{d}. Furthermore, the linear model can incorporate a variable gain \gls{K}. The inclusion of \gls{K} has uses in linearization, stability, and performance that will be expanded upon in \autoref{ch:Stability}. After these simplifications, the block diagram in \autoref{fig:sdm-model} is obtained, which is applicable to \gls{DT} or \gls{CT} designs. In the \gls{DT} case, the loop is operating entirely in the oversampled domain and the \gls{S/H} block is not shown. In the \gls{CT} case, the \gls{S/H} block in the loop is neglected so that \gls{S} and \gls{T} are \gls{CT} transfer functions\footnote{Note that regarding \autoref{fig:sdm-model} and Figures~\ref{fig:basic-struct-dt}/\ref{fig:basic-struct-ct}, the \gls{NTF} $S(\lambda)$ is the same transfer function whether interpreted from $d \rightarrow y$ or $r \rightarrow e$.}.
 
 \begin{figure}
 	\centering
@@ -173,14 +174,15 @@ A sufficient condition for $S(\lambda)$ and $T(\lambda)$ to be proper is that tr
 Most prior work in the area performs optimization directly on the \gls{NTF} of the system. This is effective because it is a relatively accurate model of the noise shaping performance. In addition, constraint \ref{it:con-2} enforces causality on the feedback loop ensuring the system is physically realizable.
 
 \section{Modelling Uncertain Quantizer Gain}
+\label{sec:model-lft}
 
-Having established conditions to ensure the closed-loop system is realizable and internally stable, we must focus on the variable gain $K$. $K$ can be understood as a time-varying gain dependent on the quantizer input. For example, a 1-bit quantizer (\gls{delta}$ = 2$) with output $\{-1, 1\}$ would have instantaneous gain $K(t) = \frac{1}{u(t)}$. As the value of $u$ at each sample time is not known in advance, we model $K$ as a multiplicative uncertainty. The upper \gls{LFT} allows $K$ to be separated into a constant gain matrix $M_{2 \times 2}$ and a normalized, $\mathcal{H}_\infty$ norm-bounded uncertain block $\Delta$ by Expression~\ref{eq:lft}.
+Having established conditions to ensure the closed-loop system is realizable and internally stable, there remains a nonlinear gain block $K$. $K$ can be understood as a time-varying gain dependent on the quantizer input. For example, a 1-bit quantizer (\gls{delta}$ = 2$) with output $\{-1, 1\}$ would have instantaneous gain $K(t) = \frac{1}{u(t)}$. As the value of $u$ at each sample time is not known in advance, $K$ may be modelled as a multiplicative uncertainty. The upper \gls{LFT} allows $K$ to be separated into a constant gain matrix $M_{2 \times 2}$ and a normalized, $\mathcal{H}_\infty$ norm-bounded uncertain block $\Delta$ by Expression~\ref{eq:lft}.
 
 \begin{equation}
 	K \leftrightarrow \mathcal{F}_U\{M, \Delta\} \quad ||\Delta||_\infty \leq 1 \label{eq:lft}
 \end{equation}
 
-The model from \autoref{fig:sdm-stdf} is shown in \autoref{fig:sdm-stdf-lft} with the quantizer and variable gain replaced by this \gls{LFT} interconnection. In \autoref{ch:Optimization}, we are interested in ensuring the robustness of the system to $\Delta$, which may be achieved using this form.
+The model from \autoref{fig:sdm-stdf} is shown in \autoref{fig:sdm-stdf-lft} with the quantizer and variable gain replaced by this \gls{LFT} interconnection. In \autoref{ch:Optimization}, it is of interest to ensure the robustness of the system to $\Delta$, which may be achieved using this form.
 
 \begin{figure}[h]
 	\centering
@@ -247,9 +249,10 @@ The model from \autoref{fig:sdm-stdf} is shown in \autoref{fig:sdm-stdf-lft} wit
 
 \subsection{Extraction of Performance and Stability Channels}
 
-Finally, we abstract the model into an augmented form where all desired input and output channels are present and all unnecessary ones hidden. Let the \gls{LFT} input to $M$ and output from $M$ be $w$ and $z$, respectively. These channels are required to be accessed in addition to $r$, $e$, $u$, and $y$ for the purposes listed in \autoref{tab:aug-ch}. The augmented system $G(\lambda)$ is shown as the dashed block in \autoref{fig:sdm-aug}.
+Finally, the model is abstracted into an augmented form where all desired input and output channels are present and all unnecessary ones hidden. Let the \gls{LFT} input to $M$ and output from $M$ be $w$ and $z$, respectively. These channels are required to be accessed in addition to $r$, $e$, $u$, and $y$ for the purposes listed in \autoref{tab:aug-ch}. The augmented system $G(\lambda)$ is shown as the dashed block in \autoref{fig:sdm-aug}.
 
 \begin{table}[t]
+	\caption{Input and output channels of interest for the augmented system.} \label{tab:aug-ch}
 	\begin{tabular}{l | >{\RaggedRight}p{2cm} >{\RaggedRight}p{2.25cm} >{\RaggedRight}p{2.25cm} >{\RaggedRight}p{2cm}}
 		\toprule
 		\diagbox[width=2cm, height=1cm]{\textbf{Input}}{\textbf{Output}} & $z$ & $e$ & $u$ & $y$ \\
@@ -258,7 +261,6 @@ Finally, we abstract the model into an augmented form where all desired input an
 		$w$ & Quantizer gain robustness channel & Not used & Not used & Not used \\
 		\bottomrule
 	\end{tabular}
-	\caption{Input and output channels of interest for the augmented system.} \label{tab:aug-ch}
 \end{table}
 
 \begin{figure}
@@ -349,7 +351,7 @@ Naturally, $H_1(\lambda)$ is a strictly proper transfer function and state-space
 	\end{bmatrix} \label{eq:m-exp}
 \end{equation}
 
-With some algebra, the augmented system $G(\lambda)$ from \autoref{fig:sdm-aug} may be written in state-space form with notation from Equations~\ref{eq:h1-ss} and \ref{eq:m-exp} by introducing state vector $x$. We use the notation $G_{qp}(\lambda)$ to indicate the transfer function of $G(\lambda)$ from some input channel $p$ to some output channel $q$ and name the closed-loop state-space matrix blocks with cursive letters as shown in \autoref{eq:aug-ss}.
+With some algebra, the augmented system $G(\lambda)$ from \autoref{fig:sdm-aug} may be written in state-space form with notation from Equations~\ref{eq:h1-ss} and \ref{eq:m-exp} by introducing state vector $x$. We use the notation $G_{qp}(\lambda)$ to indicate the transfer function of $G(\lambda)$ from some input channel $p$ to some output channel $q$ and name the closed-loop state-space matrix blocks with cursive symbols as shown in \autoref{eq:aug-ss}.
 
 \begin{align}
 	G:
@@ -389,4 +391,4 @@ With some algebra, the augmented system $G(\lambda)$ from \autoref{fig:sdm-aug} 
 	\end{bmatrix} \label{eq:aug-ss}
 \end{align}
 
-With the channels of interest exposed and the system in a state-space form, we must now express design goals as constraints on these channels. In \autoref{ch:Stability}, we discuss various stability measures and performance goals and select those which are ideal for an optimization perspective. In \autoref{ch:Optimization}, the framework is introduced to allow the targets from the previous chapter to be applied to the augmented system in a way that allows the optimization problem to be efficiently solved.
+With the channels of interest exposed and the system in a state-space form, one can express design goals as constraints on these channels. In \autoref{ch:Stability}, various stability measures and performance goals are discussed from which those that are ideal from an optimization perspective are selected. In \autoref{ch:Optimization}, the framework is introduced to allow the targets from the previous chapter to be applied to the augmented system in a way that allows the optimization problem to be efficiently solved.
