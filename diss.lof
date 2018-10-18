@@ -14,6 +14,10 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces The augmented plant is derived by setting $H_0(\lambda ) = 1$, taking the LFT of the uncertain gain, extracting the signals of interest, and writing the closed-loop equations.\relax }}{14}{figure.caption.21}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces A Lur'e system (left) with the example nonlinear transfer curve of an infinite quantizer ($\Delta =1$) shown with a shaded sector bounded region (right).\relax }}{17}{figure.caption.22}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces An ideal 1-bit quantizer (above) and its describing function approximation (below).\relax }}{20}{figure.caption.23}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The block diagram for the $\mathcal {H}_2$ stability criterion.\relax }}{23}{figure.caption.24}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The choice of PDF for the quantizer input signal places bounds on the squared $\mathcal {H}_2$ norm of the \gls {NTF} for a given MSIA \cite {Risbo1994}.\relax }}{24}{figure.caption.25}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces The block diagram of the error feedback form of a sigma delta modulator.\relax }}{25}{figure.caption.26}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

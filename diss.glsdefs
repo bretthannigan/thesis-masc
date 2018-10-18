@@ -778,6 +778,66 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{PDF}{}%
+{%
+\gls@defglossaryentry{PDF}%
+{%
+name={PDF},%
+sort={PDF},%
+type={acronym},%
+first={probability density function\glsspace (PDF)},%
+firstplural={probability density functions\glsspace (PDFs)},%
+text={PDF},%
+plural={PDFs},%
+description={probability density function},%
+descriptionplural={probability density function\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={probability density function},%
+longplural={probability density functions},%
+short={PDF},%
+shortplural={PDFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MSIA}{}%
+{%
+\gls@defglossaryentry{MSIA}%
+{%
+name={MSIA},%
+sort={MSIA},%
+type={acronym},%
+first={maximum stable input amplitude\glsspace (MSIA)},%
+firstplural={maximum stable input amplitudes\glsspace (MSIAs)},%
+text={MSIA},%
+plural={MSIAs},%
+description={maximum stable input amplitude},%
+descriptionplural={maximum stable input amplitude\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={maximum stable input amplitude},%
+longplural={maximum stable input amplitudes},%
+short={MSIA},%
+shortplural={MSIAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{pq}{}%
 {%
 \gls@defglossaryentry{pq}%
@@ -1121,6 +1181,36 @@ text={$\lambda $},%
 plural={$\lambda $s},%
 description={Placeholder for the continuous-time Laplace variable $s$ or discrete-time $z$-transformation variable $z$},%
 descriptionplural={Placeholder for the continuous-time Laplace variable $s$ or discrete-time $z$-transformation variable $z$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{EV}{}%
+{%
+\gls@defglossaryentry{EV}%
+{%
+name={$E(\cdot )$},%
+sort={$E(\cdot )$},%
+type={main},%
+first={$E(\cdot )$},%
+firstplural={$E(\cdot )$s},%
+text={$E(\cdot )$},%
+plural={$E(\cdot )$s},%
+description={Expected value operator.},%
+descriptionplural={Expected value operator.},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%

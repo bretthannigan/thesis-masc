@@ -158,6 +158,7 @@ A feedback system is considered well-posed if the inverse of the transfer matrix
 The principle of internal stability is stricter than \gls{BIBO} stability because it guarantees that the internal states of the system remain bounded. The system in \autoref{eq:stdf-inv} is internally stable if each element of the transfer matrix belongs to the set $\mathcal{R}\mathcal{H}_\infty$, that is the set of stable real rational proper transfer functions.
 
 \subsection{Constraints on the \titlecap{\glsentrylong{NTF}}}
+\label{sec:model-ntf-constraints}
 
 A sufficient condition for $S(\lambda)$ and $T(\lambda)$ to be proper is that transfer function $H_1(\lambda)$ is a strictly proper real rational transfer function. Internal stability of the system follows if $S(\lambda)$ and $T(\lambda)$ are stable. This leads to the following constraints on the \gls{NTF}:
 
@@ -337,7 +338,7 @@ Finally, the model is abstracted into an augmented form where all desired input 
 Now that the desired input and output signals are captured by the model, it is a simple exercise to write the system in state-space form. To begin, let filter $H_1(\lambda)$ be the transfer function of order \gls{order} in variable \gls{sorz}$ = z$ in the \gls{DT} case (or \gls{sorz}$ = s$ in the \gls{CT} case). The numerator and denominator coefficients are shown in \autoref{eq:h1} which has the equivalent state-space representation of \autoref{eq:h1-ss}.
 
 \begin{align}
-	H_1(\lambda) &= \frac{b_{n-1}\lambda^{n-1} + b_{n-2}\lambda^{n-2} + \ldots + b_1\lambda + b_0}{\lambda^n + a_{n-1}\lambda^{n-1} + a_{n-2}\lambda^{n-2} + \ldots + a_1z\lambda + a_0} \label{eq:h1} \\
+	H_1(\lambda) = \frac{U(\lambda)}{E(\lambda)} &= \frac{b_{n-1}\lambda^{n-1} + b_{n-2}\lambda^{n-2} + \ldots + b_1\lambda + b_0}{\lambda^n + a_{n-1}\lambda^{n-1} + a_{n-2}\lambda^{n-2} + \ldots + a_1z\lambda + a_0} \label{eq:h1} \\
 	&= C_H(\lambda I - A_H)^{-1}B_H \label{eq:h1-ss}
 \end{align}
 

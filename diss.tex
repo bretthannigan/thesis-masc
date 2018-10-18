@@ -194,6 +194,7 @@
 % Tables
 \usepackage{tabularx}
 \newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}} % ragged-right version of "p" column type
+\newcolumntype{C}[1]{>{\centering\arraybackslash$}p{#1}<{$}} % For fixed-width array columns.
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage{diagbox}
@@ -246,6 +247,8 @@
 
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\cov}{cov}
+
+\interfootnotelinepenalty=10000
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

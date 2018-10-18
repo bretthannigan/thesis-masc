@@ -12,7 +12,7 @@ Due to the nonlinear effects of the quantizer, the stability of the sigma delta 
 \subsection{Ideas from Nonlinear Control}
 \label{sec:stab-nl}
 
-An early theoretical treatment of nonlinear control is the circle criterion, which provides a graphical frequency domain method for evaluating the stability of a \gls{CT} Lur'e system. A Lur'e system is a simplified negative feedback loop consisting of a linear plant $L(s)$ with a nonlinear element $\psi(\cdot)$ in the feedback path such as the one shown in \autoref{fig:lure-sys}. The transfer curve of the nonlinear element may be time-varying and even non-monotonic but is bounded by a sector condition, a set of two lines passing through the origin with slopes $k_1$, $k_2$ that bound the curve in each direction.
+An early theoretical treatment of nonlinear control is the circle criterion, which provides a graphical frequency domain method for evaluating the stability of a \gls{CT} Lur'e system. A Lur'e system is a simplified negative feedback loop consisting of a linear plant $L(s)$ with a nonlinear element $\psi(\cdot)$ in the feedback path such as the one shown in \autoref{fig:lure-sys}. The transfer curve of the nonlinear element may be time-varying and even non-monotonic but is bounded by a sector condition, a set of two lines passing through the origin with slopes $k_1$, $k_2$ that bound the curve.
 
 \begin{figure}
 	\centering
@@ -124,7 +124,7 @@ The \gls{DT} version is the Tsypkin criterion, which has cases valid for time-va
 \end{thm}
 
 \begin{thm}[Tskypin criterion for time-invariant nonlinearities {\cite[Sec. 4.7]{Tsypkin1984}}] \label{thm:tsypkin-2}
-	Given the Lur'e feedback system in \autoref{fig:lure-sys} where the denominator of $H_1(z)$ is Schur and $\psi(\cdot)$ is a time-invariant memoryless function sector bounded by $[0, k_2]$, the closed-loop system $L(z)$  is globally asymptotically stable if there exists a scalar $\gamma \geq 0$ such that the following ineqality is satisfied:
+	Given the Lur'e feedback system in \autoref{fig:lure-sys} where the denominator of $H_1(z)$ is Schur and $\psi(\cdot)$ is a time-invariant memoryless function sector bounded by $[0, k_2]$, the closed-loop system $L(z)$  is globally asymptotically stable if there exists a scalar $\gamma \geq 0$ such that the following inequality is satisfied:
 	
 	\begin{equation}
 		\frac{1}{k_2} + \Re\left\{\left(1 + \gamma\left(1 - z^{-1}\right)\right)H_1(z)\right\}\geq 0 \quad \forall |z| = 1.
@@ -136,13 +136,13 @@ The \gls{DT} version is the Tsypkin criterion, which has cases valid for time-va
  \subsection{$\mathcal{H}_\infty$ Stability Criterion}
  \label{sec:stab-hinf}
  
-The $\mathcal{H}_\infty$ stability criterion, commonly known as Lee's rule, is a heuristic predictor of stability which states that a modulator is likely to be stable if the \gls{NTF} out-of-band gain, or $||S(\lambda)||_\infty$, does not exceed a benchmark value. The rule was initially based on the empirical study of a fourth-order \gls{DT} sigma delta modulator with single-bit quantization \cite{Chao1990}. The criterion is not necessary nor sufficient for stability and must be verified with extensive simulations. Despite this, the rationale for its use as a suggestion of stability comes from the Bode sensitivity integral shown in \autoref{eq:bodeint-dt} for Schur stable $H_1(z)$ \cite[Thm. 1]{Zhao2015}.
+The $\mathcal{H}_\infty$ stability criterion, commonly known as Lee's rule, is a heuristic predictor of stability stating that a modulator is likely to be stable if the \gls{NTF} out-of-band gain, or $||S(\lambda)||_\infty$, does not exceed a benchmark value. The rule was initially based on the empirical study of a fourth-order \gls{DT} sigma delta modulator with single-bit quantization \cite{Chao1990}. The criterion is not necessary nor sufficient for stability and must be verified with extensive simulations. Despite this, the rationale for its use as a suggestion of stability comes from the Bode sensitivity integral shown in \autoref{eq:bodeint-dt} for Schur stable $H_1(z)$ \cite[Thm. 1]{Zhao2015}.
 
 \begin{equation} 
-	\frac{1}{2\pi}\int_{-\pi}^{\pi} \log \left| \det\left(S(\omega)\right)\right|d\omega = 0 \label{eq:bodeint-dt}
+	\frac{1}{2\pi}\int_{-\pi}^{\pi} \log \left|S(\omega)\right|d\omega = 0 \label{eq:bodeint-dt}
 \end{equation}
 
-The integral enforces that the total area under the curve of the \gls{NTF} log-magnitude versus frequency is equal to zero. Applied to the sigma delta linear model, if the sensitivity of the closed-loop system to the quantization error is suppressed in the signal band, it must be compensated for by an equal area of amplified sensitivity outside the signal band. Because the quantization error is nonlinear and signal dependent, the higher the gain of the sensitivity function, the greater chance there is for a limit cycle at that frequency to destabilize the loop. Thus, the Lee's rule is a indicator of the performance-stability tradeoff. In practice, $||S(z)||_\infty \leq 2$ is often used, but this has been found to be conservative for low-order and inadequate for high-order designs \cite{Schreier1993}. However, the criterion is used extensively as a starting point for practical design due to its inclusion in popular software tools.A recent extension of Lee's rule produces a more complex $\mathcal{H}_\infty$ bound based on empirical results that may also be used as the design stability goal \cite{Neitola2017}. It is easy to formulate as part of an optimization problem as it may be applied with an $\mathcal{H}_\infty$ constraint on the $r \rightarrow e$ channel of \autoref{eq:aug}:
+The integral enforces that the total area under the curve of the \gls{NTF} log-magnitude versus frequency is equal to zero. Applied to the sigma delta linear model, if the sensitivity of the closed-loop system to the quantization error is suppressed in the signal band, it must be compensated for by an equal area of amplified sensitivity outside the signal band. Because the quantization error is nonlinear and signal dependent, the higher the gain of the sensitivity function, the greater chance there is for a limit cycle at that frequency to destabilize the loop. Thus, the Lee's rule is a indicator of the performance-stability tradeoff. In practice, $||S(z)||_\infty \leq 2$ is often used, but this has been found to be conservative for low-order and inadequate for high-order designs \cite{Schreier1993}. However, the criterion is used extensively as a starting point for practical design due to its inclusion in popular software tools. A recent extension of Lee's rule produces a more complex $\mathcal{H}_\infty$ bound based on empirical results that may be used as an alternative $\mathcal{H}_\infty$ stability goal \cite{Neitola2017}. This stability criterion is easy to formulate as part of an optimization problem as it may be applied with an $\mathcal{H}_\infty$ constraint on the $r \rightarrow e$ channel of \autoref{eq:aug}:
 
 \begin{equation}
 	||G_{er}(\lambda)||_\infty \leq \gamma_\infty. \label{eq:hinf}
@@ -170,7 +170,7 @@ Two closely related stability methods are the describing function approximation 
 		{
 			%-----------------------------------------------------------------------------------------------
 			\node[coordinate]					(m1-0) {};				\&
-			\node[dspgain,fill=white]				(m1-1) {$\frac{2\Delta}{\pi A}$};	\&
+			\node[dspgain,fill=white]				(m1-1) {$\frac{2\Delta_Q}{\pi A}$};	\&
 			\node[dspnodeopen,dsp/label=right]		(m1-2) {$\hat{y}$};		\& \\
 			%-----------------------------------------------------------------------------------------------
 		};
@@ -221,8 +221,8 @@ Two closely related stability methods are the describing function approximation 
 			axis x line=center, axis y line*=left, 
 			ymin=-1, ymax=1, 
 			xticklabels={},
-			yticklabels={$-\frac{\Delta}{2}$,$\frac{\Delta}{2}$}, ytick={-1,1},
-			xlabel={}, ylabel={$\frac{\Delta}{2}\textrm{sign}(u)$},
+			yticklabels={$-\frac{\Delta_Q}{2}$,$\frac{\Delta_Q}{2}$}, ytick={-1,1},
+			xlabel={}, ylabel={$\frac{\Delta_Q}{2}\textrm{sign}(u)$},
 			x label style={at={(axis description cs:1,0)}, anchor=east},
 			y axis line style={draw=none},
 			tick style={draw=none}
@@ -235,36 +235,36 @@ Two closely related stability methods are the describing function approximation 
 	\caption{An ideal 1-bit quantizer (above) and its describing function approximation (below).} \label{fig:df}
 \end{figure}
 
-The describing function method \cite{Taylor1999} is an approximate technique of linearization often applied to steady-state electrical circuits or nonidealities in mechanical systems. As shown in \autoref{fig:df}, a zero-mean sinusoidal input to the quantizer is assumed: $u(t) = A\sin(\omega t)$. The Fourier series of the output is truncated at the first odd coefficient because the quantizer transfer curve is also an odd function. For a single-bit quantizer, the first coefficients are:
+The describing function method \cite{Taylor1999} is an approximate technique of linearization often applied to steady-state electrical circuits or to nonidealities in mechanical systems. As shown in \autoref{fig:df}, a zero-mean sinusoidal input to the quantizer is assumed: $u(t) = A\sin(\omega t)$. The Fourier series of the output is truncated at the first odd coefficient because the quantizer transfer curve is also an odd function. For a single-bit quantizer, the first coefficients are:
 
 \begin{align}
 	a_1 &= \frac{1}{\pi} \int_0^{2\pi} \psi(t)\cos(\omega t) d(\omega t) \label{eq:fourier-a} \\
 	b_1 &= \frac{1}{\pi} \int_0^{2\pi} \psi(t)\sin(\omega t) d(\omega t), \label{eq:fourier-b}
 \end{align}
 
-Where $\psi(t)$ is the nonlinear quantizer function. Integral~\ref{eq:fourier-a} evaluates to zero while the period of Integral~\ref{eq:fourier-b} may be split into two parts:
+where $\psi(t)$ is the nonlinear quantizer function. Integral~\ref{eq:fourier-a} evaluates to zero while the period of Integral~\ref{eq:fourier-b} may be split into two parts:
 
 \begin{equation*}
 	b_1 = \frac{1}{\pi}\left(\int_0^\pi\psi(t)\sin(\omega t)d(\omega t) + \int_\pi^{2\pi}\psi(t)\sin(\omega t)d(\omega t)\right).
 \end{equation*}
 
-In the interval $\omega t \in (0, \pi)$, the single-bit quantizer outputs $\frac{\Delta}{2}$ whereas in the interval $\omega t \in (\pi, 2\pi)$, the single-bit quantizer outputs $-\frac{\Delta}{2}$. By symmetry, this integral is equal to \autoref{eq:df-derivation}.
+In the interval $\omega t \in (0, \pi)$, the single-bit quantizer outputs $\frac{\Delta_Q}{2}$ whereas in the interval $\omega t \in (\pi, 2\pi)$, the single-bit quantizer outputs $-\frac{\Delta_Q}{2}$. By symmetry, this integra simplifies to \autoref{eq:df-derivation}.
 
 \begin{equation}
-	b_1 = \frac{\Delta}{\pi}\int_0^\pi \sin(\omega t)d(\omega t) = \frac{2\Delta}{\pi} \label{eq:df-derivation}
+	b_1 = \frac{\Delta_Q}{\pi}\int_0^\pi \sin(\omega t)d(\omega t) = \frac{2\Delta_Q}{\pi} \label{eq:df-derivation}
 \end{equation}
 
 Using the Fourier series approximation $\hat{y}(t) \approx y(t)$, the describing function is derived as follows:
 
 \begin{align*}
-	N(A) &= \frac{\hat{y}(t)}{u(t)} \\
+	K(A) &= \frac{\hat{y}(t)}{u(t)} \\
 	&= \frac{b_1\sin(\omega t)}{A\sin(\omega t)} \\
-	&= \frac{2\Delta}{\pi A}.
+	&= \frac{2\Delta_Q}{\pi A}.
 \end{align*}
 
-Thus, the describing function of the single-bit quantizer is a variable gain $N(A)$ dependent on the quantizer input amplitude. As expected, when the input amplitude approaches zero, the gain approaches infinity and when it approaches the quantizer limit, the gain approaches one. In fact, instability in sigma delta modulators is often associated with low frequency, large amplitude limit cycles where the quantizer gain is low. The describing function method is a good approximation to large signal stability but often fails to predict small limit cycles because the higher harmonics of the output are neglected. The describing function has been applied to the design of sigma delta modulators \cite{Engelen1999} and extended to be dependent on phase in addition to gain to design a sixth-order modulator \cite{VanEngelen1999a}.
+Thus, the describing function of the single-bit quantizer is a variable gain $K(A)$ dependent on the quantizer input amplitude. As expected, when the input amplitude approaches zero, the gain approaches infinity and when it approaches $\pm\frac{\Delta_Q}{2}$, the gain approaches one. In fact, instability in sigma delta modulators is often associated with low frequency, large amplitude limit cycles where the quantizer gain is low. The describing function method is a good approximation to large signal stability but often fails to predict small limit cycles because the higher harmonics of the output are neglected. The describing function has been applied to the design of sigma delta modulators \cite{Engelen1999} and extended to be dependent on phase in addition to gain to design a sixth-order modulator \cite{VanEngelen1999a}.
 
-In the open loop the describing function method approximated the quantizer as a variable gain. The root locus can determine stability by showing the position of the closed-loop poles as a function of this gain. One method to design stable sigma delta modulators is to position the poles and zeros of the loop filter such that the root locus remains in the stable region of the complex plane when sweeping through valid quantizer gain values \cite{Yang2002, Kuo2006, Kang2014}. Recall the \gls{LFT} used to model the varying gain in \autoref{sec:model-lft}. \autoref{eq:lft-range} defines $M$ when the gain is within a given range $K \in [k_l, k_h]$ with nominal value $k_0$.
+In the open loop, the describing function method approximated the quantizer as a variable gain. The root locus can determine stability by showing the position of the closed-loop poles as a function of this gain. One method to design stable sigma delta modulators is to position the poles and zeros of the loop filter such that the root locus remains in the stable region of the complex plane when sweeping through valid quantizer gain values \cite{Yang2002, Kuo2006, Kang2014}. Recall the \gls{LFT} used to model the varying gain in \autoref{sec:model-lft}. \autoref{eq:lft-range} defines $M$ when the gain is within a given range $K \in [k_l, k_h]$ with nominal value $k_0$.
 
 \begin{equation}
 	M = 
@@ -385,7 +385,7 @@ To employ this stability criterion, the $\mathcal{H}_2$ norm of the sensitivity 
  \subsection{$\ell_1$ Stability Criterion}
  \label{sec:stab-l1}
  
- The $\ell_1$ stability criterion (also known as the Anastassiou's stability criterion) is best understood when the modulator is transformed into the equivalent error feedback structure shown in \autoref{fig:ef-model}. This form is primarily of theoretical importance because its implementation is extremely sensitive to filter coefficient values in the feedback path \cite{Schreier1997}. The advantage for analysis is that the \gls{NTF} and \gls{STF} are shown in independent blocks. We can use this structure to define the $\ell_1$ norm stability criterion by writing the equations for signals $u$ and $y$ as follows:
+The $\ell_1$ stability criterion (also known as the Anastassiou's stability criterion) is best understood when the modulator is transformed into the equivalent error feedback structure shown in \autoref{fig:ef-model}. This form is primarily of theoretical importance because its implementation is extremely sensitive to filter coefficient values in the feedback path \cite{Schreier1997}. The advantage for analysis is that the \gls{NTF} and \gls{STF} are shown in independent blocks. We can use this structure to define the $\ell_1$ norm stability criterion by writing the equations for signals $u$ and $y$ as follows:
  
  \begin{figure}
  	\centering
@@ -446,7 +446,7 @@ In the time domain, the input to the quantizer from \autoref{eq:l1-u} can be bou
 	\left|u[k]\right| \leq \left|\sum_{i=1}^{\infty} t[i]r[t - i]\right| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)e[t - i]\right|, \label{eq:l1-bound1}
 \end{equation}
 
-Where $t[k]$ is the impulse response of the \gls{STF} and $s[k]$ is the impulse response of the \gls{NTF}. Because the \gls{STF} only operates on the input as a pre-filter, we can assume $T(\lambda) = 1$ and \autoref{eq:l1-bound1} simplifes to:
+where $t[k]$ is the impulse response of the \gls{STF} and $s[k]$ is the impulse response of the \gls{NTF}. Because the \gls{STF} only operates on the input as a pre-filter, we can assume $T(\lambda) = 1$ and \autoref{eq:l1-bound1} simplifes to:
 
 \begin{equation}
 	\left|u[k]\right| \leq |r[k]| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)e[t - i]\right|. \label{eq:l1-bound2}
@@ -458,11 +458,11 @@ With a single-bit quantizer, the output $y$ is quantized to $\{-1, 1\}$ so the q
 	\left|u[k]\right| \leq |r[k]| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)\right|\frac{\Delta_Q}{2} \label{eq:l1-bound3}
 \end{equation}
 
-Taken over all time, the maximum magnitude of each signal is the $\ell_\infty$ norm and the summation over the impulse response of $S(\lambda) - 1$ in Equation \ref{eq:l1-bound3} is its $\ell_1$ norm. Substituting this into \autoref{eq:l1-bound3} and simplifying $\frac{\Delta_Q}{2} = 1$ gives:
+Taken over all time, the maximum magnitude of each signal is the $\ell_\infty$ norm and the summation over the impulse response of $S(\lambda) - 1$ in Equation \ref{eq:l1-bound3} is its $\ell_1$ norm. The $\ell_1$ norm is equivalent to the maximum peak-to-peak gain of the system. Substituting this into \autoref{eq:l1-bound3} and simplifying $\frac{\Delta_Q}{2} = 1$ gives:
 
 \begin{align*}
 	||u||_\infty &\leq ||r||_\infty + ||S(\lambda) - 1||_1 \\
-	&\leq ||r||_\infty + ||S(\lambda)||_1 - 1	
+	&\leq ||r||_\infty + ||S(\lambda)||_1 - 1	.
 \end{align*}
 
 Assuming a worst case quantizer input magnitude of $||u||_\infty = 2$, the expression for $\ell_1$ stability based on maximum input magnitude is shown in Equation \ref{eq:l1-bound5} \cite{Anastassiou1989}.
@@ -482,10 +482,10 @@ Thus, a modulator with a single-bit quantizer is guaranteed to be stable for inp
 Here an important result is mentioned that reduces conservatism in the stability criteria from \autoref{sec:stab-h2} and \autoref{sec:stab-l1} that are derived from a norm constraint on the \gls{NTF}. If $K$ is interpreted not a a time-varying gain that models the quantizer but as a fixed design variable, it is obvious that the value of $K$ has no effect if it precedes the single-bit quantizer. The filter $H_1(\lambda)$ in expression for the \gls{NTF} from \autoref{eq:s} may be substituted by the filter and gain in series, yielding:
 
 \begin{equation}
-	S_K(\lambda) = \frac{1}{1 - KH_1(\lambda)}. \label{eq:scale-invariance}
+	S(K, \lambda) = \frac{1}{1 - KH_1(\lambda)}. \label{eq:scale-invariance}
 \end{equation}
 
-The fictitious gain may be swept in the region $(0, \infty)$ in a nonlinear search to minimize the norm of interest. Because all these \gls{NTF}s are equivalent, the smallest achieved value $\min_K ||S_K(\lambda)||_p$ can be used in place of $||S(\lambda)||_p, p = 1, 2$ as a less conservative stability criterion.
+The fictitious gain may be swept in the region $(0, \infty)$ in a nonlinear search to minimize the norm of interest. Because all these \gls{NTF}s are equivalent, the smallest achieved value $\min_K ||S(K, \lambda)||_p$ can be used in place of $||S(\lambda)||_p$ for $p = 1, 2$ as a less conservative stability criterion.
 
 \section{Stability Concepts Not Used by this Optimization Framework}
 \label{sec:stab-notused}
@@ -506,7 +506,7 @@ It is shown in \cite{Steiner1997} that many modulator topologies can be converte
 The performance goal for the design of sigma delta modulators is simply the attenuation of quantization error in the signal band. In a signals and systems context, this can be made solvable by the minimization of the $\mathcal{H}_\infty$ norm of the noise transfer function within the signal band. In the sigma delta literature, this is sometimes called min-max optmization and has some advantages in contrast to minimization of the power using the $\mathcal{H}_2$ norm \cite{Nagahara2012}. To frame the problem, one must first specify a frequency range of interest. In the \gls{DT} case, this is equal to $\frac{\pi}{OSR}$ and in the \gls{CT} case, this is equal to the actual signal band. Using the \gls{GKYP} expression, the $\mathcal{H}_\infty$ norm of the \gls{NTF} in the signal band is minimized to either below a target value (feasibility problem) or as low as possible (optimization problem), subject to any of the above stability constraints. With reference to the augmented system in \autoref{eq:aug}, the \gls{GKYP} constraint is placed on the $r \rightarrow e$ channel that exposes the sensitivity function:
 
 \begin{equation}
-	\min_{\lambda \in [\omega_l, \omega_h]} ||G_{er}(\lambda)||_\infty \label{eq:perf}
+	\min_{\lambda \in [\omega_l, \omega_h]} ||G_{er}(\lambda)||_\infty \label{eq:perf}.
 \end{equation}
 
 In \gls{DT} designs, the Bode integral (\ref{eq:bodeint-dt}) combined with the performance goal sets the roll-off of the \gls{NTF}. For \gls{CT} designs, the performance goal and any stability constraint does not capture the effect of the quantizer sampling frequency because the \gls{S/H} block was omitted in \autoref{sec:in-ctm}. This leads to designs with very low roll-off. To rectify this and force high roll-off, the constraint in \ref{eq:ct-constraint-stf} is added for \gls{CT} designs. This forces high roll-off by reducing the $\mathcal{H}_\infty$ norm of the complementary sensitivity function (\gls{STF}) just outside the signal band. The appearance of this constraint also shows evidence of the implicit antialiasing feature of \gls{CT} loop filters.
