@@ -19,6 +19,7 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces The choice of PDF for the quantizer input signal places bounds on the squared $\mathcal {H}_2$ norm of the \gls {NTF} for a given MSIA \cite {Risbo1994}.\relax }}{24}{figure.caption.25}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces The block diagram of the error feedback form of a sigma delta modulator.\relax }}{25}{figure.caption.26}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces An example of the dependence of the iterative optimization scheme on initial conditions.\relax }}{42}{figure.caption.27}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

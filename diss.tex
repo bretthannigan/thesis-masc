@@ -187,6 +187,8 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage[electronic]{ifsym}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 % Time and Units
 \usepackage{datetime2}
 \usepackage{siunitx}
@@ -205,6 +207,7 @@
 \usepackage{subcaption}
 \usepackage{fancyhdr}
 \usepackage{ragged2e}
+\usepackage{varwidth}
 % Graphics and Drawing
 \usepackage[dvipsnames]{xcolor}
 \graphicspath{ {img/} }	
@@ -245,8 +248,11 @@
   \array{#1}}
 \makeatother
 
+\newcommand{\var}[1]{{\ttfamily#1}}% variable
+
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\trace}{Tr}
 
 \interfootnotelinepenalty=10000
 

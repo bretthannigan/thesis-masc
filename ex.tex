@@ -4,5 +4,24 @@
 \chapter{Design Examples}
 \label{ch:Examples}
 
-% nelder mead simplex
-% (e.g., using the Nelder-Mead simplex algorithm \cite{Nelder1965})
+The optimization framework developed in \autoref{ch:Optimization} may now be used to produce loop filters using various criteria from \autoref{ch:Stability}. In Sections~\ref{sec:ex-hinf} to \ref{sec:ex-l1}, a 5th-order \gls{DT} modulator with a 32 times \gls{OSR} is designed for \gls{EEG} recording applications with several different stability criteria. This application demands a \gls{LP} design to capture \gls{EEG} signals from the delta band (below \SI{4}{\hertz}) to the gamma band (up to \SI{100}{\hertz}) inclusive. Therefore, the signal will be oversampled at \SI{6.4}{\kilo\hertz} to avoid aliasing. In \autoref{sec:ex-ct}, a 3rd-order \gls{CT} modulator with a 32 times \gls{OSR} is shown to demonstrate the method applied to \gls{CT} designs. This example is intended for audio applications, i.e., \gls{LP} signals with Nyquist frequency \SI{44.1}{\kilo\hertz}.
+
+% Add predictions of performance?
+
+\section{Design Using $\mathcal{H}_\infty$ Stability Criterion}
+\label{sec:ex-hinf}
+
+\section{Design Using Root Locus Stability Criterion}
+\label{sec:ex-rl}
+
+\section{Design Using $\mathcal{H}_2$ Stability Criterion}
+\label{sec:ex-h2}
+
+\section{Design Using $\ell_1$ Stability Criterion}
+\label{sec:ex-l1}
+
+\section{\titlecap{\glsentrylong{CT}} Design}
+\label{sec:ex-ct}
+
+\section{Summary of Design Examples}
+\label{sec:ex-compare}

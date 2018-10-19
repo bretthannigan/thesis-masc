@@ -42,6 +42,18 @@
 \BOOKMARK [1][-]{section.4.2}{4.2 H2 Semidefinite Expression}{chapter.4}% 42
 \BOOKMARK [1][-]{section.4.3}{4.3 1 Semidefinite Expression}{chapter.4}% 43
 \BOOKMARK [1][-]{section.4.4}{4.4 Convexification}{chapter.4}% 44
-\BOOKMARK [0][-]{chapter.5}{5 Design Examples}{}% 45
-\BOOKMARK [0][-]{chapter.6}{6 Conclusions}{}% 46
-\BOOKMARK [0][-]{appendix.A}{A Supporting Materials}{}% 47
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Change of Variables}{section.4.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Sensitivity Shaping}{section.4.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.3}{4.4.3 H2, 1 Optimization}{section.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.4}{4.4.4 Iterative Procedure}{section.4.4}% 48
+\BOOKMARK [0][-]{chapter.5}{5 Design Examples}{}% 49
+\BOOKMARK [1][-]{section.5.1}{5.1 Design Using H Stability Criterion}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.2}{5.2 Design Using Root Locus Stability Criterion}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.3}{5.3 Design Using H2 Stability Criterion}{chapter.5}% 52
+\BOOKMARK [1][-]{section.5.4}{5.4 Design Using 1 Stability Criterion}{chapter.5}% 53
+\BOOKMARK [1][-]{section.5.5}{5.5 continuous-time Design}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.6}{5.6 Summary of Design Examples}{chapter.5}% 55
+\BOOKMARK [0][-]{chapter.6}{6 Conclusions}{}% 56
+\BOOKMARK [0][-]{appendix.A}{A Derivation of Matrix Inequalities with One Convex Term}{}% 57
+\BOOKMARK [1][-]{section.A.1}{A.1 Derivation of GKYP Inequality with Arbitrary D}{appendix.A}% 58
+\BOOKMARK [1][-]{section.A.2}{A.2 Derivation of H2 and 1 Inequalities}{appendix.A}% 59

@@ -598,6 +598,66 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{BMI}{}%
+{%
+\gls@defglossaryentry{BMI}%
+{%
+name={BMI},%
+sort={BMI},%
+type={acronym},%
+first={bilinear matrix inequality\glsspace (BMI)},%
+firstplural={bilinear matrix inequalitys\glsspace (BMIs)},%
+text={BMI},%
+plural={BMIs},%
+description={bilinear matrix inequality},%
+descriptionplural={bilinear matrix inequality\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={bilinear matrix inequality},%
+longplural={bilinear matrix inequalitys},%
+short={BMI},%
+shortplural={BMIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SDP}{}%
+{%
+\gls@defglossaryentry{SDP}%
+{%
+name={SDP},%
+sort={SDP},%
+type={acronym},%
+first={semidefinite program\glsspace (SDP)},%
+firstplural={semidefinite programs\glsspace (SDPs)},%
+text={SDP},%
+plural={SDPs},%
+description={semidefinite program},%
+descriptionplural={semidefinite program\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={semidefinite program},%
+longplural={semidefinite programs},%
+short={SDP},%
+shortplural={SDPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{GKYP}{}%
 {%
 \gls@defglossaryentry{GKYP}%
@@ -838,6 +898,126 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{LP}{}%
+{%
+\gls@defglossaryentry{LP}%
+{%
+name={LP},%
+sort={LP},%
+type={acronym},%
+first={low pass\glsspace (LP)},%
+firstplural={low passs\glsspace (LPs)},%
+text={LP},%
+plural={LPs},%
+description={low pass},%
+descriptionplural={low pass\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={low pass},%
+longplural={low passs},%
+short={LP},%
+shortplural={LPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{BP}{}%
+{%
+\gls@defglossaryentry{BP}%
+{%
+name={BP},%
+sort={BP},%
+type={acronym},%
+first={band pass\glsspace (BP)},%
+firstplural={band passs\glsspace (BPs)},%
+text={BP},%
+plural={BPs},%
+description={band pass},%
+descriptionplural={band pass\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={band pass},%
+longplural={band passs},%
+short={BP},%
+shortplural={BPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{HP}{}%
+{%
+\gls@defglossaryentry{HP}%
+{%
+name={HP},%
+sort={HP},%
+type={acronym},%
+first={high pass\glsspace (HP)},%
+firstplural={high passs\glsspace (HPs)},%
+text={HP},%
+plural={HPs},%
+description={high pass},%
+descriptionplural={high pass\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={high pass},%
+longplural={high passs},%
+short={HP},%
+shortplural={HPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CCF}{}%
+{%
+\gls@defglossaryentry{CCF}%
+{%
+name={CCF},%
+sort={CCF},%
+type={acronym},%
+first={controllable canonical form\glsspace (CCF)},%
+firstplural={controllable canonical forms\glsspace (CCFs)},%
+text={CCF},%
+plural={CCFs},%
+description={controllable canonical form},%
+descriptionplural={controllable canonical form\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={controllable canonical form},%
+longplural={controllable canonical forms},%
+short={CCF},%
+shortplural={CCFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{pq}{}%
 {%
 \gls@defglossaryentry{pq}%
@@ -872,13 +1052,13 @@ parent={},%
 {%
 \gls@defglossaryentry{delta}%
 {%
-name={$\Delta _Q$},%
-sort={$\Delta _Q$},%
+name={$\Delta _QP$},%
+sort={$\Delta _QP$},%
 type={main},%
-first={$\Delta _Q$},%
-firstplural={$\Delta _Q$s},%
-text={$\Delta _Q$},%
-plural={$\Delta _Q$s},%
+first={$\Delta _QP$},%
+firstplural={$\Delta _QP$s},%
+text={$\Delta _QP$},%
+plural={$\Delta _QP$s},%
 description={Quantization step size},%
 descriptionplural={Quantization step size},%
 symbol={\relax },%

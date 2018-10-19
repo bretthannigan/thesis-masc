@@ -316,37 +316,37 @@ The \gls{LMI}s presented in this Chapter are convex in optimization variable $P$
    	\end{array}\right]}_{C_H} && x,
 \end{alignat}
 
-where ${\vec{a} \equiv \begin{bmatrix} a_0 & a_1 & a_2 & \cdots & a_{n-1} \end{bmatrix}^T}$ and ${\vec{b} \equiv \begin{bmatrix} b_0 & b_1 & b_2 & \cdots & b_{n-1} \end{bmatrix}^T}$ are defined for brevity. These vectors are the numerator and denominator coefficients of the loop filter in ascending powers of $\lambda$. Note the important fact that when \autoref{eq:h1-ss} is in \gls{CCF}, sub-systems $G_{er}(\lambda)$, $G_{yr}(\lambda)$, and $G_{zw}(\lambda)$ from \autoref{eq:aug} are in \gls{CCF} as well, possibly after a trivial state-space transformation by $T = \frac{1}{-m_{21}}I_n$ for the latter to ensure that the lower element of $T\mathcal{B}_w$ is unity. In the following, we seek to design $\vec{a}$ and $\vec{b}$ by solving an optimization problem in different variables consisting of one or more of the constraints described in \autoref{ch:Stability}.
+where ${a_H \equiv \begin{bmatrix} a_0 & a_1 & a_2 & \cdots & a_{n-1} \end{bmatrix}^T}$ and ${b_H \equiv \begin{bmatrix} b_0 & b_1 & b_2 & \cdots & b_{n-1} \end{bmatrix}^T}$ are defined for brevity. These vectors are the numerator and denominator coefficients of the loop filter in ascending powers of $\lambda$. Note the important fact that when \autoref{eq:h1-ss} is in \gls{CCF}, sub-systems $G_{er}(\lambda)$, $G_{yr}(\lambda)$, and $G_{zw}(\lambda)$ from \autoref{eq:aug} are in \gls{CCF} as well, possibly after a trivial state-space transformation by $T = \frac{1}{-m_{21}}I_n$ for the latter to ensure that the lower element of $T\mathcal{B}_w$ is unity. In the following, we seek to design $a_H$ and $b_H$ by solving an optimization problem in different variables consisting of one or more of the constraints described in \autoref{ch:Stability}.
 
 \subsection{Change of Variables} \label{sec:opt-cv}
 
-Let ${\vec{a}_S \equiv \vec{a} + m_{22}\vec{b}}$, the negative transpose of the lower row of $\mathcal{A}$. Define ${\vec{b}_S \equiv -m_{22}\vec{b}}$ as one of the following depending on the subsystem $G_{qp}(\lambda)$:
+Let ${a \equiv a_H + m_{22}b_H}$, the negative transpose of the lower row of $\mathcal{A}$. Define ${b \equiv -m_{22}b_H}$ as one of the following depending on the subsystem $G_{qp}(\lambda)$:
 
 \begin{equation}
-	\vec{b}_S =
+	b =
 	\begin{cases}
-		-m_{22}\vec{b} & G_{qp}(\lambda) = G_{er}(\lambda) \\
-		m_{12}\vec{b} & G_{qp}(\lambda) = G_{zw}(\lambda) \\
-		m_{22}\vec{b} & G_{qp}(\lambda) = G_{yr}(\lambda) \\
-		\vec{b} & G_{qp}(\lambda) = G_{ur}(\lambda) \\
+		-m_{22}b_H & G_{qp}(\lambda) = G_{er}(\lambda) \\
+		m_{12}b_H & G_{qp}(\lambda) = G_{zw}(\lambda) \\
+		m_{22}b_H & G_{qp}(\lambda) = G_{yr}(\lambda) \\
+		b_H & G_{qp}(\lambda) = G_{ur}(\lambda) \\
 	\end{cases} \label{eq:bs}
 \end{equation}
 
-The vectors $\vec{a}_S$ and $\vec{b}_S$ are the denominator and numerator coefficients, respectively, of the closed-loop transfer function in descending powers of $\lambda$. The semidefinite program is redefined in terms of these variables to simplify nomenclature. The implementation concern of deriving $\vec{a}_S$, $\vec{b}_S$ from the closed-loop state-space matrices of \autoref{eq:aug-ss} is given in Theorem~\ref{thm:ab-from-ss}.
+The vectors $a$ and $b$ are the denominator and numerator coefficients, respectively, of the closed-loop transfer function in descending powers of $\lambda$. The semidefinite program is redefined in terms of these variables to simplify nomenclature. The implementation concern of deriving $a$, $b$ from the closed-loop state-space matrices of \autoref{eq:aug-ss} is given in Theorem~\ref{thm:ab-from-ss}.
 
 \begin{thm} \label{thm:ab-from-ss}
-	Given state-space matrices $\mathcal{A} \in \mathbb{R}^{n \times n}$, $\mathcal{B}_p \in \mathbb{R}^{n \times 1}$, $\mathcal{C}_q \in \mathbb{R}^{1 \times n}$, $\mathcal{D}_{qp} \in \mathbb{R}^{1 \times 1}$ of system $G_{qp}(\lambda)$, a subsystem of \autoref{eq:aug-ss}, it is assumed that there exists a transformation matrix $T$ that places $G_{qp}(\lambda)$ into \gls{CCF}. The vectors $\vec{b}_S$ and $\vec{a}_S$ are equal to:
+	Given state-space matrices $\mathcal{A} \in \mathbb{R}^{n \times n}$, $\mathcal{B}_p \in \mathbb{R}^{n \times 1}$, $\mathcal{C}_q \in \mathbb{R}^{1 \times n}$, $\mathcal{D}_{qp} \in \mathbb{R}^{1 \times 1}$ of system $G_{qp}(\lambda)$, a subsystem of \autoref{eq:aug-ss}, it is assumed that there exists a transformation matrix $T$ that places $G_{qp}(\lambda)$ into \gls{CCF}. The vectors $b$ and $a$ are equal to:
 	
 	\begin{align}
-		\vec{a}_S &= -T^{-T}\mathcal{A}^TT^TT\mathcal{B}_p \label{eq:as-p-1} \\
-		\vec{b}_S &= T^{-T}\mathcal{C}_q^T \label{eq:as-p-2}
+		a &= -T^{-T}\mathcal{A}^TT^TT\mathcal{B}_p \label{eq:as-p-1} \\
+		b &= T^{-T}\mathcal{C}_q^T \label{eq:as-p-2}
 	\end{align}
 \end{thm}
 
 \begin{proof}
-	For (\ref{eq:as-p-1}), because \gls{CCF} is assumed, ${T\mathcal{B}_p = \begin{bmatrix} 0_{1 \times n-1} & 1 \end{bmatrix}^T}$ extracts the negative transpose of the bottom row of the transformed $\mathcal{A}$, which is equal to the definition $\vec{a}_S \equiv \vec{a} + m_{22}\vec{b}$ by \autoref{eq:ccf-1} and \autoref{eq:aug-ss}.
+	For (\ref{eq:as-p-1}), because \gls{CCF} is assumed, ${T\mathcal{B}_p = \begin{bmatrix} 0_{1 \times n-1} & 1 \end{bmatrix}^T}$ extracts the negative transpose of the bottom row of the transformed $\mathcal{A}$, which is equal to the definition $a \equiv a_H + m_{22}b_H$ by \autoref{eq:ccf-1} and \autoref{eq:aug-ss}.
 	
-	\autoref{eq:as-p-2} is simply the transformed $\mathcal{C}_q$ which is different for each subsystem. Since the transformation $T$ ensures the subsystems are in \gls{CCF}, $C_H$ may be replaced by $\vec{b}$ in the expression for $\mathcal{C}_q$ from \autoref{eq:aug}, obtaining the cases from \autoref{eq:bs}.
+	\autoref{eq:as-p-2} is simply the transformed $\mathcal{C}_q$ which is different for each subsystem. Since the transformation $T$ ensures the subsystems are in \gls{CCF}, $C_H$ may be replaced by $b_H$ in the expression for $\mathcal{C}_q$ from \autoref{eq:aug}, obtaining the cases from \autoref{eq:bs}.
 \end{proof}
 
 \subsection{Sensitivity Shaping}
@@ -356,12 +356,12 @@ Addressing the performance goal in \autoref{sec:stab-perf}, the authors of \cite
 
 \begin{equation} \label{eq:cv-1}
 	\begin{bmatrix}
-		I & \vec{a}_S \\
+		I & a \\
 		0 & 1
 	\end{bmatrix}
 \end{equation}
 
-on the left and its transpose on the right eliminates any products between $\vec{a}_S$, $\vec{b}_S$ and $P$, $Q$, restoring linearity in the first summation term. This leaves only products between $\vec{a}_S$ and $\vec{b}_S$ in the second term of \autoref{eq:lmiinf}. Simplifying and using a Schur complement results in only one non-convex term, that is $\vec{a_s}\vec{a_s}^T$ in the upper-left block. The procedure in \cite{Li2014} is only applicable to shaping the sensitivity function $G_{er}(\lambda)$ because it assumes $\mathcal{D} = 1$. A full derivation that is valid for any $\mathcal{D}$, such as that encountered when solving \autoref{eq:rl}, is produced in Appendix~\ref{sec:apd-a-1}.
+on the left and its transpose on the right eliminates any products between $a$, $b$ and $P$, $Q$, restoring linearity in the first summation term. This leaves only products between $a$ and $b$ in the second term of \autoref{eq:lmiinf}. Simplifying and using a Schur complement results in only one non-convex term, that is $aa^T$ in the upper-left block. The procedure in \cite{Li2014} is only applicable to shaping the sensitivity function $G_{er}(\lambda)$ because it assumes $\mathcal{D} = 1$. A full derivation that is valid for any $\mathcal{D}$, such as that encountered when solving \autoref{eq:rl}, is produced in Appendix~\ref{sec:apd-a-1}.
 % Add to appx
 
 \subsection{$\mathcal{H}_2$, $\ell_1$ Optimization}
@@ -371,7 +371,7 @@ The congruent transformation procedure from Section~\ref{sec:opt-ss} does not de
 
 \begin{equation} \label{eq:cv-3}
 	\begin{bmatrix}
-		I & \vec{a}_S \\
+		I & a \\
 		0 & 1
 	\end{bmatrix}
 	\begin{bmatrix}
@@ -379,18 +379,100 @@ The congruent transformation procedure from Section~\ref{sec:opt-ss} does not de
 		0 & 1
 	\end{bmatrix}
 	\begin{bmatrix}
-		I & \vec{a}_S \\
+		I & a \\
 		0 & 1
 	\end{bmatrix}^T
 	= 
 	\begin{bmatrix}
-		\vec{a}_S\vec{a}_S^T & \vec{a}_S \\
-		\vec{a}_S^T & 1
+		aa^T & a \\
+		a^T & 1
 	\end{bmatrix}
 \end{equation}
 
-It is seen that, like \autoref{eq:lmiinf}, the other semidefinite programs can undergo a change of variables to have the same, single nonlinear term $\vec{a}_S\vec{a}_S^T$. The full expression is given in Appendix~\ref{sec:apd-a-2}.
+It is seen that, like \autoref{eq:lmiinf}, the other semidefinite programs can undergo a change of variables to have the same, single nonlinear term $aa^T$. The full expression is given in Appendix~\ref{sec:apd-a-2}.
 
 \subsection{Iterative Procedure}
 
-The non-convex inequalities have now been converted into a form where one quadratic term exists. The solving of a quadratically constrained \gls{LMI} is a difficult problem. Several methods of solving (\ref{eq:lmiinf-equiv}) and (\ref{eq:lmi2-lmi1-equiv}) were attempted but had poor results. These included using a general non-convex solver directly, using a rank-constrainted LMI solver, and using Shor's relaxation to linearize the problem. Instead, we use the iterative method from \cite{Shishkin2017} which, for problems with simple non-convexities, appears to be similar to the method used in \cite{Li2014} except with an extra parameter to guarantee finite convergence. The iterative LMI problems generated with this method were solved numerically using the YALMIP Toolbox for MATLAB \cite{Lofberg2004} with the LMILAB solver \cite{Gahinet1995}. Curiously, other solvers seem to converge on inferior solutions and often encounter numerical problems.
+The non-convex inequalities have now been converted into a form where one quadratic term exists. The solving of a quadratically constrained \gls{LMI} is a difficult problem. Several methods of solving \autoref{eq:lmiinf-equiv} and \autoref{eq:lmi2-lmi1-equiv} were attempted but had poor results. These included using a general non-convex solver directly, using a rank-constrainted LMI solver, and using Shor's relaxation to linearize the problem. Instead, we use the iterative method from \cite{Shishkin2017} which, for problems with simple non-convexities, appears to be similar to the method used in \cite{Li2014} except with an extra parameter to guarantee finite convergence. 
+
+In short, the iterative method proceeds following Algorithm~\ref{alg:iter}, where the quadratic term is separated from the rest of the \gls{LMI} by splitting the optimization problem into the form:
+
+\begin{equation} \label{eq:opt-prb}
+	\begin{gathered}
+		\min f(\lambda) \mathrm{ s.t.} \\
+		C_i(a, \lambda, \cdot) + Q(a) \geq 0 \quad \forall i \\	
+	\end{gathered}
+\end{equation}
+
+where $f(\gamma)$ is the objective function, $C_i(a, \gamma, \cdot)$ is the $i$th convex \gls{LMI} constraint, and $Q(a)=\begin{bmatrix} aa^T & 0 \\ 0 & 0 \end{bmatrix}$ is the quadratic part involving $a$. A maximum number of iterations \var{maxIter} is defined, as well as termination crtieria $\epsilon$ and an optional weight $\kappa$ to penalize wandering in the neighbourhood of a solution.
+
+\begin{algorithm}
+	\caption{Iterative convexification} \label{alg:iter}
+	\begin{algorithmic}[1]
+		\Procedure{QmiSolve}{$a_{init}$}
+			\State $a_f = \Call{CheckFeas}{a_{init}}$
+			\State $(a, b, \gamma) = \Call{CvxIter}{a_f}$
+			\State \Return $a, b, \gamma$
+		\EndProcedure
+		\Function{CheckFeas}{$a_{in}$}
+			\State \begin{varwidth}[t]{\linewidth}
+				given starting value $a_{in}$, find feasible $a$ s.t.:\par
+				\hskip \algorithmicindent $C_i(a + a_{in}, \gamma, \cdot) + Q(a + a_{in}) - Q(a) \ \forall i$
+				\end{varwidth} \Comment{Convex feas. problem}
+			\State $a_{out} \gets a +a_{in}$
+			\State \Return $a_{out}$
+		\EndFunction
+		\Function{CvxIter}{$a_{in}$}
+			\State $k \gets 0$
+			\State $a^{(0)} \gets a_{in}$
+			\While{$k < $\var{maxIter} and $\Delta_a > \epsilon$}
+				\State \begin{varwidth}[t]{\linewidth}
+					solve: \par
+					\hskip \algorithmicindent $\min f(\gamma) + \kappa||a||_2^2$ s.t. \par
+					\hskip \algorithmicindent $C_i(a +  a^{(k)}, \gamma, \cdot) + Q(a + a^{(k)}) - Q(a) \ \forall i$ 
+				\end{varwidth} \Comment{Convex opt. problem}
+				\State $k \gets k + 1$
+				\State $a^{(k)} \gets a^{(k-1)} + a$
+				\State $\Delta_a \gets ||a^{(k)} - a^{(k-1)}||_2$
+			\EndWhile
+			\State \Return $a^{(k)}, b, \gamma$
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+The iterative LMI problems generated with this method were solved numerically using the YALMIP Toolbox for MATLAB \cite{Lofberg2004} with the LMILAB solver \cite{Gahinet1995} wrapped by the Nelder-Mead simplex algorithm to solve the $\ell_1$ \gls{BMI} (if applicable) \cite{Nelder1965}. Curiously, other \gls{SDP} solvers seem to converge on inferior solutions and often encounter numerical problems. Parameters $\kappa$ and $\epsilon$ were tuned as necessary by observing the convergence of $a$ by iteration.
+
+Algorithm~\ref{alg:iter} requires an feasible intialization in the form of a loop filter transfer function. In many cases, passing a simple transfer function such as:
+
+\begin{equation*}
+	H_1(z) = \frac{z^{n-1}}{z^{n}}
+\end{equation*}
+
+for the \gls{DT} case, or:
+
+\begin{equation*}
+	H_1(s) = \frac{(s + 1)^{n-1}}{(s + 1)^n}
+\end{equation*}
+
+for the \gls{CT} case results in convergence. For more difficult cases with higher order or more aggressive \gls{OSR}, it may be necessary to use a more appropriate starting point such as the poles and zeros chosen from a specific region by the authors of \cite[Fig. 2]{Li2014} or a \gls{LF} derived from the \var{synthesizeNTF} function in the Delta Sigma Toolbox \cite[Appx. B]{Schreier1997}. A third option explored is using the Shor convex relaxation \cite{Boyd1997} to find an approximate convex starting point. This involves solving the optimization problem derived from that in \autoref{eq:opt-prb} but with an additional matrix variable and positive semidefinite constraint to try to force $\mathring{A} = aa^T$:
+
+\begin{equation*}
+	\begin{gathered}
+		\min \trace\{W\} \mathrm{ s.t.} \\
+		C_i(a, \lambda, \cdot) \geq 0 \quad \forall i \\
+		W = 
+		\begin{bmatrix}
+			\mathring{A} & a \\
+			a^T & 1
+		\end{bmatrix} \geq 0 \\
+		\mathring{A} = \mathring{A}^T.
+	\end{gathered}
+\end{equation*}
+
+\autoref{fig:opt-convergence} shows the an example of the achieved \gls{GKYP} $\mathcal{H}_\infty$ norm in the sensitivity function signal band after 500 iterations of  \textproc{CvxIter} from Algorithm~\ref{alg:iter} with initial condition poles randomly placed in the unit circle. It can be seen that the performance objective is minimized in ``stages'' corresponding to a pole-zero pair being optimized, increasing the apparent order of the system. If the algorithm terminates at a sub-optimal level, there often exists a pole-zero cancellation in the loop filter.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=3.5in]{opt-convergence}
+	\caption{An example of the dependence of the iterative optimization scheme on initial conditions.} \label{fig:opt-convergence}
+\end{figure}

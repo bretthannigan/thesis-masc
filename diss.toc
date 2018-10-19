@@ -39,9 +39,21 @@
 \contentsline {section}{\numberline {4.1}GKYP Lemma}{30}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}$\mathcal {H}_\infty $ Minimization Across All Frequencies}{32}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Positive Real Constraints}{32}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}$\mathcal {H}_2$ Semidefinite Expression}{32}{section.4.2}
-\contentsline {section}{\numberline {4.3}$\ell _1$ Semidefinite Expression}{32}{section.4.3}
-\contentsline {section}{\numberline {4.4}Convexification}{32}{section.4.4}
-\contentsline {chapter}{\numberline {5}Design Examples}{33}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusions}{34}{chapter.6}
-\contentsline {chapter}{\numberline {A}Supporting Materials}{35}{appendix.A}
+\contentsline {section}{\numberline {4.2}$\mathcal {H}_2$ Semidefinite Expression}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}$\ell _1$ Semidefinite Expression}{35}{section.4.3}
+\contentsline {section}{\numberline {4.4}Convexification}{36}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Change of Variables}{37}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Sensitivity Shaping}{38}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}$\mathcal {H}_2$, $\ell _1$ Optimization}{39}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Iterative Procedure}{39}{subsection.4.4.4}
+\contentsline {chapter}{\numberline {5}Design Examples}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}Design Using $\mathcal {H}_\infty $ Stability Criterion}{43}{section.5.1}
+\contentsline {section}{\numberline {5.2}Design Using Root Locus Stability Criterion}{43}{section.5.2}
+\contentsline {section}{\numberline {5.3}Design Using $\mathcal {H}_2$ Stability Criterion}{43}{section.5.3}
+\contentsline {section}{\numberline {5.4}Design Using $\ell _1$ Stability Criterion}{43}{section.5.4}
+\contentsline {section}{\numberline {5.5}\titlecap {continuous-time} Design}{43}{section.5.5}
+\contentsline {section}{\numberline {5.6}Summary of Design Examples}{43}{section.5.6}
+\contentsline {chapter}{\numberline {6}Conclusions}{44}{chapter.6}
+\contentsline {chapter}{\numberline {A}Derivation of Matrix Inequalities with One Convex Term}{45}{appendix.A}
+\contentsline {section}{\numberline {A.1}Derivation of GKYP Inequality with Arbitrary $\mathcal {D}$}{45}{section.A.1}
+\contentsline {section}{\numberline {A.2}Derivation of $\mathcal {H}_2$ and $\ell _1$ Inequalities}{45}{section.A.2}
