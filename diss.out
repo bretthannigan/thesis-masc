@@ -4,9 +4,9 @@
 \BOOKMARK [0][-]{chapter*.4}{Table of Contents}{}% 4
 \BOOKMARK [0][-]{chapter*.5}{List of Tables}{}% 5
 \BOOKMARK [0][-]{chapter*.6}{List of Figures}{}% 6
-\BOOKMARK [0][-]{section*.7}{List of Symbols}{}% 7
-\BOOKMARK [0][-]{section*.9}{Glossary}{}% 8
-\BOOKMARK [0][-]{chapter*.11}{Acknowledgments}{}% 9
+\BOOKMARK [0][-]{chapter*.7}{ List of Symbols}{}% 7
+\BOOKMARK [0][-]{chapter*.8}{ Glossary}{}% 8
+\BOOKMARK [0][-]{chapter*.9}{Acknowledgments}{}% 9
 \BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 10
 \BOOKMARK [1][-]{section.1.1}{1.1 Oversampling and Noise Shaping}{chapter.1}% 11
 \BOOKMARK [1][-]{section.1.2}{1.2 Basic Structure}{chapter.1}% 12
@@ -54,6 +54,6 @@
 \BOOKMARK [1][-]{section.5.5}{5.5 continuous-time Design}{chapter.5}% 54
 \BOOKMARK [1][-]{section.5.6}{5.6 Summary of Design Examples}{chapter.5}% 55
 \BOOKMARK [0][-]{chapter.6}{6 Conclusions}{}% 56
-\BOOKMARK [0][-]{appendix.A}{A Derivation of Matrix Inequalities with One Convex Term}{}% 57
+\BOOKMARK [0][-]{appendix.A}{A Derivation of Matrix Inequalities with One Quadratic Term}{}% 57
 \BOOKMARK [1][-]{section.A.1}{A.1 Derivation of GKYP Inequality with Arbitrary D}{appendix.A}% 58
 \BOOKMARK [1][-]{section.A.2}{A.2 Derivation of H2 and 1 Inequalities}{appendix.A}% 59

@@ -33,7 +33,7 @@
 \documentclass[gpscopy,onehalfspacing,11pt]{ubcdiss/ubcdiss}
 
 % For your own copies (looks nicer)
-% \documentclass[balanced,twoside,11pt]{ubcdiss}
+% \documentclass[balanced,twoside,openany,11pt]{ubcdiss/ubcdiss}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -215,6 +215,7 @@
 \usetikzlibrary{arrows, positioning, dsp, chains, fit, calc, matrix}
 \usepackage[american]{circuitikz}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.3}
 \usepgfplotslibrary{fillbetween}
 \pgfdeclarelayer{bg}    % declare background layer
 \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
@@ -255,6 +256,15 @@
 \DeclareMathOperator{\trace}{Tr}
 
 \interfootnotelinepenalty=10000
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14.5pt}
+\makeatletter
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\@chapapp\ \thechapter.\ #1}}{}}
+\makeatother
+\fancyhead[CE,CO]{\slshape \leftmark}
+\fancyfoot[CE,CO]{\thepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -452,6 +462,9 @@
 %    if applicable, the examining committee
 \makecommitteepage
 
+\pagestyle{fancy}
+
+
 %    3. Abstract (mandatory - maximum 350 words)
 \include{abstract}
 \cleardoublepage
@@ -497,6 +510,7 @@
 \glsresetall	% reset all acronyms used so far
 
 %    1. Introduction
+
 \include{intro}
 
 %    2. Main body
@@ -523,6 +537,7 @@
 %\bibliography{/Users/brett/Documents/Mendeley_Desktop/BibTeX/library} % OS X
 \end{singlespace}
 
+%\renewcommand\chaptername{Appendix}
 \appendix
 %    6. Appendices (including copies of all required UBC Research
 %       Ethics Board's Certificates of Approval)

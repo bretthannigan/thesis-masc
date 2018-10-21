@@ -1,15 +1,304 @@
 %% The following is a directive for TeXShop to indicate the main file
 %%!TEX root = diss.tex
 
-\chapter{Derivation of Matrix Inequalities with One Convex Term}
+\chapter{Derivation of Matrix Inequalities with One Quadratic Term}
 \label{sec:apd-a}
 
 \section{Derivation of \glsentryshort{GKYP} Inequality with Arbitrary $\mathcal{D}$}
 \label{sec:apd-a-1}
 
-Ttest1
+\begin{thm}
+	Equation~\ref{eq:lmiinf} from \autoref{sec:opt-gkyp} is equivalent to the following:
+	
+	\begin{equation} \label{eq:lmiinf-equiv}
+		\begin{bmatrix}
+			-\Xi_{11} + aa^T & -\Xi_{12} + a & -\mathcal{C}_q^T - a\mathcal{D}_{qp}^T \\
+			-\Xi_{12}^T + a^T & -\Xi_{22} + 1 & -\mathcal{D}_{qp}^T \\
+			-\mathcal{C}_q - a^T\mathcal{D}_{qp} & -\mathcal{D}_{qp} & \gamma_\infty
+		\end{bmatrix} \geq 0
+	\end{equation}
+	
+	where (\ref{eq:lmiinf-equiv}) contains just one nonlinear term in variable $a$, and:
+	
+	\begin{equation*}
+		\begin{bmatrix}
+			\Xi_{11} & \Xi_{12} \\
+			\Xi_{12}^T & \Xi_{22}
+		\end{bmatrix} =
+		\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			\mathcal{A} & \mathcal{B}_p \\
+			I & 0
+		\end{bmatrix}^T
+		\left(\Phi \oplus P_\gamma + \Psi \oplus Q_\gamma\right)
+		\begin{bmatrix}
+			\mathcal{A} & \mathcal{B}_p \\
+			I & 0
+		\end{bmatrix} 
+		\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}^T
+	\end{equation*}
+	\begin{align} \label{eq:pq}
+		P_\gamma = \gamma_\infty^{-1}P && Q_\gamma = \gamma_\infty^{-1}Q.
+	\end{align}
+\end{thm}
+
+\begin{proof}
+	Starting from \autoref{eq:lmiinf}, the procedure mentioned in \autoref{sec:opt-ss} is followed to eliminate non-convex products in the first term of the \gls{LMI} \cite[Th. 1]{Li2014}:
+
+	\begin{equation} \label{eq:a-1}
+		-\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			\mathcal{A} & \mathcal{B}_p \\
+			I & 0
+		\end{bmatrix}^T
+		f\left(\Phi, \Psi, P, Q\right)
+		\begin{bmatrix}
+			\mathcal{A} & \mathcal{B}_p \\
+			I & 0
+		\end{bmatrix} 
+		\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}^T +
+		\ldots 
+%		-\begin{bmatrix}
+%			I & \vec{a}_S \\
+%			0 & 1
+%		\end{bmatrix}
+%		\begin{bmatrix}
+%			\mathcal{C}_y & \mathcal{D}_{yx} \\
+%			0 & I
+%		\end{bmatrix}^T
+%		\begin{bmatrix}
+%			1 & 0 \\
+%			0 & -\gamma_\infty
+%		\end{bmatrix}
+%		\begin{bmatrix}
+%			\mathcal{C}_y & \mathcal{D}_{yx} \\
+%			0 & I
+%		\end{bmatrix}
+%		\begin{bmatrix} 
+%			I & \vec{a}_S \\
+%			0 & 1
+%		\end{bmatrix}^T 
+		\geq 0.
+	\end{equation}
+
+	Let the notation $\Xi_{ij}$ be used for the linear part:
+	
+	\begin{equation} \label{eq:a-2}
+		-\begin{bmatrix}
+			\Xi_{11} & \Xi_{12} \\
+			\Xi_{12}^T & \Xi_{22}
+		\end{bmatrix} + \ldots
+%		\\
+%		-\begin{bmatrix}
+%			I & \vec{a}_S \\
+%			0 & 1
+%		\end{bmatrix}
+%		\begin{bmatrix}
+%			\mathcal{C}_y & \mathcal{D}_{yx} \\
+%			0 & I
+%		\end{bmatrix}^T
+%		\begin{bmatrix}
+%			1 & 0 \\
+%			0 & -\gamma_\infty
+%		\end{bmatrix}
+%		\begin{bmatrix}
+%			\mathcal{C}_y & \mathcal{D}_{yx} \\
+%			0 & I
+%		\end{bmatrix}
+%		\begin{bmatrix} 
+%			I & \vec{a}_S \\
+%			0 & 1
+%		\end{bmatrix}^T
+		\geq 0.
+	\end{equation}
+
+	\autoref{eq:a-2} may undergo a congruent transformation by $\gamma_\infty^{-\frac{1}{2}}I$ introducing a commutable factor of $\gamma_\infty^{-1}$ to every element. For the first summation term, the factor is absorbed into $Q$ and $P$ with the redefinition from \autoref{eq:pq} yielding:
+
+	\begin{equation} \label{eq:a-3}
+		-\begin{bmatrix}
+			\Xi_{11} & \Xi_{12} \\
+			\Xi_{12}^T & \Xi_{22}
+		\end{bmatrix} - 
+		\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			\mathcal{C}_q & \mathcal{D}_{qp} \\
+			0 & I
+		\end{bmatrix}^T
+		\begin{bmatrix}
+			\gamma_\infty^{-1} & 0 \\
+			0 & -1
+		\end{bmatrix}
+		\begin{bmatrix}
+			\mathcal{C}_y & \mathcal{D}_{qp} \\
+			0 & I
+		\end{bmatrix}
+		\begin{bmatrix} 
+			I & a \\
+			0 & 1
+		\end{bmatrix}^T
+		\geq 0.
+	\end{equation}
+
+	Multiplying the inner factors in the second term of \autoref{eq:a-3} leads to:
+	
+	\begin{equation*}
+		-\begin{bmatrix}
+			\Xi_{11} & \Xi_{12} \\
+			\Xi_{12}^T & \Xi_{22}
+		\end{bmatrix}^T -
+		\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			\gamma_\infty^{-1}\mathcal{C}_q^T\mathcal{C}_q & \gamma_\infty^{-1}\mathcal{C}_q^T\mathcal{D}_{qp} \\
+			\gamma_\infty^{-1}\mathcal{D}_{qp}^T\mathcal{C}_q & \gamma_\infty^{-1}\mathcal{D}_{qp}^T\mathcal{D}_{qp} - 1
+		\end{bmatrix}
+		\begin{bmatrix} 
+			I & a \\
+			0 & 1
+		\end{bmatrix}^T
+		\geq 0
+	\end{equation*}
+
+	which can be expanded into:
+	
+	\begin{multline} \label{eq:a-5}
+		-\begin{bmatrix}
+			\Xi_{11} & \Xi_{12} \\
+			\Xi_{12}^T & \Xi_{22}
+		\end{bmatrix} -
+		\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			I & a\mathcal{D}_{qp}^T \\
+			0 & \mathcal{D}_{qp}^T
+		\end{bmatrix}
+		\begin{bmatrix}
+			\mathcal{C}_q^T \\
+			1
+		\end{bmatrix}
+		\gamma_\infty^{-1}
+		\begin{bmatrix}
+			\mathcal{C}_q^T \\
+			1
+		\end{bmatrix}^T
+		\begin{bmatrix}
+			I & a\mathcal{D}_{qp}^T \\
+			0 & \mathcal{D}_{qp}^T
+		\end{bmatrix}^T
+		\begin{bmatrix} 
+			I & a \\
+			0 & 1
+		\end{bmatrix}^T + \\
+		+\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			0 & 0 \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix} 
+			I & a \\
+			0 & 1
+		\end{bmatrix}^T
+		\geq 0.
+	\end{multline}
+	
+	The 3 outer factors multiplied with $\gamma_\infty^{-1}$ in the middle term of \autoref{eq:a-5} are then combined together and the last summation term is also multiplied through, resulting in the following:
+	
+	\begin{equation} \label{eq:a-6}
+		-\begin{bmatrix}
+			\Xi_{11} & \Xi_{12} \\
+			\Xi_{12}^T & \Xi_{22}
+		\end{bmatrix}
+		-\begin{bmatrix}
+			\mathcal{C}_q^T + a\mathcal{D}_{qp}^T \\
+			\mathcal{D}_{qp}^T
+		\end{bmatrix}
+		\gamma_\infty^{-1}
+		\begin{bmatrix}
+			\mathcal{C}_q^T + a\mathcal{D}_{qp}^T \\
+			\mathcal{D}_{qp}^T
+		\end{bmatrix}^T +
+		\begin{bmatrix}
+			aa^T & a \\
+			a^T & 1
+		\end{bmatrix}
+		\geq 0.
+	\end{equation}
+	
+	The last summation term of \autoref{eq:a-6} is then added with the linear part $\Xi$. Because $\gamma_\infty > 0 \leftrightarrow \gamma_\infty^{-1} > 0$, a Schur complement taken around $\gamma_\infty$ allows \autoref{eq:a-6} to be written as the single matrix inequality shown in \autoref{eq:lmiinf-equiv}.
+
+\end{proof}
 
 \section{Derivation of $\mathcal{H}_2$ and $\ell_1$ Inequalities}
 \label{sec:apd-a-2}
 
-etstesta 
+\begin{thm}
+	\autoref{eq:lmi2-1} from \autoref{sec:opt-h2} and \autoref{eq:lmi1-1} from \autoref{sec:opt-l1} are equivalent to the following:
+	
+	\begin{equation} \label{eq:lmi2-lmi1-equiv}
+		\begin{bmatrix}
+			-\Xi_{11} + aa^T & -\Xi_{12} + a \\
+			-\Xi_{12}^T + a^T & -\Xi_{22} + 1
+		\end{bmatrix} \geq 0,
+	\end{equation}
+	
+	where \autoref{eq:lmi2-lmi1-equiv} contains just one nonlinear term in variable $a$, and:
+
+	\begin{equation*}
+		\begin{bmatrix}
+			\Xi_{11} & \Xi_{12} \\
+			\Xi_{12}^T & \Xi_{22}
+		\end{bmatrix} =
+		\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			\mathcal{A} & \mathcal{B}_p \\
+			I & 0
+		\end{bmatrix}^T
+		f\left(\Phi, P_\gamma, \alpha\right)
+		\begin{bmatrix}
+			\mathcal{A} & \mathcal{B}_p \\
+			I & 0
+		\end{bmatrix} 
+		\begin{bmatrix}
+			I & a \\
+			0 & 1
+		\end{bmatrix}^T
+	\end{equation*}
+
+	\begin{gather} \label{eq:pq}
+		f\left(\Phi, P_\gamma, \alpha\right) = 
+		\begin{cases}
+			\Phi \oplus P_\gamma & \textrm{for the $\mathcal{H}_2$ case} \\
+			\left(\Phi + \begin{bmatrix} 0 & 0 \\ 0 & \alpha \end{bmatrix}\right) \oplus P_\gamma & \textrm{for the $\ell_1$ case}
+		\end{cases} \\
+		P_\gamma = \gamma_\infty^{-1}P.
+	\end{gather}
+\end{thm}
+
+\begin{proof}
+	Starting from either \autoref{eq:lmi2-1} or \autoref{eq:lmi1-1}, the procedure mentioned in \autoref{sec:opt-h2l1} is followed to eliminate non-convex products in the first term of the \gls{LMI} independent of $f\left(\Phi, P_\gamma, \alpha\right)$. The second summation term is the same in both \gls{LMI}s and simplifies to \autoref{eq:cv-3}. Combining these, the matrix inequality from \autoref{eq:lmi2-lmi1-equiv} is produced.
+\end{proof}

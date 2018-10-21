@@ -193,7 +193,7 @@ The $\mathcal{H}_2$ norm used in the stability constraint from \autoref{sec:stab
 	\begin{align}
 		\begin{bmatrix}
 			-\mathcal{A}^TP\mathcal{A} + P & -\mathcal{A}^TP\mathcal{B}_p \\
-			-\mathcal{B}_x^TP\mathcal{A} & -\mathcal{B}_x^TP\mathcal{B}_p + 1
+			-\mathcal{B}_p^TP\mathcal{A} & -\mathcal{B}_p^TP\mathcal{B}_p + 1
 		\end{bmatrix} &\geq 0 \\
 		\shortintertext{which can be manipulated into the form:}
 		\begin{bmatrix}
@@ -220,9 +220,9 @@ The $\mathcal{H}_2$ norm used in the stability constraint from \autoref{sec:stab
 	
 	\begin{equation*}
 		\begin{bmatrix}
-			P & P\mathcal{A} & P\mathcal{B}_x \\
+			P & P\mathcal{A} & P\mathcal{B}_p \\
 			\mathcal{A}^TP & P & 0 \\
-			\mathcal{B}_xP & 0 & 1
+			\mathcal{B}_pP & 0 & 1
 		\end{bmatrix}.
 	\end{equation*}
 \end{proof}
@@ -252,8 +252,8 @@ The computation of the $\ell_1$ norm is not generally possible in a semidefinite
 			\begin{bmatrix}
 				\mathcal{A} & \mathcal{B}_p \\
 				I & 0
-			\end{bmatrix} + \\
-			+\begin{bmatrix}
+			\end{bmatrix} +
+			\begin{bmatrix}
 				\mathbf{0} & 0 \\
 				0 & 1
 			\end{bmatrix} &\geq 0 \label{eq:lmi1-1}
@@ -473,6 +473,6 @@ for the \gls{CT} case results in convergence. For more difficult cases with high
 
 \begin{figure}
 	\centering
-	\includegraphics[width=3.5in]{opt-convergence}
+	\includegraphics[width=3.45in]{opt-convergence}
 	\caption{An example of the dependence of the iterative optimization scheme on initial conditions.} \label{fig:opt-convergence}
 \end{figure}
