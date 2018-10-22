@@ -385,7 +385,7 @@ To employ this stability criterion, the $\mathcal{H}_2$ norm of the sensitivity 
  \subsection{$\ell_1$ Stability Criterion}
  \label{sec:stab-l1}
  
-The $\ell_1$ stability criterion (also known as the Anastassiou's stability criterion) is best understood when the modulator is transformed into the equivalent error feedback structure shown in \autoref{fig:ef-model}. This form is primarily of theoretical importance because its implementation is extremely sensitive to filter coefficient values in the feedback path \cite{Schreier1997}. The advantage for analysis is that the \gls{NTF} and \gls{STF} are shown in independent blocks. We can use this structure to define the $\ell_1$ norm stability criterion by writing the equations for signals $u$ and $y$ as follows:
+The $\ell_1$ stability criterion (also known as the Anastassiou's stability criterion) is best understood when the modulator is transformed into the equivalent error feedback structure shown in \autoref{fig:ef-model}. This form is primarily of theoretical importance because its implementation is extremely sensitive to filter coefficient values in the feedback path \cite{Schreier1997}. The advantage for analysis is that the \gls{NTF} and \gls{STF} are shown in independent blocks. This structure is used to define the $\ell_1$ norm stability criterion by writing the equations for signals $u$ and $y$ as follows:
  
  \begin{figure}
  	\centering
@@ -446,7 +446,7 @@ In the time domain, the input to the quantizer from \autoref{eq:l1-u} can be bou
 	\left|u[k]\right| \leq \left|\sum_{i=1}^{\infty} t[i]r[t - i]\right| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)e[t - i]\right|, \label{eq:l1-bound1}
 \end{equation}
 
-where $t[k]$ is the impulse response of the \gls{STF} and $s[k]$ is the impulse response of the \gls{NTF}. Because the \gls{STF} only operates on the input as a pre-filter, we can assume $T(\lambda) = 1$ and \autoref{eq:l1-bound1} simplifes to:
+where $t[k]$ is the impulse response of the \gls{STF} and $s[k]$ is the impulse response of the \gls{NTF}. Because the \gls{STF} only operates on the input as a pre-filter, the assumption $T(\lambda) = 1$ is taken and \autoref{eq:l1-bound1} simplifes to:
 
 \begin{equation}
 	\left|u[k]\right| \leq |r[k]| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)e[t - i]\right|. \label{eq:l1-bound2}
@@ -478,6 +478,7 @@ Thus, a modulator with a single-bit quantizer is guaranteed to be stable for inp
 \end{equation}
 
 \subsection{Scale Invariance of the Single-Bit Quantizer}
+\label{sec:stab-si}
 
 Here an important result is mentioned that reduces conservatism in the stability criteria from \autoref{sec:stab-h2} and \autoref{sec:stab-l1} that are derived from a norm constraint on the \gls{NTF}. If $K$ is interpreted not a a time-varying gain that models the quantizer but as a fixed design variable, it is obvious that the value of $K$ has no effect if it precedes the single-bit quantizer. The filter $H_1(\lambda)$ in expression for the \gls{NTF} from \autoref{eq:s} may be substituted by the filter and gain in series, yielding:
 

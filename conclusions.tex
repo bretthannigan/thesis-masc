@@ -3,3 +3,19 @@
 
 \chapter{Conclusions}
 \label{ch:Conclusions}
+
+This thesis has outlined the development of a systematic, high-level design framework for sigma delta modulators. To accomplish this, the basic principles of how sigma delta coding permits high resolution despite using a coarse quantizer were presented in \autoref{ch:Introduction}. A simplified structure of the signal flow was presented as were the various transfer functions and their effect on noise shaping. In \autoref{ch:Modelling}, the nonlinear nature of the quantizer was dealt with using techniques from control systems, allowing the modulator to be treated by an optimization framework. The well-posedness, internal stability, and sensitivity integral concepts were introduced that place limitations on the theoretical performance possible by using feedback. A state-space model was developed with channels exposing modulator transfer functions of interest. \autoref{ch:Stability} presented a literature review of some stability criteria and examined how various criteria could be applied to the model as a system norm constraint. The actual optimization and convexification theory was presented in \autoref{ch:Optimization} as a series of \gls{LMI}s coupled with an iterative procedure used as a workaround for the non-convex quadratic term. Finally, design examples were presented in \autoref{ch:Examples} motivated by a bio-signal acquisition problem. These examples showcase different stability criteria and the trade-off between performance and stability.
+
+The major contributions in this work include:
+
+\begin{enumerate}
+	\item Uniting \gls{GKYP}, $\mathcal{H}_2$, and $\ell_1$ designs into a consistent set of \gls{LMI}s for the design of \gls{IIR} \gls{NTF}s.
+	\item Extending the \gls{GKYP} lemma used in \cite{Li2014} to be compatible with non-unity $\mathcal{D}$ matrices so that it can be used to place constraints on channels other than the sensitivity function.
+	\item Addition of a uncertain quantizer gain method of enforcing stability using robust control techniques.
+	\item Application of the \gls{SDP} framework to direct \gls{CT} sigma delta modulator design.
+\end{enumerate}
+
+\section{Future Work}
+\label{sec:conclusions-future}
+
+There remains 

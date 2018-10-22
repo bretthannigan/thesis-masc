@@ -316,7 +316,7 @@ The \gls{LMI}s presented in this Chapter are convex in optimization variable $P$
    	\end{array}\right]}_{C_H} && x,
 \end{alignat}
 
-where ${a_H \equiv \begin{bmatrix} a_0 & a_1 & a_2 & \cdots & a_{n-1} \end{bmatrix}^T}$ and ${b_H \equiv \begin{bmatrix} b_0 & b_1 & b_2 & \cdots & b_{n-1} \end{bmatrix}^T}$ are defined for brevity. These vectors are the numerator and denominator coefficients of the loop filter in ascending powers of $\lambda$. Note the important fact that when \autoref{eq:h1-ss} is in \gls{CCF}, sub-systems $G_{er}(\lambda)$, $G_{yr}(\lambda)$, and $G_{zw}(\lambda)$ from \autoref{eq:aug} are in \gls{CCF} as well, possibly after a trivial state-space transformation by $T = \frac{1}{-m_{21}}I_n$ for the latter to ensure that the lower element of $T\mathcal{B}_w$ is unity. In the following, we seek to design $a_H$ and $b_H$ by solving an optimization problem in different variables consisting of one or more of the constraints described in \autoref{ch:Stability}.
+where ${a_H \equiv \begin{bmatrix} a_0 & a_1 & a_2 & \cdots & a_{n-1} \end{bmatrix}^T}$ and ${b_H \equiv \begin{bmatrix} b_0 & b_1 & b_2 & \cdots & b_{n-1} \end{bmatrix}^T}$ are defined for brevity. These vectors are the numerator and denominator coefficients of the loop filter in ascending powers of $\lambda$. Note the important fact that when \autoref{eq:h1-ss} is in \gls{CCF}, sub-systems $G_{er}(\lambda)$, $G_{yr}(\lambda)$, and $G_{zw}(\lambda)$ from \autoref{eq:aug} are in \gls{CCF} as well, possibly after a trivial state-space transformation by $T = \frac{1}{-m_{21}}I_n$ for the latter to ensure that the lower element of $T\mathcal{B}_w$ is unity. The goal below is to design $a_H$ and $b_H$ by solving an optimization problem in different variables consisting of one or more of the constraints described in \autoref{ch:Stability}.
 
 \subsection{Change of Variables} \label{sec:opt-cv}
 
@@ -393,7 +393,7 @@ It is seen that, like \autoref{eq:lmiinf}, the other semidefinite programs can u
 
 \subsection{Iterative Procedure}
 
-The non-convex inequalities have now been converted into a form where one quadratic term exists. The solving of a quadratically constrained \gls{LMI} is a difficult problem. Several methods of solving \autoref{eq:lmiinf-equiv} and \autoref{eq:lmi2-lmi1-equiv} were attempted but had poor results. These included using a general non-convex solver directly, using a rank-constrainted LMI solver, and using Shor's relaxation to linearize the problem. Instead, we use the iterative method from \cite{Shishkin2017} which, for problems with simple non-convexities, appears to be similar to the method used in \cite{Li2014} except with an extra parameter to guarantee finite convergence. 
+The non-convex inequalities have now been converted into a form where one quadratic term exists. The solving of a quadratically constrained \gls{LMI} is a difficult problem. Several methods of solving \autoref{eq:lmiinf-equiv} and \autoref{eq:lmi2-lmi1-equiv} were attempted but had poor results. These included using a general non-convex solver directly, using a rank-constrainted LMI solver, and using Shor's relaxation to linearize the problem. Instead, the iterative method from \cite{Shishkin2017} is used. For problems with simple non-convexities, this method appears to be similar to the method used in \cite{Li2014} except with an extra parameter to guarantee finite convergence. 
 
 In short, the iterative method proceeds following Algorithm~\ref{alg:iter}, where the quadratic term is separated from the rest of the \gls{LMI} by splitting the optimization problem into the form:
 
@@ -407,7 +407,7 @@ In short, the iterative method proceeds following Algorithm~\ref{alg:iter}, wher
 where $f(\gamma)$ is the objective function, $C_i(a, \gamma, \cdot)$ is the $i$th convex \gls{LMI} constraint, and $Q(a)=\begin{bmatrix} aa^T & 0 \\ 0 & 0 \end{bmatrix}$ is the quadratic part involving $a$. A maximum number of iterations \var{maxIter} is defined, as well as termination crtieria $\epsilon$ and an optional weight $\kappa$ to penalize wandering in the neighbourhood of a solution.
 
 \begin{algorithm}
-	\caption{Iterative convexification} \label{alg:iter}
+	\caption{Iterative convexification procedure} \label{alg:iter}
 	\begin{algorithmic}[1]
 		\Procedure{QmiSolve}{$a_{init}$}
 			\State $a_f = \Call{CheckFeas}{a_{init}}$

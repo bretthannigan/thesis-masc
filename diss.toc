@@ -50,10 +50,11 @@
 \contentsline {section}{\numberline {5.1}Design Using $\mathcal {H}_\infty $ Stability Criterion}{42}{section.5.1}
 \contentsline {section}{\numberline {5.2}Design Using Root Locus Stability Criterion}{44}{section.5.2}
 \contentsline {section}{\numberline {5.3}Design Using $\mathcal {H}_2$ Stability Criterion}{46}{section.5.3}
-\contentsline {section}{\numberline {5.4}Design Using $\ell _1$ Stability Criterion}{48}{section.5.4}
-\contentsline {section}{\numberline {5.5}\titlecap {continuous-time} Design}{48}{section.5.5}
-\contentsline {section}{\numberline {5.6}Summary of Design Examples}{48}{section.5.6}
-\contentsline {chapter}{\numberline {6}Conclusions}{49}{chapter.6}
-\contentsline {chapter}{\numberline {A}Derivation of Matrix Inequalities with One Quadratic Term}{50}{appendix.A}
-\contentsline {section}{\numberline {A.1}Derivation of GKYP Inequality with Arbitrary $\mathcal {D}$}{50}{section.A.1}
-\contentsline {section}{\numberline {A.2}Derivation of $\mathcal {H}_2$ and $\ell _1$ Inequalities}{52}{section.A.2}
+\contentsline {section}{\numberline {5.4}Design Using $\ell _1$ Stability Criterion}{49}{section.5.4}
+\contentsline {section}{\numberline {5.5}\titlecap {continuous-time} Design}{49}{section.5.5}
+\contentsline {section}{\numberline {5.6}Summary of Design Examples}{50}{section.5.6}
+\contentsline {chapter}{\numberline {6}Conclusions}{52}{chapter.6}
+\contentsline {section}{\numberline {6.1}Future Work}{53}{section.6.1}
+\contentsline {chapter}{\numberline {A}Derivation of Matrix Inequalities with One Quadratic Term}{54}{appendix.A}
+\contentsline {section}{\numberline {A.1}Derivation of GKYP Inequality with Arbitrary $\mathcal {D}$}{54}{section.A.1}
+\contentsline {section}{\numberline {A.2}Derivation of $\mathcal {H}_2$ and $\ell _1$ Inequalities}{56}{section.A.2}

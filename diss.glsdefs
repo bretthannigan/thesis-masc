@@ -898,6 +898,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{FS}{}%
+{%
+\gls@defglossaryentry{FS}%
+{%
+name={FS},%
+sort={FS},%
+type={acronym},%
+first={full-scale\glsspace (FS)},%
+firstplural={full-scales\glsspace (FSs)},%
+text={FS},%
+plural={FSs},%
+description={full-scale},%
+descriptionplural={full-scale\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={full-scale},%
+longplural={full-scales},%
+short={FS},%
+shortplural={FSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{LP}{}%
 {%
 \gls@defglossaryentry{LP}%
