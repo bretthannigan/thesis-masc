@@ -10,6 +10,7 @@
 \newacronym{CT}{CT}{continuous-time}
 \newacronym{DT}{DT}{discrete-time}
 \newacronym{S/H}{S/H}{sample-and-hold}
+\newacronym{DC}{DC}{direct current}
 
 \newacronym{EEG}{EEG}{electroencephalography}
 \newacronym{ECG}{ECG}{electrocardiography}
@@ -29,7 +30,7 @@
 \newacronym{CLANS}{CLANS}{closed-loop analysis of noise shaper}
 \newacronym{LMI}{LMI}{linear matrix inequality}
 \newacronym{BMI}{BMI}{bilinear matrix inequality}
-\newacronym{SDP}{SDP}{semidefinite program}
+\newacronym{SDP}{SDP}{semidefinite programming}
 \newacronym{GKYP}{GKYP}{generalized Kalman-Yakubovi\v{c}-Popov}
 \newacronym{FIR}{FIR}{finite impulse response}
 \newacronym{IIR}{IIR}{infinite impulse response}
@@ -49,13 +50,16 @@
 
 \newacronym{CCF}{CCF}{controllable canonical form}
 
+\newacronym{HDL}{HDL}{hardware description language}
+\newacronym{FPGA}{FPGA}{field programmable gate array}
+
 % Symbols
 \newglossaryentry{pq}{
 	name = $P_Q$ ,
 	description = In-band quantization noise power
 }
 \newglossaryentry{delta}{
-	name = $\Delta_QP$ ,
+	name = $\Delta_Q$ ,
 	description = Quantization step size
 }
 \newglossaryentry{order}{
@@ -82,9 +86,29 @@
 	name = $d$,
 	description = Quantization noise source (linearized model)
 }
+\newglossaryentry{w}{
+	name = $w$,
+	description = Disturbance input signal
+}
+\newglossaryentry{z}{
+	name = $z$,
+	description = Disturbance output signal
+}
 \newglossaryentry{K}{
 	name = $K$,
 	description = Variable quantizer gain (linearized model)
+}
+\newglossaryentry{G}{
+	name = $G(\lambda)$,
+	description = Augmented system
+}
+\newglossaryentry{M}{
+	name = $M$,
+	description = \glsentryshort{LFT} constant gain matrix
+}
+\newglossaryentry{K(A)}{
+	name = $K(A)$,
+	description = Describing function of a quantizer
 }
 \newglossaryentry{S}{
 	name = $S(\lambda)$,
@@ -100,9 +124,45 @@
 }
 \newglossaryentry{EV}{
 	name = $E(\cdot)$,
-	description = Expected value operator.
+	description = Expected value operator
 }
-
+\newglossaryentry{Hinf}{
+	name = $\mathcal{H}_\infty$,
+	description = {infinity norm ($||\cdot||_\infty$), maximum energy gain of a system or peak gain over frequency}
+}
+\newglossaryentry{H2}{
+	name = $\mathcal{H}_2$,
+	description = {2-norm ($||\cdot||_2$), RMS gain of a system}
+}
+\newglossaryentry{l1}{
+	name = $\ell_1$,
+	description = {1-norm ($||\cdot||_1$), maximum peak-to-peak gain}
+}
+\newglossaryentry{starnorm}{
+	name = $\star$-norm,
+	description = an upper bound on the $\ell_1$ norm (see \cite{Nagpal1994})
+}
+\newglossaryentry{vary}{
+	name = $\sigma_y^2$,
+	description = variance of quantizer output signal $y$
+}
+\newglossaryentry{varu}{
+	name = $\sigma_u^2$,
+	description = variance of quantizer input signal $u$
+}
+\newglossaryentry{vard}{
+	name = $\sigma_d^2$,
+	description = variance of quantization noise signal $d$
+}
+\newglossaryentry{meany}{
+	name = $\mu_y$,
+	description = mean (DC component) of quantizer output signal $y$
+}
+\newglossaryentry{meanu}{
+	name = $\mu_u$,
+	description = mean (DC component) of quantizer input signal $u$
+}
+	
 \renewcommand{\glossarysection}[2][\theglstoctitle]{%
  \def\theglstoctitle{#2}%
  \chapter*{#2}%

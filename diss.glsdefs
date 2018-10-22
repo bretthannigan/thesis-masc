@@ -208,6 +208,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{DC}{}%
+{%
+\gls@defglossaryentry{DC}%
+{%
+name={DC},%
+sort={DC},%
+type={acronym},%
+first={direct current\glsspace (DC)},%
+firstplural={direct currents\glsspace (DCs)},%
+text={DC},%
+plural={DCs},%
+description={direct current},%
+descriptionplural={direct current\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={direct current},%
+longplural={direct currents},%
+short={DC},%
+shortplural={DCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{EEG}{}%
 {%
 \gls@defglossaryentry{EEG}%
@@ -635,12 +665,12 @@ parent={},%
 name={SDP},%
 sort={SDP},%
 type={acronym},%
-first={semidefinite program\glsspace (SDP)},%
-firstplural={semidefinite programs\glsspace (SDPs)},%
+first={semidefinite programming\glsspace (SDP)},%
+firstplural={semidefinite programmings\glsspace (SDPs)},%
 text={SDP},%
 plural={SDPs},%
-description={semidefinite program},%
-descriptionplural={semidefinite program\acrpluralsuffix },%
+description={semidefinite programming},%
+descriptionplural={semidefinite programming\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -649,8 +679,8 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={semidefinite program},%
-longplural={semidefinite programs},%
+long={semidefinite programming},%
+longplural={semidefinite programmings},%
 short={SDP},%
 shortplural={SDPs},%
 counter={page},%
@@ -1048,6 +1078,66 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{HDL}{}%
+{%
+\gls@defglossaryentry{HDL}%
+{%
+name={HDL},%
+sort={HDL},%
+type={acronym},%
+first={hardware description language\glsspace (HDL)},%
+firstplural={hardware description languages\glsspace (HDLs)},%
+text={HDL},%
+plural={HDLs},%
+description={hardware description language},%
+descriptionplural={hardware description language\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={hardware description language},%
+longplural={hardware description languages},%
+short={HDL},%
+shortplural={HDLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FPGA}{}%
+{%
+\gls@defglossaryentry{FPGA}%
+{%
+name={FPGA},%
+sort={FPGA},%
+type={acronym},%
+first={field programmable gate array\glsspace (FPGA)},%
+firstplural={field programmable gate arrays\glsspace (FPGAs)},%
+text={FPGA},%
+plural={FPGAs},%
+description={field programmable gate array},%
+descriptionplural={field programmable gate array\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={field programmable gate array},%
+longplural={field programmable gate arrays},%
+short={FPGA},%
+shortplural={FPGAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{pq}{}%
 {%
 \gls@defglossaryentry{pq}%
@@ -1082,13 +1172,13 @@ parent={},%
 {%
 \gls@defglossaryentry{delta}%
 {%
-name={$\Delta _QP$},%
-sort={$\Delta _QP$},%
+name={$\Delta _Q$},%
+sort={$\Delta _Q$},%
 type={main},%
-first={$\Delta _QP$},%
-firstplural={$\Delta _QP$s},%
-text={$\Delta _QP$},%
-plural={$\Delta _QP$s},%
+first={$\Delta _Q$},%
+firstplural={$\Delta _Q$s},%
+text={$\Delta _Q$},%
+plural={$\Delta _Q$s},%
 description={Quantization step size},%
 descriptionplural={Quantization step size},%
 symbol={\relax },%
@@ -1288,6 +1378,66 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{w}{}%
+{%
+\gls@defglossaryentry{w}%
+{%
+name={$w$},%
+sort={$w$},%
+type={main},%
+first={$w$},%
+firstplural={$w$s},%
+text={$w$},%
+plural={$w$s},%
+description={Disturbance input signal},%
+descriptionplural={Disturbance input signal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{z}{}%
+{%
+\gls@defglossaryentry{z}%
+{%
+name={$z$},%
+sort={$z$},%
+type={main},%
+first={$z$},%
+firstplural={$z$s},%
+text={$z$},%
+plural={$z$s},%
+description={Disturbance output signal},%
+descriptionplural={Disturbance output signal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{K}{}%
 {%
 \gls@defglossaryentry{K}%
@@ -1301,6 +1451,96 @@ text={$K$},%
 plural={$K$s},%
 description={Variable quantizer gain (linearized model)},%
 descriptionplural={Variable quantizer gain (linearized model)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{G}{}%
+{%
+\gls@defglossaryentry{G}%
+{%
+name={$G(\lambda )$},%
+sort={$G(\lambda )$},%
+type={main},%
+first={$G(\lambda )$},%
+firstplural={$G(\lambda )$s},%
+text={$G(\lambda )$},%
+plural={$G(\lambda )$s},%
+description={Augmented system},%
+descriptionplural={Augmented system},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{M}{}%
+{%
+\gls@defglossaryentry{M}%
+{%
+name={$M$},%
+sort={$M$},%
+type={main},%
+first={$M$},%
+firstplural={$M$s},%
+text={$M$},%
+plural={$M$s},%
+description={\glsentryshort {LFT} constant gain matrix},%
+descriptionplural={\glsentryshort {LFT} constant gain matrix},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{K(A)}{}%
+{%
+\gls@defglossaryentry{K(A)}%
+{%
+name={$K(A)$},%
+sort={$K(A)$},%
+type={main},%
+first={$K(A)$},%
+firstplural={$K(A)$s},%
+text={$K(A)$},%
+plural={$K(A)$s},%
+description={Describing function of a quantizer},%
+descriptionplural={Describing function of a quantizer},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -1419,8 +1659,278 @@ first={$E(\cdot )$},%
 firstplural={$E(\cdot )$s},%
 text={$E(\cdot )$},%
 plural={$E(\cdot )$s},%
-description={Expected value operator.},%
-descriptionplural={Expected value operator.},%
+description={Expected value operator},%
+descriptionplural={Expected value operator},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Hinf}{}%
+{%
+\gls@defglossaryentry{Hinf}%
+{%
+name={$\mathcal {H}_\infty $},%
+sort={$\mathcal {H}_\infty $},%
+type={main},%
+first={$\protect \mathcal {H}_\infty $},%
+firstplural={$\protect \mathcal {H}_\infty $s},%
+text={$\protect \mathcal {H}_\infty $},%
+plural={$\protect \mathcal {H}_\infty $s},%
+description={infinity norm ($||\cdot ||_\infty $), maximum energy gain of a system or peak gain over frequency},%
+descriptionplural={infinity norm ($||\cdot ||_\infty $), maximum energy gain of a system or peak gain over frequency},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{H2}{}%
+{%
+\gls@defglossaryentry{H2}%
+{%
+name={$\mathcal {H}_2$},%
+sort={$\mathcal {H}_2$},%
+type={main},%
+first={$\protect \mathcal {H}_2$},%
+firstplural={$\protect \mathcal {H}_2$s},%
+text={$\protect \mathcal {H}_2$},%
+plural={$\protect \mathcal {H}_2$s},%
+description={2-norm ($||\cdot ||_2$), RMS gain of a system},%
+descriptionplural={2-norm ($||\cdot ||_2$), RMS gain of a system},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{l1}{}%
+{%
+\gls@defglossaryentry{l1}%
+{%
+name={$\ell _1$},%
+sort={$\ell _1$},%
+type={main},%
+first={$\ell _1$},%
+firstplural={$\ell _1$s},%
+text={$\ell _1$},%
+plural={$\ell _1$s},%
+description={1-norm ($||\cdot ||_1$), maximum peak-to-peak gain},%
+descriptionplural={1-norm ($||\cdot ||_1$), maximum peak-to-peak gain},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{starnorm}{}%
+{%
+\gls@defglossaryentry{starnorm}%
+{%
+name={$\star $-norm},%
+sort={$\star $-norm},%
+type={main},%
+first={$\star $-norm},%
+firstplural={$\star $-norms},%
+text={$\star $-norm},%
+plural={$\star $-norms},%
+description={an upper bound on the $\ell _1$ norm (see \cite {Nagpal1994})},%
+descriptionplural={an upper bound on the $\ell _1$ norm (see \cite {Nagpal1994})},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{vary}{}%
+{%
+\gls@defglossaryentry{vary}%
+{%
+name={$\sigma _y^2$},%
+sort={$\sigma _y^2$},%
+type={main},%
+first={$\sigma _y^2$},%
+firstplural={$\sigma _y^2$s},%
+text={$\sigma _y^2$},%
+plural={$\sigma _y^2$s},%
+description={variance of quantizer output signal $y$},%
+descriptionplural={variance of quantizer output signal $y$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{varu}{}%
+{%
+\gls@defglossaryentry{varu}%
+{%
+name={$\sigma _u^2$},%
+sort={$\sigma _u^2$},%
+type={main},%
+first={$\sigma _u^2$},%
+firstplural={$\sigma _u^2$s},%
+text={$\sigma _u^2$},%
+plural={$\sigma _u^2$s},%
+description={variance of quantizer input signal $u$},%
+descriptionplural={variance of quantizer input signal $u$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{vard}{}%
+{%
+\gls@defglossaryentry{vard}%
+{%
+name={$\sigma _d^2$},%
+sort={$\sigma _d^2$},%
+type={main},%
+first={$\sigma _d^2$},%
+firstplural={$\sigma _d^2$s},%
+text={$\sigma _d^2$},%
+plural={$\sigma _d^2$s},%
+description={variance of quantization noise signal $d$},%
+descriptionplural={variance of quantization noise signal $d$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{meany}{}%
+{%
+\gls@defglossaryentry{meany}%
+{%
+name={$\mu _y$},%
+sort={$\mu _y$},%
+type={main},%
+first={$\mu _y$},%
+firstplural={$\mu _y$s},%
+text={$\mu _y$},%
+plural={$\mu _y$s},%
+description={mean (DC component) of quantizer output signal $y$},%
+descriptionplural={mean (DC component) of quantizer output signal $y$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{meanu}{}%
+{%
+\gls@defglossaryentry{meanu}%
+{%
+name={$\mu _u$},%
+sort={$\mu _u$},%
+type={main},%
+first={$\mu _u$},%
+firstplural={$\mu _u$s},%
+text={$\mu _u$},%
+plural={$\mu _u$s},%
+description={mean (DC component) of quantizer input signal $u$},%
+descriptionplural={mean (DC component) of quantizer input signal $u$},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
