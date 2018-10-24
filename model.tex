@@ -253,10 +253,12 @@ The model from \autoref{fig:sdm-stdf} is shown in \autoref{fig:sdm-stdf-lft} wit
 Finally, the model is abstracted into an augmented form where all desired input and output channels are present and all unnecessary ones hidden. Let the \gls{LFT} $\Delta \rightarrow M$ input and $M \rightarrow \Delta$ output be \gls{w} and \gls{z}, respectively. These channels are required to be accessed in addition to \gls{r}, \gls{e}, \gls{u}, and \gls{y} for the purposes listed in \autoref{tab:aug-ch}. The augmented system \gls{G} is encapsulated as the dashed block in \autoref{fig:sdm-aug}.
 
 \begin{table}[t]
+	\centering
 	\caption{Input and output channels of interest for the augmented system.} \label{tab:aug-ch}
-	\begin{tabular}{l | >{\RaggedRight}p{2cm} >{\RaggedRight}p{2.25cm} >{\RaggedRight}p{2.25cm} >{\RaggedRight}p{2cm}}
+	%\renewcommand{\arraystretch}{2}
+	\begin{tabular}{>{\centering\arraybackslash}m{1.6cm} | >{\RaggedRight}m{2cm} >{\RaggedRight}m{2.25cm} >{\RaggedRight}m{2.25cm} >{\RaggedRight}m{2cm}}
 		\toprule
-		\diagbox[width=2cm, height=1cm]{\textbf{Input}}{\textbf{Output}} & $z$ & $e$ & $u$ & $y$ \\
+		\diagbox[width=2cm, height=1cm]{\textbf{Input}}{\textbf{Output}} & \multicolumn{1}{c}{$z$} & \multicolumn{1}{c}{$e$} & \multicolumn{1}{c}{$u$} & \multicolumn{1}{c}{$y$} \\
 		\midrule
 		$r$ & Not used & \gls{NTF} performance channel & Constraint on quantizer input signal & \gls{STF} constraints for \gls{CT} design \\
 		$w$ & Quantizer gain robustness channel & Not used & Not used & Not used \\

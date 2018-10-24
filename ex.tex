@@ -44,7 +44,7 @@ Like most high-order designs using the Lee criterion, stability is conditional o
 					ymin=50,ymax=100,
 					axis y line*=left,
 					xlabel={Lee criterion},
-					ylabel={Maximum SQNR (dB) \ref{plt:msqnr1}},
+					ylabel={Maximum \glsentryshort{SQNR} (dB) \ref{plt:msqnr1}},
 					]
 					\addplot[solid,mark=*,mark options={fill=white}] table [x=lee,y=maxSqnr,col sep=comma] {data/comparison-hinf.csv};
 					\label{plt:msqnr1}
@@ -57,7 +57,7 @@ Like most high-order designs using the Lee criterion, stability is conditional o
 					ymin=-50,ymax=0,
 					axis y line*=right,
 					axis x line=none,
-					ylabel={MSIA, relative to \glsentryshort{FS} (dB) \ref{plt:msia1}},
+					ylabel={\glsentryshort{MSIA}, relative to \glsentryshort{FS} (dB) \ref{plt:msia1}},
 					]
 					\addplot[solid,draw=gray,mark=square*,mark options={fill=white}] table [x=lee,y=msia,col sep=comma] {data/comparison-hinf.csv};
 					\label{plt:msia1}
@@ -91,7 +91,7 @@ The root locus design technique is done by solving the \gls{GKYP} optimization p
 					ymin=40,ymax=100,
 					axis y line*=left,
 					xlabel={Quantizer gain lower bound $k_l$},
-					ylabel={Maximum SQNR (dB) \ref{plt:msqnr2}},
+					ylabel={Maximum \glsentryshort{SQNR} (dB) \ref{plt:msqnr2}},
 					]
 					\addplot[solid,mark=*,mark options={fill=white}] table [x=kl,y=maxSqnr,col sep=comma] {data/comparison-robust.csv};
 					\label{plt:msqnr2}
@@ -104,7 +104,7 @@ The root locus design technique is done by solving the \gls{GKYP} optimization p
 					ymin=-80,ymax=0,
 					axis y line*=right,
 					axis x line=none,
-					ylabel={MSIA, relative to \glsentryshort{FS} (dB) \ref{plt:msia2}},
+					ylabel={\glsentryshort{MSIA}, relative to \glsentryshort{FS} (dB) \ref{plt:msia2}},
 					]
 					\addplot[solid,draw=gray,mark=square*,mark options={fill=white}] table [x=kl,y=msia,col sep=comma] {data/comparison-robust.csv};
 					\label{plt:msia2}
@@ -160,7 +160,7 @@ Computing the NTF gain using the scale invariance procedure from \autoref{sec:st
 					ymin=60,ymax=100,
 					axis y line*=left,
 					xlabel={$||G_{er}(z)||_2^2$},
-					ylabel={Maximum SQNR (dB) \ref{plt:msqnr3}},
+					ylabel={Maximum \glsentryshort{SQNR} (dB) \ref{plt:msqnr3}},
 					]
 					\addplot[solid,mark=*,mark options={fill=white}] table [x=h22,y=maxSqnr,col sep=comma] {data/comparison-h2-2.csv};
 					\label{plt:msqnr3}
@@ -174,7 +174,7 @@ Computing the NTF gain using the scale invariance procedure from \autoref{sec:st
 					axis y line*=right,
 					axis x line=none,
 					ylabel style={align=center},
-					ylabel={Simulated MSIA, relative to \glsentryshort{FS} (dB) \ref{plt:msia3-1}\\ Predicted MSIA, relative to \glsentryshort{FS} (dB) \ref{plt:msia3-2}},
+					ylabel={Simulated \glsentryshort{MSIA}, relative to \glsentryshort{FS} (dB) \ref{plt:msia3-1}\\ Predicted MSIA, relative to \glsentryshort{FS} (dB) \ref{plt:msia3-2}},
 					]
 					\addplot[solid,draw=gray,mark=square*,mark options={fill=white}] table [x=h22,y=msia,col sep=comma] {data/comparison-h2-2.csv};
 					\label{plt:msia3-1}
@@ -191,6 +191,67 @@ Computing the NTF gain using the scale invariance procedure from \autoref{sec:st
 
 \section{Design Using \gls{l1} Stability Criterion}
 \label{sec:ex-l1}
+
+In this example, the \gls{l1} method is used to create a modulator design that is mathematically guaranteed to be stable for a range of input amplitudes by solving the \gls{GKYP} optimization problem while using the \gls{starnorm} constraint. This constraint is only an upper bound on the \gls{l1} norm, so there is some trial-and-error to find this \gls{starnorm} upper bound that produces the desired $\ell_1$ norm bound. In this case, running the optimization problem with a $\star$-norm constranit of $4$ results in $||G_{er}(z)||_1 = 2.32$ and a loop filter as follows:
+
+\begin{equation*}
+	H_1(z) = \frac{0.602\left(z^2 - 1.69z + 0.718\right)}{\left(z - 0.891\right)\left(z^2 - 1.949z + 0.955\right)}.
+\end{equation*}
+
+This design is guaranteed to be stable for input amplitudes up to 0.68 \gls{FS}, but empirical stability is seen for the entire input range. The cost for this stability is a decrease in performance: a peak \gls{SQNR} of \SI{59}{\deci\bel} and a minimum resolvable input amplitude of \SI{-41}{\deci\bel} FS. Note that similar to the case in \autoref{sec:ex-h2}, there are now 2 pole-zero cancellations in the final loop filter resulting in an order 3 transfer function. The \gls{NTF} for this design can been seen in Figure~\ref{fig:ntf-l1}. The simulated performance along with the simulated and guaranteed stability is shown for various \gls{starnorm} goals in \autoref{fig:l1-perf-stab}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=3.45in]{ntf-l1}
+	\caption{Upper: The sensitivity function of the \gls{l1} norm design from \autoref{sec:ex-l1} shows the signal band rejection has been diminished in order to provide mathematically guaranteed stability. Lower: the impulse response of the sensitivity function has been minimized by the \gls{l1} norm criterion.} \label{fig:ntf-l1}
+\end{figure}
+
+\begin{figure}
+	\begin{NoHyper}
+		\begin{center}
+			\begin{tikzpicture}
+				\pgfplotsset{set layers}
+				\begin{axis}[
+					width=3in,
+					title={\textbf{Trade-off with \gls{l1} Stability Criterion}},
+					scale only axis,
+					xmin=2,xmax=6,
+					ymin=40,ymax=80,
+					axis y line*=left,
+					xlabel={$||G_{er}(z)||_\star$},
+					ylabel={Maximum \glsentryshort{SQNR} (dB) \ref{plt:msqnr4}},
+					]
+					\addplot[solid,mark=*,mark options={fill=white}] table [x=star,y=maxSqnr,col sep=comma] {data/comparison-l1.csv};
+					\label{plt:msqnr4}
+					\addplot[mark=*,mark options={fill=black}] coordinates {(4, 58.87)};
+				\end{axis}
+				\begin{axis}[
+					width=3in,
+					scale only axis,
+					xmin=2,xmax=6,
+					ymin=-16,ymax=0,
+					axis y line*=right,
+					axis x line=none,
+					ylabel style={align=center},
+					ylabel={Simulated \glsentryshort{MSIA}, relative to \glsentryshort{FS} (dB) \ref{plt:msia4-1}\\ Guaranteed \glsentryshort{MSIA} from \gls{starnorm} (dB) \ref{plt:msia4-2}\\ Guaranteed \glsentryshort{MSIA} from \gls{l1} norm (dB) \ref{plt:msia4-3} \\ Guaranteed \glsentryshort{MSIA} from optimized \gls{l1} norm (dB) \ref{plt:msia4-4}},
+					]
+					\addplot[solid,draw=gray,mark=square*,mark options={fill=white}] table [x=star,y=msia,col sep=comma] {data/comparison-l1.csv};
+					\label{plt:msia4-1}
+					\addplot[solid,draw=gray,mark=triangle*,mark options={fill=white,scale=1.5}] table [x=star,y=msiaExpStardB,col sep=comma] {data/comparison-l1.csv};
+					\label{plt:msia4-2}
+					\addplot[solid,draw=gray,mark=diamond*,mark options={fill=white,scale=1.5}] table [x=star,y=msiaExpl1dB,col sep=comma] {data/comparison-l1.csv};
+					\label{plt:msia4-3}
+					\addplot[solid,draw=gray,mark=pentagon*,mark options={fill=white,scale=1.25}] table [x=star,y=msiaExpOptdB,col sep=comma] {data/comparison-l1.csv};
+					\label{plt:msia4-4}
+					\addplot[mark=square*,draw=gray,mark options={fill=gray}] coordinates {(4, 0)};
+					\addplot[mark=diamond*,draw=gray,mark options={fill=gray,scale=1.5}] coordinates {(4, -4.174944481)};
+					\addplot[mark=pentagon*,draw=gray,mark options={fill=gray,scale=1.25}] coordinates {(4, -3.332007102)};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+	\end{NoHyper}
+	\caption{The performance (maximum simulated \glsentryshort{SQNR}) and stability achieved with the modulator design from \autoref{sec:ex-l1} for \gls{starnorm} goals. The simulated \gls{MSIA} is shown along with the guaranteed \glsentryshort{MSIA} computed using methods of decreasing conservativeness: the \gls{starnorm} upper bound, the \gls{l1} norm, and the \gls{l1} norm with the scale invariance property. The shaded markers indicate the selected design $||G_{er}(z)||_\star$ value.} \label{fig:l1-perf-stab}
+\end{figure}
 
 \section{\titlecap{\glsentrylong{CT}} Design}
 \label{sec:ex-ct}
@@ -227,3 +288,4 @@ for which the sensitivity and complementary sensitivity functions are shown in \
 
 \section{Summary of Design Examples}
 \label{sec:ex-compare}
+

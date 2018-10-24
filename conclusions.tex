@@ -11,7 +11,7 @@ The major contributions in this work include:
 \begin{enumerate}
 	\item Uniting \gls{GKYP}, \gls{H2}, and \gls{l1} designs into a consistent set of \gls{LMI}s for the design of \gls{IIR} \gls{NTF}s.
 	\item Extending the \gls{GKYP} lemma used in \cite{Li2014} to be compatible with non-unity $\mathcal{D}$ matrices so that it can be used to place constraints on channels other than the sensitivity function.
-	\item Addition of a uncertain quantizer gain method of enforcing stability using robust control techniques.
+	\item Addition of the uncertain quantizer gain method of enforcing stability using robust control techniques.
 	\item Application of the \gls{SDP} framework to direct \gls{CT} sigma delta modulator design.
 \end{enumerate}
 
@@ -24,15 +24,30 @@ In \autoref{ch:Examples}, it was shown that the framework presented here is appl
 	\item There is no existing way to model the influence of integrator state saturation in this context.
 	\item The \gls{LMI} optimization expressions are not feasible for \gls{LF}s with poles or zeros exactly on the unit circle (for \gls{DT}) or imaginary axis (for \gls{CT}), and they are sometimes placed arbitrarily close.
 	\item Although mathematically correct, many state-of-the-art \gls{SDP} solvers fail to reach the optimum solution of the \gls{LMI}s.
-	\item The parameters \var{maxIter}, $\epsilon$, and $\kappa$ used in the iterative optimization process are difficult to choose and may need to be set based on the chosen stability criteria. Example values used by the author are listed in \autoref{tab:params}.
+	\item The parameters \var{maxIter}, $\epsilon$, and $\kappa$ used in the iterative optimization process are difficult to choose and may need to be set based on the chosen stability criteria. Example ad-hoc values used by the author are listed in \autoref{tab:params}.
 	\item It is often difficult to avoid pole-zero cancellations in high order \gls{LF} during optimization so careful choice of initial conditions and the iteration parameters may be necessary.
 \end{enumerate}
+
+\begin{table}[t]
+	\centering
+	\caption{Suggested termination parameters used in the interative convexification procedure.} \label{tab:params}
+	\begin{tabular}{l | >{\raggedleft\arraybackslash}p{1.75cm} >{\raggedleft\arraybackslash}p{1.4cm} >{\RaggedRight}p{1cm}}
+		\toprule
+		\textbf{Design type} & \multicolumn{1}{l}{\var{maxIter}} & \multicolumn{1}{l}{$\epsilon$} & \multicolumn{1}{l}{$\kappa$} \\
+		\midrule
+		\gls{Hinf} & 500 & $1\times10^{-6}$ & 0.005 \\
+		Root locus & 2~000 & $1\times10^{-4}$ & 0.005 \\
+		\gls{H2} & 150 & $1\times10^{-6}$ & 0 \\
+		\gls{l1} & 1~000 & $1\times10^{-4}$ & 0.001 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 \section{Future Work}
 \label{sec:conclusions-future}
 
 There remain many interesting directions of future study relating to this problem. A more direct application to circuit design is the first of them. For example, constraints on the transfer function coefficients for ease of implementation would be advantageous (e.g., ratios that encourage low capacitor sizes for switched-capacitor \gls{DT} designs). As well, it has been assumed that any realizable loop filter is acceptable. It may be more desirable to restrict the loop filter to that which can be manifested using a specific topology. Both of these would seem relatively straightforward by redefining the variables $a$ and $b$ and imposing additional terms to the objective function. As a longer-term goal, an automated method that could synthesize \gls{HDL} code for simulation (and perhaps testing of \gls{D/A} designs using an \gls{FPGA}) of a design made using this framework would be an exciting next step.
 
-A deeper look into the \gls{CT} design procedure in order to identify more ideal design constraints would be another area of future work. Many recent high-throughput sigma delta modulator designs are moving to the \gls{CT} domian. This also brings about a greater sensitivity non-idealities such as clock jitter, which could possibly be incorporated into the linear model as an uncertainty in a way similar to the quantizer gain. Currently, internal stability is guaranteed for designs using this framework, but one cannot specify a maximum signal magnitude that is not exceeded at any point in the system. Improving the model so that the effect of state saturation would make design more realistic. Saturation is not only is necessary for an actual circuit implementation, but can also prevent the onset of instability.
+A deeper look into the \gls{CT} design procedure in order to identify more ideal design constraints would be another area of future work. Many recent high-throughput sigma delta modulator designs are moving to the \gls{CT} domian. This also brings about a greater sensitivity non-idealities such as clock jitter, which could possibly be incorporated into the linear model as an uncertainty in a way similar to the quantizer gain. Currently, internal stability is guaranteed for designs using this framework, but one cannot specify a maximum signal magnitude that is not exceeded at any point in the system. Improving the model so that the effect of state saturation would make designs more realistic. Saturation is not only is necessary for an actual circuit implementation, but can also prevent the onset of instability.
 
 On the practical side, it is of interest to improve the convexification procedure to eliminate some of the limitations described above and make the design procedure easier for circuit design experts who may not be totally familiar with the field of convex optimization.
