@@ -440,7 +440,7 @@ where $f(\gamma)$ is the objective function, $C_i(a, \gamma, \cdot)$ is the $i$t
 	\end{algorithmic}
 \end{algorithm}
 
-The iterative LMI problems generated with this method were solved numerically using the YALMIP Toolbox for MATLAB \cite{Lofberg2004} with the LMILAB solver \cite{Gahinet1995} wrapped by the Nelder-Mead simplex algorithm \cite{Nelder1965} to solve the \gls{l1} \gls{BMI} (if applicable). Curiously, other \gls{SDP} solvers seem to converge on inferior solutions and often encounter numerical problems. Parameters $\kappa$ and $\epsilon$ were tuned as necessary by observing the convergence of $a$ by iteration.
+The iterative LMI problems generated with this method were solved numerically using the YALMIP Toolbox for MATLAB \cite{Lofberg2004} with the LMILAB solver \cite{Gahinet1995} wrapped by the Nelder-Mead simplex algorithm \cite{Nelder1965} to solve for $\alpha$ in the \gls{l1} \gls{BMI} (if applicable). Curiously, other \gls{SDP} solvers seem to converge on inferior solutions and often encounter numerical problems. Parameters $\kappa$ and $\epsilon$ were tuned as necessary by observing the convergence of $a$ by iteration with example values presented in \autoref{tab:params}.
 
 Algorithm~\ref{alg:iter} requires an feasible intialization in the form of a loop filter transfer function. In many cases, passing a simple transfer function such as:
 

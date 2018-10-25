@@ -9,7 +9,7 @@ In order to apply an optimization framework to the design of the \gls{LF}, the s
 \section{Linearization of the Quantizer Element}
 \label{sec:model-linq}
 
-Next, the nonlinear nature of the quantizer is dealt with. As mentioned before, a common linearization approach is to replace the quantizer with an additive noise source \gls{d}. Furthermore, the linear model can incorporate a variable gain \gls{K}. The inclusion of \gls{K} has uses in linearization, stability, and performance that will be expanded upon in \autoref{ch:Stability}. After these simplifications, the block diagram in \autoref{fig:sdm-model} is obtained, which is applicable to \gls{DT} or \gls{CT} designs. In the \gls{DT} case, the loop is operating entirely in the oversampled domain and the \gls{S/H} block is not shown. In the \gls{CT} case, the \gls{S/H} block in the loop is neglected so that \gls{S} and \gls{T} are \gls{CT} transfer functions\footnote{Note that regarding \autoref{fig:sdm-model} and Figures~\ref{fig:basic-struct-dt}/\ref{fig:basic-struct-ct}, the \gls{NTF} $S(\lambda)$ is the same transfer function whether interpreted from $d \rightarrow y$ or $r \rightarrow e$.}.
+The nonlinear nature of the quantizer must be captured by the model as a way to enforce stability. As mentioned before, a common linearization approach is to replace the quantizer with an additive noise source \gls{d}. Furthermore, the linear model can incorporate a variable gain \gls{K}. The inclusion of \gls{K} has uses in linearization, stability, and performance that will be expanded upon in \autoref{ch:Stability}. After these simplifications, the block diagram in \autoref{fig:sdm-model} is obtained, which is applicable to \gls{DT} or \gls{CT} designs. In the \gls{DT} case, the loop is operating entirely in the oversampled domain and the \gls{S/H} block is not shown. In the \gls{CT} case, the \gls{S/H} block in the loop is neglected so that \gls{S} and \gls{T} are \gls{CT} transfer functions\footnote{Note that regarding \autoref{fig:sdm-model} and Figures~\ref{fig:basic-struct-dt}/\ref{fig:basic-struct-ct}, the \gls{NTF} $S(\lambda)$ is the same transfer function whether interpreted from $d \rightarrow y$ or $r \rightarrow e$.}.
 
 \begin{figure}
 	\centering
@@ -128,7 +128,7 @@ With some abuse of notation, the equations describing this loop are:
 
 A feedback system is considered well-posed if the inverse of the transfer matrix in \autoref{eq:stdf} exists and each of its elements are proper. \autoref{eq:stdf-inv} shows that this is the case if both $S(\lambda)$ and $T(\lambda)$ are proper transfer functions.
 
-\begin{equation}
+\begin{align}
 	\begin{bmatrix}
 		e \\
 		y
@@ -136,7 +136,7 @@ A feedback system is considered well-posed if the inverse of the transfer matrix
 	\begin{bmatrix}
 		1 & 1 \\
 		-H_1K & 1
-	\end{bmatrix}^{-1} =
+	\end{bmatrix}^{-1} &=
 	\begin{bmatrix}
 		\frac{1}{1 + H_1K} & \frac{-1}{1 + H_1K} \\
 		\frac{H_1K}{1 + H_1K} & \frac{1}{1 + H_1K}
@@ -144,7 +144,7 @@ A feedback system is considered well-posed if the inverse of the transfer matrix
 	\begin{bmatrix}
 		r \\
 		d
-	\end{bmatrix} = 
+	\end{bmatrix} \\ &= 
 	\begin{bmatrix}
 		S & -S \\
 		T & S
@@ -153,7 +153,7 @@ A feedback system is considered well-posed if the inverse of the transfer matrix
 		r \\
 		d
 	\end{bmatrix}. \label{eq:stdf-inv}
-\end{equation}
+\end{align}
 
 The principle of internal stability is stricter than \gls{BIBO} stability because it guarantees that the internal states of the system remain bounded. The system in \autoref{eq:stdf-inv} is internally stable if each element of the transfer matrix belongs to the set $\mathcal{R}\mathcal{H}_\infty$, i.e., the set of stable real rational proper transfer functions.
 
@@ -354,7 +354,7 @@ Naturally, $H_1(\lambda)$ is a strictly proper transfer function and state-space
 	\end{bmatrix}. \label{eq:m-exp}
 \end{equation}
 
-With some algebra, the augmented system \gls{G} from \autoref{fig:sdm-aug} may be written in state-space form with notation from Equations~\ref{eq:h1-ss} and \ref{eq:m-exp} by introducing state vector $x$. The notation $G_{qp}(\lambda)$ is used to indicate the transfer function of \gls{G} from some input channel $p$ to some output channel $q$ and the closed-loop state-space matrix blocks are denoted with cursive symbols as shown in \autoref{eq:aug-ss}.
+With some algebra, the augmented system \gls{G} from \autoref{fig:sdm-aug} may be written in state-space form with notation from Equations~\ref{eq:h1-ss} and \ref{eq:m-exp} by introducing \gls{order}$\times 1$ state vector $x$. The notation $G_{qp}(\lambda)$ is used to indicate the \gls{SISO} transfer function of \gls{G} from some input channel $p$ to some output channel $q$. The closed-loop state-space matrix blocks are denoted with cursive symbols as shown in \autoref{eq:aug-ss}.
 
 \begin{align}
 	G:

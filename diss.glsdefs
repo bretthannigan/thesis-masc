@@ -868,6 +868,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{SISO}{}%
+{%
+\gls@defglossaryentry{SISO}%
+{%
+name={SISO},%
+sort={SISO},%
+type={acronym},%
+first={single-input single-output\glsspace (SISO)},%
+firstplural={single-input single-outputs\glsspace (SISOs)},%
+text={SISO},%
+plural={SISOs},%
+description={single-input single-output},%
+descriptionplural={single-input single-output\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={single-input single-output},%
+longplural={single-input single-outputs},%
+short={SISO},%
+shortplural={SISOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{PDF}{}%
 {%
 \gls@defglossaryentry{PDF}%

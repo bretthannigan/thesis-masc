@@ -4,7 +4,7 @@
 \chapter{Conclusions}
 \label{ch:Conclusions}
 
-This thesis has outlined the development of a systematic, high-level design framework for sigma delta modulators. To accomplish this, \autoref{ch:Introduction} presents the basic principles of sigma delta coding that permit high resolution despite using coarse quantization. A simplified structure of the signal flow was presented as were the various transfer functions and their effect on noise shaping. In \autoref{ch:Modelling}, the nonlinear nature of the quantizer was dealt with using techniques from control systems, allowing the modulator to be treated by an optimization framework. The well-posedness, internal stability, and sensitivity integral concepts were introduced that place limitations on the theoretical performance possible by using feedback. A state-space model was developed with channels exposing modulator transfer functions of interest. \autoref{ch:Stability} presented a literature review of some stability criteria and examined how various criteria could be applied to the model as a system norm constraint. The actual optimization and convexification theory was presented in \autoref{ch:Optimization} as a series of \gls{LMI}s coupled with an iterative procedure used as a workaround for the non-convex quadratic term. Finally, design examples were presented in \autoref{ch:Examples} motivated by a bio-signal acquisition problem. These examples showcase different stability criteria and the trade-off between performance and stability.
+This thesis has outlined the development of a systematic, high-level design framework for sigma delta modulators. To accomplish this, \autoref{ch:Introduction} presents the basic principles of sigma delta coding that permit high resolution despite using coarse quantization. A simplified structure of the signal flow was presented as were the various transfer functions and their effect on noise shaping. In \autoref{ch:Modelling}, the nonlinear nature of the quantizer was dealt with using techniques from control systems, allowing the modulator to be treated by an optimization framework. The well-posedness, internal stability, and sensitivity integral concepts were introduced that place limitations on the theoretical performance possible by using feedback. A state-space model was developed with channels exposing modulator transfer functions of interest. \autoref{ch:Stability} presented a literature review of some stability criteria and examined how various criteria could be applied to the model as a system norm constraint. The actual optimization and convexification equations were presented in \autoref{ch:Optimization} as a series of \gls{LMI}s coupled with an iterative procedure used as a workaround for the non-convex quadratic term. Finally, design examples were presented in \autoref{ch:Examples} motivated by a bio-signal acquisition problem. These examples showcase different stability criteria and the trade-off between performance and stability.
 
 The major contributions in this work include:
 
@@ -21,8 +21,8 @@ The major contributions in this work include:
 In \autoref{ch:Examples}, it was shown that the framework presented here is applicable to many sigma delta modulator design problems and can be competitive with existing tools. Despite this, the method has several limitations:
 
 \begin{enumerate}
-	\item There is no existing way to model the influence of integrator state saturation in this context.
-	\item The \gls{LMI} optimization expressions are not feasible for \gls{LF}s with poles or zeros exactly on the unit circle (for \gls{DT}) or imaginary axis (for \gls{CT}), and they are sometimes placed arbitrarily close.
+	\item The the influence of integrator state saturation is not included in the model.
+	\item The \gls{LMI} optimization expressions are not feasible for \gls{LF}s with poles or zeros exactly on the unit circle (for \gls{DT}) or imaginary axis (for \gls{CT}).
 	\item Although mathematically correct, many state-of-the-art \gls{SDP} solvers fail to reach the optimum solution of the \gls{LMI}s.
 	\item The parameters \var{maxIter}, $\epsilon$, and $\kappa$ used in the iterative optimization process are difficult to choose and may need to be set based on the chosen stability criteria. Example ad-hoc values used by the author are listed in \autoref{tab:params}.
 	\item It is often difficult to avoid pole-zero cancellations in high order \gls{LF} during optimization so careful choice of initial conditions and the iteration parameters may be necessary.
@@ -30,7 +30,7 @@ In \autoref{ch:Examples}, it was shown that the framework presented here is appl
 
 \begin{table}[t]
 	\centering
-	\caption{Suggested termination parameters used in the interative convexification procedure.} \label{tab:params}
+	\caption{Suggested starting point for termination parameters used in the interative convexification procedure.} \label{tab:params}
 	\begin{tabular}{l | >{\raggedleft\arraybackslash}p{1.75cm} >{\raggedleft\arraybackslash}p{1.4cm} >{\RaggedRight}p{1cm}}
 		\toprule
 		\textbf{Design type} & \multicolumn{1}{l}{\var{maxIter}} & \multicolumn{1}{l}{$\epsilon$} & \multicolumn{1}{l}{$\kappa$} \\
