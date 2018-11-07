@@ -320,13 +320,13 @@ where vectors ${a_H \equiv \begin{bmatrix} a_0 & a_1 & a_2 & \cdots & a_{n-1} \e
 
 \subsection{Change of Variables} \label{sec:opt-cv}
 
-Let ${a \equiv a_H + m_{22}b_H}$, the negative transpose of the lower row of $\mathcal{A}$. Define ${b \equiv -m_{22}b_H}$ as one of the following depending on the subsystem $G_{qp}(\lambda)$:
+Let ${a \equiv a_H + m_{22}b_H}$, the negative transpose of the lower row of $\mathcal{A}$. Define $b$ as one of the following depending on the subsystem $G_{qp}(\lambda)$:
 
 \begin{equation}
-	b =
+	b \equiv
 	\begin{cases}
 		-m_{22}b_H & G_{qp}(\lambda) = G_{er}(\lambda) \\
-		m_{12}b_H & G_{qp}(\lambda) = G_{zw}(\lambda) \\
+		-m_{12}m_{12}b_H & G_{qp}(\lambda) = G_{zw}(\lambda) \\
 		m_{22}b_H & G_{qp}(\lambda) = G_{yr}(\lambda) \\
 		b_H & G_{qp}(\lambda) = G_{ur}(\lambda) \\
 	\end{cases} \label{eq:bs}
