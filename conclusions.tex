@@ -6,7 +6,7 @@
 
 This thesis has outlined the development of a systematic, high-level design framework for sigma delta modulators. To accomplish this, \autoref{ch:Introduction} presents the basic principles of sigma delta coding that permit high resolution despite using coarse quantization. A simplified structure of the signal flow was presented as were the various transfer functions and their effect on noise shaping. In \autoref{ch:Modelling}, the nonlinear nature of the quantizer was dealt with using techniques from control systems, allowing the modulator to be treated by an optimization framework. The well-posedness, internal stability, and sensitivity integral concepts were introduced that place limitations on the theoretical performance possible by using feedback. A state-space model was developed with channels exposing modulator transfer functions of interest. \autoref{ch:Stability} presented a literature review of some stability criteria and examined how various criteria could be applied to the model as a system norm constraint. The actual optimization and convexification equations were presented in \autoref{ch:Optimization} as a series of \gls{LMI}s coupled with an iterative procedure used as a workaround for the non-convex quadratic term. Finally, design examples were presented in \autoref{ch:Examples} motivated by a bio-signal acquisition problem. These examples showcase different stability criteria and the trade-off between performance and stability.
 
-The major contributions in this work include:
+As outlined in \autoref{sec:in-contrib}, the major contributions in this work include:
 
 \begin{enumerate}
 	\item Uniting \gls{GKYP}, \gls{H2}, and \gls{l1} designs into a consistent set of \gls{LMI}s for the design of \gls{IIR} \gls{NTF}s.
