@@ -393,7 +393,7 @@ It is seen that, like \autoref{eq:lmiinf}, the other semidefinite programs can u
 
 \subsection{Iterative Procedure}
 
-The non-convex inequalities have now been converted into a form where one quadratic term exists. The solving of a quadratically constrained \gls{LMI} is a difficult problem. Several methods of solving \autoref{eq:lmiinf-equiv} and \autoref{eq:lmi2-lmi1-equiv} were attempted but had poor results. These included using a general non-convex solver directly, using a rank-constrainted LMI solver, and using Shor's relaxation to linearize the problem. Instead, the iterative method from \cite{Shishkin2017} is used. For problems with simple non-convexities, this method appears to be similar to the method used in \cite{Li2014} except with an extra parameter to guarantee finite convergence. 
+The non-convex inequalities have now been converted into a form where one quadratic term exists. The solving of a quadratically constrained \gls{LMI} is a difficult problem. Several methods of solving \autoref{eq:lmiinf-equiv} and \autoref{eq:lmi2-lmi1-equiv} were attempted but had poor results. These included using a general non-convex solver directly, using a rank-constrained LMI solver, and using Shor's relaxation to linearize the problem. Instead, the iterative method from \cite{Shishkin2017} is used. For problems with simple non-convexities, this method appears to be similar to the method used in \cite{Li2014} except with an extra parameter to guarantee finite convergence. 
 
 In short, the iterative method proceeds following Algorithm~\ref{alg:iter}, where the quadratic term is separated from the rest of the \gls{LMI} by splitting the optimization problem into the form:
 
@@ -404,7 +404,7 @@ In short, the iterative method proceeds following Algorithm~\ref{alg:iter}, wher
 	\end{gathered}
 \end{equation}
 
-where $f(\gamma)$ is the objective function, $C_i(a, \gamma, \cdot)$ is the $i$th convex \gls{LMI} constraint, and $Q(a)=\begin{bmatrix} aa^T & 0 \\ 0 & 0 \end{bmatrix}$ is the quadratic part involving $a$. A maximum number of iterations \var{maxIter} is defined, as well as termination crtieria $\epsilon$ and an optional weight $\kappa$ to penalize wandering in the neighbourhood of a solution.
+where $f(\gamma)$ is the objective function, $C_i(a, \gamma, \cdot)$ is the $i$th convex \gls{LMI} constraint, and $Q(a)=\begin{bmatrix} aa^T & 0 \\ 0 & 0 \end{bmatrix}$ is the quadratic part involving $a$. A maximum number of iterations \var{maxIter} is defined, as well as termination criteria $\epsilon$ and an optional weight $\kappa$ to penalize wandering in the neighbourhood of a solution.
 
 \begin{algorithm}
 	\caption{Iterative convexification procedure} \label{alg:iter}
@@ -442,7 +442,7 @@ where $f(\gamma)$ is the objective function, $C_i(a, \gamma, \cdot)$ is the $i$t
 
 The iterative LMI problems generated with this method were solved numerically using the YALMIP Toolbox for MATLAB \cite{Lofberg2004} with the LMILAB solver \cite{Gahinet1995} wrapped by the Nelder-Mead simplex algorithm \cite{Nelder1965} to solve for $\alpha$ in the \gls{l1} \gls{BMI} (if applicable). Curiously, other \gls{SDP} solvers seem to converge on inferior solutions and often encounter numerical problems. Parameters $\kappa$ and $\epsilon$ were tuned as necessary by observing the convergence of $a$ by iteration with example values presented in \autoref{tab:params}.
 
-Algorithm~\ref{alg:iter} requires an feasible intialization in the form of a loop filter transfer function. In many cases, passing a simple transfer function such as:
+Algorithm~\ref{alg:iter} requires an feasible initialization in the form of a loop filter transfer function. In many cases, passing a simple transfer function such as:
 
 \begin{equation*}
 	H_1(z) = \frac{z^{n-1}}{z^{n}}

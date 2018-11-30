@@ -4,7 +4,7 @@
 \chapter{Introduction}
 \label{ch:Introduction}
 
-The conversion of signals between analog and digital domanis is an often encountered problem in signal processing. For an analog signal to be represented digitally, it must undergo the processes of sampling and quantization (\autoref{fig:samp-quant}). The former is the conversion from \gls{CT} to \gls{DT} and can be done without loss of information by the Nyquist-Shannon sampling theorem, given a sufficiently high sample rate. The latter is the mapping from an infinite set of possible values to a fixed number of quantization levels that is required for digital representation with finite memory. Unlike sampling, the process of quantization is non-injective and thus irreversible. The design of signal conversion circuits that minimize the error introduced by quantization is a major problem in mixed signal electronics.
+The conversion of signals between analog and digital domains is an often encountered problem in signal processing. For an analog signal to be represented digitally, it must undergo the processes of sampling and quantization (\autoref{fig:samp-quant}). The former is the conversion from \gls{CT} to \gls{DT} and can be done without loss of information by the Nyquist-Shannon sampling theorem, given a sufficiently high sample rate. The latter is the mapping from an infinite set of possible values to a fixed number of quantization levels that is required for digital representation with finite memory. Unlike sampling, the process of quantization is non-injective and thus irreversible. The design of signal conversion circuits that minimize the error introduced by quantization is a major problem in mixed signal electronics.
 
 \begin{figure}
 	\centering
@@ -139,7 +139,7 @@ The conversion of signals between analog and digital domanis is an often encount
 	\label{fig:samp-quant}
 \end{figure}
 
-Sigma delta modulation is a widely used method for \gls{A/D} and \gls{D/A} conversion of signals that provides high resolution through the techniques of oversampling and noise shaping. Oversampling trades throughput for resolution. Because of this, the sigma delta modulator generally lies between integrating converters, which are specialized for near-\glsentryshort{DC} signals, and high-speed architectures, such as successive approximation and flash. The sigma delta quantization scheme is especially applicable to signals with low to moderate frequency content. Signals with these properties include most biosignals such as those recorded electrically (e.g., \gls{EEG}, \gls{ECG}) or through other means using transducers (e.g., \gls{PPG}), as well as audio signals.
+Sigma delta modulation is a widely used method for \gls{A/D} and \gls{D/A} conversion of signals that provides high resolution through the techniques of oversampling and noise shaping. Oversampling trades throughput for resolution. Because of this, the sigma delta modulator generally lies between integrating converters, which are specialized for near-\glsentryshort{DC} signals, and high-speed architectures, such as successive approximation and flash. The sigma delta quantization scheme is especially applicable to signals with low to moderate frequency content. Signals with these properties include most bio-signals such as those recorded electrically (e.g., \gls{EEG}, \gls{ECG}) or through other means using transducers (e.g., \gls{PPG}), as well as audio signals.
 
 \section{Oversampling and Noise Shaping}
 \label{sec:in-os-ns}
@@ -373,7 +373,7 @@ It may appear that oversampling alone quickly becomes impractical because one mu
 \section{Basic Structure}
 \label{sec:in-bs}
 
-The basic block diagram of a sigma delta modulator and nomenclature that will be used henceforth is now introduced. For brevity, the scope of this thesis is limited to sigma delta \gls{A/D} converters but the concepts are easily transferrable to the \gls{D/A} case. Modulators can be one of two main classes, \gls{CT} or \gls{DT}, referring to the nature of the \gls{LF}. 
+The basic block diagram of a sigma delta modulator and nomenclature that will be used henceforth is now introduced. For brevity, the scope of this thesis is limited to sigma delta \gls{A/D} converters but the concepts are easily transferrable to the \gls{D/A} case. Modulators can be one of two main classes, \gls{DT} or \gls{CT}, referring to the nature of the \gls{LF}. The two types differ in the location of the \gls{S/H} block. \gls{CT} modulators allow higher sampling rates and lower power consumption than \gls{DT} types, but are more susceptible to power supply variations, clock jitter, and component nonidealities. In addition, the stability of a \gls{CT} sigma delta modulator is more difficult to analyze.
 
 \subsection{Discrete-Time Modulator}
 \label{sec:in-dtm}
@@ -475,7 +475,7 @@ The basic block diagram of a sigma delta modulator and nomenclature that will be
 
 Consider the \gls{DT} modulator block diagram shown in \autoref{fig:basic-struct-dt}. The analog front-end includes the \gls{AAF} and \gls{S/H} block. This subsystem conditions the input signal $r_0(t)$ and samples it outside the loop to produce \gls{DT} signal $r[k]$. In the modulator loop, the 2-input, 1-output \gls{LF} operates on $r[k]$ and the feedback signal, producing intermediate signal $u[k]$ with shaped noise. Then, $u[k]$ undergoes quantization producing discrete-value output $y[k]$. The quantizer output is fed back to the \gls{LF} and also passed along. The final subsystem filters the signal from the shaped noise in the digital domain with a downsampling \gls{DRF} to yield the final digital output $y[m]$.
 
-From a control systems perspective, there are a couple of transfer functions that will be used to analyze and synthesize loop filters. The sensitivity function \gls{S}, where \gls{sorz}$=z$, is known as the \gls{NTF} of the modulator because it shows how the quantization error is filtered in the linearized model. The complementary sensitivity function \gls{T} is known as the \gls{STF} of the modulator and shows how the signal is transformed by the modulator loop.
+From a control systems perspective, there are a couple of transfer functions that will be used to analyze and synthesize loop filters. The sensitivity function \gls{S}, where \gls{sorz}$=z$, is known as the \gls{NTF} of the modulator because it shows how the quantization error is filtered in the linearized model. The \gls{NTF} is conceptualized as a transfer function from an additive disturbance entering at the quantizer to the output $y$. The complementary sensitivity function \gls{T} is known as the \gls{STF} of the modulator and shows how the signal is transformed by the modulator loop. It is conceptualized as shown in \autoref{fig:basic-struct-dt} from input $r$ to output $y$.
 
 \subsection{Continuous-Time Modulator}
 \label{sec:in-ctm}
@@ -559,7 +559,7 @@ From a control systems perspective, there are a couple of transfer functions tha
 	\caption{The basic block diagram of a \glsentryshort{CT} sigma delta \glsentryshort{A/D} converter.} \label{fig:basic-struct-ct}
 \end{figure}
 
-For the \gls{CT} class of modulators, consider the structure of \autoref{fig:basic-struct-ct}. It is similar to the \gls{DT} case except the \gls{LF} operates directly on analog input $r(t)$ in the \gls{CT} domain and sampling is done inside the loop. The \gls{AAF} is no longer necessary in most cases because the \gls{LF} precedes the sampling block. It generally has high gain for in-band signals and implicitly attenuates components of the signal that would result in aliasing. Finally, signal $y[k]$ must undergo \gls{D/A} conversion during feedback, modelled witht the pulse transfer function $P(s)$. 
+For the \gls{CT} class of modulators, consider the structure of \autoref{fig:basic-struct-ct}. It is similar to the \gls{DT} case except the \gls{LF} operates directly on analog input $r(t)$ in the \gls{CT} domain and sampling is done inside the loop. The \gls{AAF} is no longer necessary in most cases because the \gls{LF} precedes the sampling block. It generally has high gain for in-band signals and implicitly attenuates components of the signal that would result in aliasing. Finally, signal $y[k]$ must undergo \gls{D/A} conversion during feedback, modelled with the pulse transfer function $P(s)$. 
 
 The \gls{NTF} and \gls{STF} of a \gls{CT} sigma delta modulator are more difficult to define because they are transfer functions involving both \gls{CT} and \gls{DT} signals. The \gls{DT} equivalence principle states that there is a \gls{DT} modulator model that exactly describes the \gls{CT} design at the sampling instants, because the modulator is overall a sampled data system \cite[Sec. 3.2]{Ortmanns2005}. Thus, \gls{DT} transfer functions can be derived for this purpose. However, these equivalent transfer functions may be difficult to manipulate due to their dependence on $P(s)$. For the purposes of this analysis, the sampling block is omitted during design, causing \gls{S} and \gls{T} to be simplified as \gls{CT} (\gls{sorz}$=s$) transfer functions mapping $t(t) \rightarrow e(t)$ and $r(t) \rightarrow y(t)$, respectively.
 
@@ -614,10 +614,10 @@ More recently, the \gls{GKYP} lemma has been applied to sigma delta modulator de
 \section{Objectives}
 \label{sec:in-obj}
 
-The objective of this thesis was to develop a systematic method of designing sigma delta \gls{A/D} converters for the recording of bio-signals. The goal of this method was to:
+The objective of this thesis was to develop a systematic method of designing sigma delta \gls{A/D} converters for the recording of bio-signals. Many bio-signals are low-pass signals with reasonably low Nyquist frequencies. The designs presented in this Thesis are not usable only for only this class of signal but a specific bio-signal is used for the examples in \autoref{ch:Examples}. The goal of this method was to:
 
 \begin{enumerate}
-	\item Model the nonlinear system accurately in a way that allows analysis of exisiting designs.
+	\item Model the nonlinear system accurately in a way that allows analysis of existing designs.
 	\item Reduce dependence on simulation by supporting as many stability criteria as possible.
 	\item Provide a way to design guaranteed stable sigma delta modulators in a way that minimizes conservatism.
 \end{enumerate}
@@ -641,6 +641,3 @@ The contributions in this Thesis are related to both the theory of sigma delta l
 Having established some background on the workings and nomenclature of a sigma delta modulator, \autoref{ch:Modelling} expands on this to show modifications to the general sigma delta model based on control theory that will permit it to be used in an optimization framework. In \autoref{ch:Stability}, various stability criteria are introduced, ranging from heuristics to sufficient conditions. Their relative rigour and impact on performance is discussed. Following the discussion of the role of optimization in loop filter design, \autoref{ch:Optimization} bridges the Modelling and Stability chapters by introducing a \gls{SDP} framework that supports the aforementioned criteria. The total design process is discussed in \autoref{ch:Examples}, with emphasis on simulation results as well as an empirical study of the tradeoff between performance and stability when using this approach. Finally, \autoref{ch:Conclusions} concludes the thesis with some discussion about the merits and shortcomings of this method of sigma delta modulator design and possible directions for future work.
 
 \endinput
-
-Any text after an \endinput is ignored.
-You could put scraps here or things in progress.

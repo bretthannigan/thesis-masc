@@ -1,0 +1,1980 @@
+\ifglsentryexists{UBC}{}%
+{%
+\gls@defglossaryentry{UBC}%
+{%
+name={UBC},%
+sort={UBC},%
+type={hidden},%
+first={University of British Columbia\glsspace (UBC)},%
+firstplural={University of British Columbias\glsspace (UBCs)},%
+text={UBC},%
+plural={UBCs},%
+description={University of British Columbia},%
+descriptionplural={University of British Columbia\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={University of British Columbia},%
+longplural={University of British Columbias},%
+short={UBC},%
+shortplural={UBCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GPS}{}%
+{%
+\gls@defglossaryentry{GPS}%
+{%
+name={GPS},%
+sort={GPS},%
+type={hidden},%
+first={graduate and postdoctoral studies\glsspace (GPS)},%
+firstplural={graduate and postdoctoral studiess\glsspace (GPSs)},%
+text={GPS},%
+plural={GPSs},%
+description={graduate and postdoctoral studies},%
+descriptionplural={graduate and postdoctoral studies\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={graduate and postdoctoral studies},%
+longplural={graduate and postdoctoral studiess},%
+short={GPS},%
+shortplural={GPSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{A/D}{}%
+{%
+\gls@defglossaryentry{A/D}%
+{%
+name={A/D},%
+sort={A/D},%
+type={acronym},%
+first={analog-to-digital\glsspace (A/D)},%
+firstplural={analog-to-digitals\glsspace (A/Ds)},%
+text={A/D},%
+plural={A/Ds},%
+description={analog-to-digital},%
+descriptionplural={analog-to-digital\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={analog-to-digital},%
+longplural={analog-to-digitals},%
+short={A/D},%
+shortplural={A/Ds},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{D/A}{}%
+{%
+\gls@defglossaryentry{D/A}%
+{%
+name={D/A},%
+sort={D/A},%
+type={acronym},%
+first={digital-to-analog\glsspace (D/A)},%
+firstplural={digital-to-analogs\glsspace (D/As)},%
+text={D/A},%
+plural={D/As},%
+description={digital-to-analog},%
+descriptionplural={digital-to-analog\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={digital-to-analog},%
+longplural={digital-to-analogs},%
+short={D/A},%
+shortplural={D/As},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CT}{}%
+{%
+\gls@defglossaryentry{CT}%
+{%
+name={CT},%
+sort={CT},%
+type={acronym},%
+first={continuous-time\glsspace (CT)},%
+firstplural={continuous-times\glsspace (CTs)},%
+text={CT},%
+plural={CTs},%
+description={continuous-time},%
+descriptionplural={continuous-time\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={continuous-time},%
+longplural={continuous-times},%
+short={CT},%
+shortplural={CTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DT}{}%
+{%
+\gls@defglossaryentry{DT}%
+{%
+name={DT},%
+sort={DT},%
+type={acronym},%
+first={discrete-time\glsspace (DT)},%
+firstplural={discrete-times\glsspace (DTs)},%
+text={DT},%
+plural={DTs},%
+description={discrete-time},%
+descriptionplural={discrete-time\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={discrete-time},%
+longplural={discrete-times},%
+short={DT},%
+shortplural={DTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{S/H}{}%
+{%
+\gls@defglossaryentry{S/H}%
+{%
+name={S/H},%
+sort={S/H},%
+type={acronym},%
+first={sample-and-hold\glsspace (S/H)},%
+firstplural={sample-and-holds\glsspace (S/Hs)},%
+text={S/H},%
+plural={S/Hs},%
+description={sample-and-hold},%
+descriptionplural={sample-and-hold\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={sample-and-hold},%
+longplural={sample-and-holds},%
+short={S/H},%
+shortplural={S/Hs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DC}{}%
+{%
+\gls@defglossaryentry{DC}%
+{%
+name={DC},%
+sort={DC},%
+type={acronym},%
+first={direct current\glsspace (DC)},%
+firstplural={direct currents\glsspace (DCs)},%
+text={DC},%
+plural={DCs},%
+description={direct current},%
+descriptionplural={direct current\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={direct current},%
+longplural={direct currents},%
+short={DC},%
+shortplural={DCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{EEG}{}%
+{%
+\gls@defglossaryentry{EEG}%
+{%
+name={EEG},%
+sort={EEG},%
+type={acronym},%
+first={electroencephalography\glsspace (EEG)},%
+firstplural={electroencephalographys\glsspace (EEGs)},%
+text={EEG},%
+plural={EEGs},%
+description={electroencephalography},%
+descriptionplural={electroencephalography\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={electroencephalography},%
+longplural={electroencephalographys},%
+short={EEG},%
+shortplural={EEGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ECG}{}%
+{%
+\gls@defglossaryentry{ECG}%
+{%
+name={ECG},%
+sort={ECG},%
+type={acronym},%
+first={electrocardiography\glsspace (ECG)},%
+firstplural={electrocardiographys\glsspace (ECGs)},%
+text={ECG},%
+plural={ECGs},%
+description={electrocardiography},%
+descriptionplural={electrocardiography\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={electrocardiography},%
+longplural={electrocardiographys},%
+short={ECG},%
+shortplural={ECGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PPG}{}%
+{%
+\gls@defglossaryentry{PPG}%
+{%
+name={PPG},%
+sort={PPG},%
+type={acronym},%
+first={photoplethysmography\glsspace (PPG)},%
+firstplural={photoplethysmographys\glsspace (PPGs)},%
+text={PPG},%
+plural={PPGs},%
+description={photoplethysmography},%
+descriptionplural={photoplethysmography\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={photoplethysmography},%
+longplural={photoplethysmographys},%
+short={PPG},%
+shortplural={PPGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{OSR}{}%
+{%
+\gls@defglossaryentry{OSR}%
+{%
+name={OSR},%
+sort={OSR},%
+type={acronym},%
+first={oversampling ratio\glsspace (OSR)},%
+firstplural={oversampling ratios\glsspace (OSRs)},%
+text={OSR},%
+plural={OSRs},%
+description={oversampling ratio},%
+descriptionplural={oversampling ratio\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={oversampling ratio},%
+longplural={oversampling ratios},%
+short={OSR},%
+shortplural={OSRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SQNR}{}%
+{%
+\gls@defglossaryentry{SQNR}%
+{%
+name={SQNR},%
+sort={SQNR},%
+type={acronym},%
+first={signal-to-quantization-noise ratio\glsspace (SQNR)},%
+firstplural={signal-to-quantization-noise ratios\glsspace (SQNRs)},%
+text={SQNR},%
+plural={SQNRs},%
+description={signal-to-quantization-noise ratio},%
+descriptionplural={signal-to-quantization-noise ratio\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={signal-to-quantization-noise ratio},%
+longplural={signal-to-quantization-noise ratios},%
+short={SQNR},%
+shortplural={SQNRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{AAF}{}%
+{%
+\gls@defglossaryentry{AAF}%
+{%
+name={AAF},%
+sort={AAF},%
+type={acronym},%
+first={antialiasing filter\glsspace (AAF)},%
+firstplural={antialiasing filters\glsspace (AAFs)},%
+text={AAF},%
+plural={AAFs},%
+description={antialiasing filter},%
+descriptionplural={antialiasing filter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={antialiasing filter},%
+longplural={antialiasing filters},%
+short={AAF},%
+shortplural={AAFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LF}{}%
+{%
+\gls@defglossaryentry{LF}%
+{%
+name={LF},%
+sort={LF},%
+type={acronym},%
+first={loop filter\glsspace (LF)},%
+firstplural={loop filters\glsspace (LFs)},%
+text={LF},%
+plural={LFs},%
+description={loop filter},%
+descriptionplural={loop filter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={loop filter},%
+longplural={loop filters},%
+short={LF},%
+shortplural={LFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DRF}{}%
+{%
+\gls@defglossaryentry{DRF}%
+{%
+name={DRF},%
+sort={DRF},%
+type={acronym},%
+first={digital reconstruction filter\glsspace (DRF)},%
+firstplural={digital reconstruction filters\glsspace (DRFs)},%
+text={DRF},%
+plural={DRFs},%
+description={digital reconstruction filter},%
+descriptionplural={digital reconstruction filter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={digital reconstruction filter},%
+longplural={digital reconstruction filters},%
+short={DRF},%
+shortplural={DRFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LF}{}%
+{%
+\gls@defglossaryentry{LF}%
+{%
+name={LF},%
+sort={LF},%
+type={acronym},%
+first={loop filter\glsspace (LF)},%
+firstplural={loop filters\glsspace (LFs)},%
+text={LF},%
+plural={LFs},%
+description={loop filter},%
+descriptionplural={loop filter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={loop filter},%
+longplural={loop filters},%
+short={LF},%
+shortplural={LFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NTF}{}%
+{%
+\gls@defglossaryentry{NTF}%
+{%
+name={NTF},%
+sort={NTF},%
+type={acronym},%
+first={noise transfer function\glsspace (NTF)},%
+firstplural={noise transfer functions\glsspace (NTFs)},%
+text={NTF},%
+plural={NTFs},%
+description={noise transfer function, equivalent to the sensitivity function},%
+descriptionplural={noise transfer function\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={noise transfer function},%
+longplural={noise transfer functions},%
+short={NTF},%
+shortplural={NTFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{STF}{}%
+{%
+\gls@defglossaryentry{STF}%
+{%
+name={STF},%
+sort={STF},%
+type={acronym},%
+first={signal transfer function\glsspace (STF)},%
+firstplural={signal transfer functions\glsspace (STFs)},%
+text={STF},%
+plural={STFs},%
+description={signal transfer function, equivalent to the complementary sensitivity function},%
+descriptionplural={signal transfer function\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={signal transfer function},%
+longplural={signal transfer functions},%
+short={STF},%
+shortplural={STFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CLANS}{}%
+{%
+\gls@defglossaryentry{CLANS}%
+{%
+name={CLANS},%
+sort={CLANS},%
+type={acronym},%
+first={closed-loop analysis of noise shaper\glsspace (CLANS)},%
+firstplural={closed-loop analysis of noise shapers\glsspace (CLANSs)},%
+text={CLANS},%
+plural={CLANSs},%
+description={closed-loop analysis of noise shaper},%
+descriptionplural={closed-loop analysis of noise shaper\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={closed-loop analysis of noise shaper},%
+longplural={closed-loop analysis of noise shapers},%
+short={CLANS},%
+shortplural={CLANSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LMI}{}%
+{%
+\gls@defglossaryentry{LMI}%
+{%
+name={LMI},%
+sort={LMI},%
+type={acronym},%
+first={linear matrix inequality\glsspace (LMI)},%
+firstplural={linear matrix inequalitys\glsspace (LMIs)},%
+text={LMI},%
+plural={LMIs},%
+description={linear matrix inequality},%
+descriptionplural={linear matrix inequality\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={linear matrix inequality},%
+longplural={linear matrix inequalitys},%
+short={LMI},%
+shortplural={LMIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{BMI}{}%
+{%
+\gls@defglossaryentry{BMI}%
+{%
+name={BMI},%
+sort={BMI},%
+type={acronym},%
+first={bilinear matrix inequality\glsspace (BMI)},%
+firstplural={bilinear matrix inequalitys\glsspace (BMIs)},%
+text={BMI},%
+plural={BMIs},%
+description={bilinear matrix inequality},%
+descriptionplural={bilinear matrix inequality\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={bilinear matrix inequality},%
+longplural={bilinear matrix inequalitys},%
+short={BMI},%
+shortplural={BMIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SDP}{}%
+{%
+\gls@defglossaryentry{SDP}%
+{%
+name={SDP},%
+sort={SDP},%
+type={acronym},%
+first={semidefinite programming\glsspace (SDP)},%
+firstplural={semidefinite programmings\glsspace (SDPs)},%
+text={SDP},%
+plural={SDPs},%
+description={semidefinite programming},%
+descriptionplural={semidefinite programming\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={semidefinite programming},%
+longplural={semidefinite programmings},%
+short={SDP},%
+shortplural={SDPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GKYP}{}%
+{%
+\gls@defglossaryentry{GKYP}%
+{%
+name={GKYP},%
+sort={GKYP},%
+type={acronym},%
+first={generalized Kalman-Yakubovi\v {c}-Popov\glsspace (GKYP)},%
+firstplural={generalized Kalman-Yakubovi\v {c}-Popovs\glsspace (GKYPs)},%
+text={GKYP},%
+plural={GKYPs},%
+description={generalized Kalman-Yakubovi\v {c}-Popov},%
+descriptionplural={generalized Kalman-Yakubovi\v {c}-Popov\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={generalized Kalman-Yakubovi\v {c}-Popov},%
+longplural={generalized Kalman-Yakubovi\v {c}-Popovs},%
+short={GKYP},%
+shortplural={GKYPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FIR}{}%
+{%
+\gls@defglossaryentry{FIR}%
+{%
+name={FIR},%
+sort={FIR},%
+type={acronym},%
+first={finite impulse response\glsspace (FIR)},%
+firstplural={finite impulse responses\glsspace (FIRs)},%
+text={FIR},%
+plural={FIRs},%
+description={finite impulse response},%
+descriptionplural={finite impulse response\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={finite impulse response},%
+longplural={finite impulse responses},%
+short={FIR},%
+shortplural={FIRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IIR}{}%
+{%
+\gls@defglossaryentry{IIR}%
+{%
+name={IIR},%
+sort={IIR},%
+type={acronym},%
+first={infinite impulse response\glsspace (IIR)},%
+firstplural={infinite impulse responses\glsspace (IIRs)},%
+text={IIR},%
+plural={IIRs},%
+description={infinite impulse response},%
+descriptionplural={infinite impulse response\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={infinite impulse response},%
+longplural={infinite impulse responses},%
+short={IIR},%
+shortplural={IIRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DSP}{}%
+{%
+\gls@defglossaryentry{DSP}%
+{%
+name={DSP},%
+sort={DSP},%
+type={acronym},%
+first={digital signal processing\glsspace (DSP)},%
+firstplural={digital signal processings\glsspace (DSPs)},%
+text={DSP},%
+plural={DSPs},%
+description={digital signal processing},%
+descriptionplural={digital signal processing\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={digital signal processing},%
+longplural={digital signal processings},%
+short={DSP},%
+shortplural={DSPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{BIBO}{}%
+{%
+\gls@defglossaryentry{BIBO}%
+{%
+name={BIBO},%
+sort={BIBO},%
+type={acronym},%
+first={bounded-input bounded-output\glsspace (BIBO)},%
+firstplural={bounded-input bounded-outputs\glsspace (BIBOs)},%
+text={BIBO},%
+plural={BIBOs},%
+description={bounded-input bounded-output},%
+descriptionplural={bounded-input bounded-output\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={bounded-input bounded-output},%
+longplural={bounded-input bounded-outputs},%
+short={BIBO},%
+shortplural={BIBOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LFT}{}%
+{%
+\gls@defglossaryentry{LFT}%
+{%
+name={LFT},%
+sort={LFT},%
+type={acronym},%
+first={linear fractional transformation\glsspace (LFT)},%
+firstplural={linear fractional transformations\glsspace (LFTs)},%
+text={LFT},%
+plural={LFTs},%
+description={linear fractional transformation},%
+descriptionplural={linear fractional transformation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={linear fractional transformation},%
+longplural={linear fractional transformations},%
+short={LFT},%
+shortplural={LFTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SISO}{}%
+{%
+\gls@defglossaryentry{SISO}%
+{%
+name={SISO},%
+sort={SISO},%
+type={acronym},%
+first={single-input single-output\glsspace (SISO)},%
+firstplural={single-input single-outputs\glsspace (SISOs)},%
+text={SISO},%
+plural={SISOs},%
+description={single-input single-output},%
+descriptionplural={single-input single-output\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={single-input single-output},%
+longplural={single-input single-outputs},%
+short={SISO},%
+shortplural={SISOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PDF}{}%
+{%
+\gls@defglossaryentry{PDF}%
+{%
+name={PDF},%
+sort={PDF},%
+type={acronym},%
+first={probability density function\glsspace (PDF)},%
+firstplural={probability density functions\glsspace (PDFs)},%
+text={PDF},%
+plural={PDFs},%
+description={probability density function},%
+descriptionplural={probability density function\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={probability density function},%
+longplural={probability density functions},%
+short={PDF},%
+shortplural={PDFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MSIA}{}%
+{%
+\gls@defglossaryentry{MSIA}%
+{%
+name={MSIA},%
+sort={MSIA},%
+type={acronym},%
+first={maximum stable input amplitude\glsspace (MSIA)},%
+firstplural={maximum stable input amplitudes\glsspace (MSIAs)},%
+text={MSIA},%
+plural={MSIAs},%
+description={maximum stable input amplitude},%
+descriptionplural={maximum stable input amplitude\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={maximum stable input amplitude},%
+longplural={maximum stable input amplitudes},%
+short={MSIA},%
+shortplural={MSIAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FS}{}%
+{%
+\gls@defglossaryentry{FS}%
+{%
+name={FS},%
+sort={FS},%
+type={acronym},%
+first={full-scale\glsspace (FS)},%
+firstplural={full-scales\glsspace (FSs)},%
+text={FS},%
+plural={FSs},%
+description={full-scale},%
+descriptionplural={full-scale\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={full-scale},%
+longplural={full-scales},%
+short={FS},%
+shortplural={FSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LP}{}%
+{%
+\gls@defglossaryentry{LP}%
+{%
+name={LP},%
+sort={LP},%
+type={acronym},%
+first={low pass\glsspace (LP)},%
+firstplural={low passs\glsspace (LPs)},%
+text={LP},%
+plural={LPs},%
+description={low pass},%
+descriptionplural={low pass\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={low pass},%
+longplural={low passs},%
+short={LP},%
+shortplural={LPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{BP}{}%
+{%
+\gls@defglossaryentry{BP}%
+{%
+name={BP},%
+sort={BP},%
+type={acronym},%
+first={band pass\glsspace (BP)},%
+firstplural={band passs\glsspace (BPs)},%
+text={BP},%
+plural={BPs},%
+description={band pass},%
+descriptionplural={band pass\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={band pass},%
+longplural={band passs},%
+short={BP},%
+shortplural={BPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{HP}{}%
+{%
+\gls@defglossaryentry{HP}%
+{%
+name={HP},%
+sort={HP},%
+type={acronym},%
+first={high pass\glsspace (HP)},%
+firstplural={high passs\glsspace (HPs)},%
+text={HP},%
+plural={HPs},%
+description={high pass},%
+descriptionplural={high pass\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={high pass},%
+longplural={high passs},%
+short={HP},%
+shortplural={HPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CCF}{}%
+{%
+\gls@defglossaryentry{CCF}%
+{%
+name={CCF},%
+sort={CCF},%
+type={acronym},%
+first={controllable canonical form\glsspace (CCF)},%
+firstplural={controllable canonical forms\glsspace (CCFs)},%
+text={CCF},%
+plural={CCFs},%
+description={controllable canonical form},%
+descriptionplural={controllable canonical form\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={controllable canonical form},%
+longplural={controllable canonical forms},%
+short={CCF},%
+shortplural={CCFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{HDL}{}%
+{%
+\gls@defglossaryentry{HDL}%
+{%
+name={HDL},%
+sort={HDL},%
+type={acronym},%
+first={hardware description language\glsspace (HDL)},%
+firstplural={hardware description languages\glsspace (HDLs)},%
+text={HDL},%
+plural={HDLs},%
+description={hardware description language},%
+descriptionplural={hardware description language\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={hardware description language},%
+longplural={hardware description languages},%
+short={HDL},%
+shortplural={HDLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FPGA}{}%
+{%
+\gls@defglossaryentry{FPGA}%
+{%
+name={FPGA},%
+sort={FPGA},%
+type={acronym},%
+first={field programmable gate array\glsspace (FPGA)},%
+firstplural={field programmable gate arrays\glsspace (FPGAs)},%
+text={FPGA},%
+plural={FPGAs},%
+description={field programmable gate array},%
+descriptionplural={field programmable gate array\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={field programmable gate array},%
+longplural={field programmable gate arrays},%
+short={FPGA},%
+shortplural={FPGAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pq}{}%
+{%
+\gls@defglossaryentry{pq}%
+{%
+name={$P_Q$},%
+sort={$P_Q$},%
+type={main},%
+first={$P_Q$},%
+firstplural={$P_Q$s},%
+text={$P_Q$},%
+plural={$P_Q$s},%
+description={In-band quantization noise power},%
+descriptionplural={In-band quantization noise power},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{delta}{}%
+{%
+\gls@defglossaryentry{delta}%
+{%
+name={$\Delta _Q$},%
+sort={$\Delta _Q$},%
+type={main},%
+first={$\Delta _Q$},%
+firstplural={$\Delta _Q$s},%
+text={$\Delta _Q$},%
+plural={$\Delta _Q$s},%
+description={Quantization step size},%
+descriptionplural={Quantization step size},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{order}{}%
+{%
+\gls@defglossaryentry{order}%
+{%
+name={$n$},%
+sort={$n$},%
+type={main},%
+first={$n$},%
+firstplural={$n$s},%
+text={$n$},%
+plural={$n$s},%
+description={Filter order},%
+descriptionplural={Filter order},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{r}{}%
+{%
+\gls@defglossaryentry{r}%
+{%
+name={$r$},%
+sort={$r$},%
+type={main},%
+first={$r$},%
+firstplural={$r$s},%
+text={$r$},%
+plural={$r$s},%
+description={Analog reference input signal},%
+descriptionplural={Analog reference input signal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{e}{}%
+{%
+\gls@defglossaryentry{e}%
+{%
+name={$e$},%
+sort={$e$},%
+type={main},%
+first={$e$},%
+firstplural={$e$s},%
+text={$e$},%
+plural={$e$s},%
+description={Feedback error signal},%
+descriptionplural={Feedback error signal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{u}{}%
+{%
+\gls@defglossaryentry{u}%
+{%
+name={$u$},%
+sort={$u$},%
+type={main},%
+first={$u$},%
+firstplural={$u$s},%
+text={$u$},%
+plural={$u$s},%
+description={Quantizer input signal},%
+descriptionplural={Quantizer input signal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{y}{}%
+{%
+\gls@defglossaryentry{y}%
+{%
+name={$y$},%
+sort={$y$},%
+type={main},%
+first={$y$},%
+firstplural={$y$s},%
+text={$y$},%
+plural={$y$s},%
+description={Digital bitstream output signal},%
+descriptionplural={Digital bitstream output signal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{d}{}%
+{%
+\gls@defglossaryentry{d}%
+{%
+name={$d$},%
+sort={$d$},%
+type={main},%
+first={$d$},%
+firstplural={$d$s},%
+text={$d$},%
+plural={$d$s},%
+description={Quantization noise source (linearized model)},%
+descriptionplural={Quantization noise source (linearized model)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{w}{}%
+{%
+\gls@defglossaryentry{w}%
+{%
+name={$w$},%
+sort={$w$},%
+type={main},%
+first={$w$},%
+firstplural={$w$s},%
+text={$w$},%
+plural={$w$s},%
+description={Disturbance input signal},%
+descriptionplural={Disturbance input signal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{z}{}%
+{%
+\gls@defglossaryentry{z}%
+{%
+name={$z$},%
+sort={$z$},%
+type={main},%
+first={$z$},%
+firstplural={$z$s},%
+text={$z$},%
+plural={$z$s},%
+description={Disturbance output signal},%
+descriptionplural={Disturbance output signal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{K}{}%
+{%
+\gls@defglossaryentry{K}%
+{%
+name={$K$},%
+sort={$K$},%
+type={main},%
+first={$K$},%
+firstplural={$K$s},%
+text={$K$},%
+plural={$K$s},%
+description={Variable quantizer gain (linearized model)},%
+descriptionplural={Variable quantizer gain (linearized model)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{G}{}%
+{%
+\gls@defglossaryentry{G}%
+{%
+name={$G(\lambda )$},%
+sort={$G(\lambda )$},%
+type={main},%
+first={$G(\lambda )$},%
+firstplural={$G(\lambda )$s},%
+text={$G(\lambda )$},%
+plural={$G(\lambda )$s},%
+description={Augmented system},%
+descriptionplural={Augmented system},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{M}{}%
+{%
+\gls@defglossaryentry{M}%
+{%
+name={$M$},%
+sort={$M$},%
+type={main},%
+first={$M$},%
+firstplural={$M$s},%
+text={$M$},%
+plural={$M$s},%
+description={\glsentryshort {LFT} constant gain matrix},%
+descriptionplural={\glsentryshort {LFT} constant gain matrix},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{K(A)}{}%
+{%
+\gls@defglossaryentry{K(A)}%
+{%
+name={$K(A)$},%
+sort={$K(A)$},%
+type={main},%
+first={$K(A)$},%
+firstplural={$K(A)$s},%
+text={$K(A)$},%
+plural={$K(A)$s},%
+description={Describing function of a quantizer},%
+descriptionplural={Describing function of a quantizer},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{S}{}%
+{%
+\gls@defglossaryentry{S}%
+{%
+name={$S(\lambda )$},%
+sort={$S(\lambda )$},%
+type={main},%
+first={$S(\lambda )$},%
+firstplural={$S(\lambda )$s},%
+text={$S(\lambda )$},%
+plural={$S(\lambda )$s},%
+description={Sensitivity function},%
+descriptionplural={Sensitivity function},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{T}{}%
+{%
+\gls@defglossaryentry{T}%
+{%
+name={$T(\lambda )$},%
+sort={$T(\lambda )$},%
+type={main},%
+first={$T(\lambda )$},%
+firstplural={$T(\lambda )$s},%
+text={$T(\lambda )$},%
+plural={$T(\lambda )$s},%
+description={Complementary sensitivity function},%
+descriptionplural={Complementary sensitivity function},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sorz}{}%
+{%
+\gls@defglossaryentry{sorz}%
+{%
+name={$\lambda $},%
+sort={$\lambda $},%
+type={main},%
+first={$\lambda $},%
+firstplural={$\lambda $s},%
+text={$\lambda $},%
+plural={$\lambda $s},%
+description={Placeholder for the continuous-time Laplace variable $s$ or discrete-time $z$-transformation variable $z$},%
+descriptionplural={Placeholder for the continuous-time Laplace variable $s$ or discrete-time $z$-transformation variable $z$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{EV}{}%
+{%
+\gls@defglossaryentry{EV}%
+{%
+name={$E(\cdot )$},%
+sort={$E(\cdot )$},%
+type={main},%
+first={$E(\cdot )$},%
+firstplural={$E(\cdot )$s},%
+text={$E(\cdot )$},%
+plural={$E(\cdot )$s},%
+description={Expected value operator},%
+descriptionplural={Expected value operator},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Hinf}{}%
+{%
+\gls@defglossaryentry{Hinf}%
+{%
+name={$\mathcal {H}_\infty $},%
+sort={$\mathcal {H}_\infty $},%
+type={main},%
+first={$\protect \mathcal {H}_\infty $},%
+firstplural={$\protect \mathcal {H}_\infty $s},%
+text={$\protect \mathcal {H}_\infty $},%
+plural={$\protect \mathcal {H}_\infty $s},%
+description={infinity norm ($||\cdot ||_\infty $), maximum energy gain of a system or peak gain over frequency},%
+descriptionplural={infinity norm ($||\cdot ||_\infty $), maximum energy gain of a system or peak gain over frequency},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{H2}{}%
+{%
+\gls@defglossaryentry{H2}%
+{%
+name={$\mathcal {H}_2$},%
+sort={$\mathcal {H}_2$},%
+type={main},%
+first={$\protect \mathcal {H}_2$},%
+firstplural={$\protect \mathcal {H}_2$s},%
+text={$\protect \mathcal {H}_2$},%
+plural={$\protect \mathcal {H}_2$s},%
+description={2-norm ($||\cdot ||_2$), RMS gain of a system},%
+descriptionplural={2-norm ($||\cdot ||_2$), RMS gain of a system},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{l1}{}%
+{%
+\gls@defglossaryentry{l1}%
+{%
+name={$\ell _1$},%
+sort={$\ell _1$},%
+type={main},%
+first={$\ell _1$},%
+firstplural={$\ell _1$s},%
+text={$\ell _1$},%
+plural={$\ell _1$s},%
+description={1-norm ($||\cdot ||_1$), maximum peak-to-peak gain},%
+descriptionplural={1-norm ($||\cdot ||_1$), maximum peak-to-peak gain},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{starnorm}{}%
+{%
+\gls@defglossaryentry{starnorm}%
+{%
+name={$\star $-norm},%
+sort={$\star $-norm},%
+type={main},%
+first={$\star $-norm},%
+firstplural={$\star $-norms},%
+text={$\star $-norm},%
+plural={$\star $-norms},%
+description={an upper bound on the $\ell _1$ norm (see \cite {Nagpal1994})},%
+descriptionplural={an upper bound on the $\ell _1$ norm (see \cite {Nagpal1994})},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{vary}{}%
+{%
+\gls@defglossaryentry{vary}%
+{%
+name={$\sigma _y^2$},%
+sort={$\sigma _y^2$},%
+type={main},%
+first={$\sigma _y^2$},%
+firstplural={$\sigma _y^2$s},%
+text={$\sigma _y^2$},%
+plural={$\sigma _y^2$s},%
+description={variance of quantizer output signal $y$},%
+descriptionplural={variance of quantizer output signal $y$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{varu}{}%
+{%
+\gls@defglossaryentry{varu}%
+{%
+name={$\sigma _u^2$},%
+sort={$\sigma _u^2$},%
+type={main},%
+first={$\sigma _u^2$},%
+firstplural={$\sigma _u^2$s},%
+text={$\sigma _u^2$},%
+plural={$\sigma _u^2$s},%
+description={variance of quantizer input signal $u$},%
+descriptionplural={variance of quantizer input signal $u$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{vard}{}%
+{%
+\gls@defglossaryentry{vard}%
+{%
+name={$\sigma _d^2$},%
+sort={$\sigma _d^2$},%
+type={main},%
+first={$\sigma _d^2$},%
+firstplural={$\sigma _d^2$s},%
+text={$\sigma _d^2$},%
+plural={$\sigma _d^2$s},%
+description={variance of quantization noise signal $d$},%
+descriptionplural={variance of quantization noise signal $d$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{meany}{}%
+{%
+\gls@defglossaryentry{meany}%
+{%
+name={$\mu _y$},%
+sort={$\mu _y$},%
+type={main},%
+first={$\mu _y$},%
+firstplural={$\mu _y$s},%
+text={$\mu _y$},%
+plural={$\mu _y$s},%
+description={mean (DC component) of quantizer output signal $y$},%
+descriptionplural={mean (DC component) of quantizer output signal $y$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{meanu}{}%
+{%
+\gls@defglossaryentry{meanu}%
+{%
+name={$\mu _u$},%
+sort={$\mu _u$},%
+type={main},%
+first={$\mu _u$},%
+firstplural={$\mu _u$s},%
+text={$\mu _u$},%
+plural={$\mu _u$s},%
+description={mean (DC component) of quantizer input signal $u$},%
+descriptionplural={mean (DC component) of quantizer input signal $u$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

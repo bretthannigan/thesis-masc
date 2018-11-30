@@ -4,7 +4,7 @@
 \chapter{Stability Criteria and Performance Goals}
 \label{ch:Stability}
 
-Due to the nonlinear effects of the quantizer, the stability of the sigma delta feedback loop is difficult to prove. An excellent exploration into the mechanisms of instability may be found in \cite{Risbo1994}. There are no known necessary conditions for stability of sigma delta modulators but there are several heuristic and sufficient conditions with various degrees of conservativenenss. In \autoref{sec:stab-nl}, some theory from relay feedback control is introduced to establish formal methods for ensuring stability. There are some shortcomings of these methods when applied to practical sigma delta modulator design, therefore Sections~\ref{sec:stab-hinf} to \ref{sec:stab-l1} describe some stability criteria that may be less robust but allow a greater performance-stability tradeoff. For completeness, additional stability methods of interest that are not compatible with this optimization framework are presented in \autoref{sec:stab-notused}. Finally. the performance goal is discussed in \autoref{sec:stab-perf}.
+Due to the nonlinear effects of the quantizer, the stability of the sigma delta feedback loop is difficult to prove. An excellent exploration into the mechanisms of instability may be found in \cite{Risbo1994}. There are no known necessary conditions for stability of sigma delta modulators but there are several heuristic and sufficient conditions with various degrees of conservatism. In \autoref{sec:stab-nl}, some theory from relay feedback control is introduced to establish formal methods for ensuring stability. There are some shortcomings of these methods when applied to practical sigma delta modulator design, therefore Sections~\ref{sec:stab-hinf} to \ref{sec:stab-l1} describe some stability criteria that may be less robust but allow a greater performance-stability tradeoff. For completeness, additional stability methods of interest that are not compatible with this optimization framework are presented in \autoref{sec:stab-notused}. Finally. the performance goal is discussed in \autoref{sec:stab-perf}.
 
 \section{Stability Criteria Used by this Optimization Framework}
 \label{sec:stab-used}
@@ -113,9 +113,9 @@ The Popov criterion in Theorem~\ref{thm:popov} is a slightly less conservative a
 
 The graphical interpretation for this criterion is that the Popov plot of $\omega\Im\{H_1(j\omega)\}$ versus $\Re\{H_1(j\omega)\}$ remains to the right of a line passing through point $-\frac{1}{k_2} + j0$ with slope $\frac{1}{\gamma}$. 
 
-The \gls{DT} version is the Tsypkin criterion, which has cases valid for time-varying and time-invariant nonlinearities. The analog to the circle criterion is shown in Theorem~\ref{thm:tsypkin-1} and the analog to the Popv criterion is shown in Theroem~\ref{thm:tsypkin-2}.
+The \gls{DT} version is the Tsypkin criterion, which has cases valid for time-varying and time-invariant nonlinearities. The analog to the circle criterion is shown in Theorem~\ref{thm:tsypkin-1} and the analog to the Popov criterion is shown in Theorem~\ref{thm:tsypkin-2}.
 
-\begin{thm}[Tskypin criterion for time-varying nonlinearities {\cite[Sec. 4.6]{Tsypkin1984}}] \label{thm:tsypkin-1}
+\begin{thm}[Tsypkin criterion for time-varying nonlinearities {\cite[Sec. 4.6]{Tsypkin1984}}] \label{thm:tsypkin-1}
 	Given the \gls{DT} Lur'e feedback system in \autoref{fig:lure-sys} where the denominator of $H_1(z)$ is Schur and $\psi(t,\cdot)$ is a memoryless function sector bounded by $[0, k_2]$, the closed-loop system is globally asymptotically stable if the following inequality is satisfied:
 	
 	\begin{equation}
@@ -123,7 +123,7 @@ The \gls{DT} version is the Tsypkin criterion, which has cases valid for time-va
 	\end{equation}
 \end{thm}
 
-\begin{thm}[Tskypin criterion for time-invariant nonlinearities {\cite[Sec. 4.7]{Tsypkin1984}}] \label{thm:tsypkin-2}
+\begin{thm}[Tsypkin criterion for time-invariant nonlinearities {\cite[Sec. 4.7]{Tsypkin1984}}] \label{thm:tsypkin-2}
 	Given the \gls{DT} Lur'e feedback system in \autoref{fig:lure-sys} where the denominator of $H_1(z)$ is Schur and $\psi(\cdot)$ is a time-invariant memoryless function sector bounded by $[0, k_2]$, the closed-loop system is globally asymptotically stable if there exists a scalar $\gamma \geq 0$ such that the following inequality is satisfied:
 	
 	\begin{equation}
@@ -446,7 +446,7 @@ In the time domain, the input to the quantizer from \autoref{eq:l1-u} can be bou
 	\left|u[k]\right| \leq \left|\sum_{i=1}^{\infty} t[i]r[t - i]\right| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)e[t - i]\right|, \label{eq:l1-bound1}
 \end{equation}
 
-where $t[k]$ is the impulse response of the \gls{STF} and $s[k]$ is the impulse response of the \gls{NTF}. Because the \gls{STF} only operates on the input as a pre-filter, the assumption $T(\lambda) = 1$ is taken and \autoref{eq:l1-bound1} simplifes to:
+where $t[k]$ is the impulse response of the \gls{STF} and $s[k]$ is the impulse response of the \gls{NTF}. Because the \gls{STF} only operates on the input as a pre-filter, the assumption $T(\lambda) = 1$ is taken and \autoref{eq:l1-bound1} simplifies to:
 
 \begin{equation}
 	\left|u[k]\right| \leq |r[k]| + \left|\sum_{i=1}^{\infty} \left(s[i] - 1\right)e[t - i]\right|. \label{eq:l1-bound2}
@@ -495,16 +495,16 @@ It may be worthwhile to introduce further methods of designing sigma delta modul
 
 \subsection{Methods Ensuring Bounded States}
 
-A different way of ensuring stability of a modulator system is the positive invariant set approach. This is a mixed analytical and simulation-based method to find positive invariant sets in the state-space of the system. These are regions of \gls{order}-dimensional space for which, once entered, the states of the system $x$ remain inside under given input conditions. The method is computationally intesive and relies on sampling to expand or contract the set bounds \cite{Schreier1997}, which is not rigorous. However, given a random enough input, it may be a very close approximation to the actual positive invariant sets. A simpler version of this technique uses hypercubes as set boundaries and can be combined with the \gls{l1} rule to ensure stability \cite{Yagyu2004a}. The method is a good analysis of predicted stability because it also captures the integrator state values of the system which are important for the actual circuit implementation. However, it is not easy to apply as a design method.
+A different way of ensuring stability of a modulator system is the positive invariant set approach. This is a mixed analytical and simulation-based method to find positive invariant sets in the state-space of the system. These are regions of \gls{order}-dimensional space for which, once entered, the states of the system $x$ remain inside under given input conditions. The method is computationally intensive and relies on sampling to expand or contract the set bounds \cite{Schreier1997}, which is not rigorous. However, given a random enough input, it may be a very close approximation to the actual positive invariant sets. A simpler version of this technique uses hypercubes as set boundaries and can be combined with the \gls{l1} rule to ensure stability \cite{Yagyu2004a}. The method is a good analysis of predicted stability because it also captures the integrator state values of the system which are important for the actual circuit implementation. However, it is not easy to apply as a design method.
 
 \subsection{Diagonal Modulators}
 
-It is shown in \cite{Steiner1997} that many modulator topologies can be converted into a state-space diagonal representation of the \gls{LF}. In these cases, an \gls{order}th order modulator simplifies into \gls{order} parallel 1st-order modulators interacting only through the quantizer nonlinearity. By examining the stability of the 1st-order modulator using its fixed points \cite{Steiner1996}, the parallel modulators can be shown as a ``shifted'' version, where the shift indicates an offset at the quantizer input due to the other parallel paths. The equations for the fixed points are rearranged to form constraints on the system's poles, inputs, and output matrix coefficients. The downside of this method is that the loop filter is restricted to a specific form and the mathematics become diffcult when complex conjugate poles are introduced as are present in most high-order designs \cite{Mladenov2013}.
+It is shown in \cite{Steiner1997} that many modulator topologies can be converted into a state-space diagonal representation of the \gls{LF}. In these cases, an \gls{order}th order modulator simplifies into \gls{order} parallel 1st-order modulators interacting only through the quantizer nonlinearity. By examining the stability of the 1st-order modulator using its fixed points \cite{Steiner1996}, the parallel modulators can be shown as a ``shifted'' version, where the shift indicates an offset at the quantizer input due to the other parallel paths. The equations for the fixed points are rearranged to form constraints on the system's poles, inputs, and output matrix coefficients. The downside of this method is that the loop filter is restricted to a specific form and the mathematics become difficult when complex conjugate poles are introduced as are present in most high-order designs \cite{Mladenov2013}.
 
 \section{Performance Goals}
 \label{sec:stab-perf}
 
-The performance goal for the design of sigma delta modulators is simply the attenuation of quantization error in the signal band. In a signals and systems context, this can be made solvable by minimizing the \gls{Hinf} norm of the noise transfer function within the signal band. In the sigma delta literature, this is sometimes called min-max optmization and has some advantages in contrast to minimization of the power using the \gls{H2} norm \cite{Nagahara2012}. To frame the problem, one must first specify a frequency range of interest. In the \gls{DT} case, this band has width equal to $\frac{\pi}{OSR}$ and in the \gls{CT} case, this is equal to the actual signal band. Using the \gls{GKYP} expression, the \gls{Hinf} norm of the \gls{NTF} in the signal band is minimized to either below a target value (feasibility problem) or as low as possible (optimization problem), subject to any of the above stability constraints. With reference to the augmented system in \autoref{eq:aug}, the \gls{GKYP} constraint is placed on the $r \rightarrow e$ channel that exposes the sensitivity function:
+The performance goal for the design of sigma delta modulators is simply the attenuation of quantization error in the signal band. In a signals and systems context, this can be made solvable by minimizing the \gls{Hinf} norm of the noise transfer function within the signal band. In the sigma delta literature, this is sometimes called min-max optimization and has some advantages in contrast to minimization of the power using the \gls{H2} norm \cite{Nagahara2012}. To frame the problem, one must first specify a frequency range of interest. In the \gls{DT} case, this band has width equal to $\frac{\pi}{OSR}$ and in the \gls{CT} case, this is equal to the actual signal band. Using the \gls{GKYP} expression, the \gls{Hinf} norm of the \gls{NTF} in the signal band is minimized to either below a target value (feasibility problem) or as low as possible (optimization problem), subject to any of the above stability constraints. With reference to the augmented system in \autoref{eq:aug}, the \gls{GKYP} constraint is placed on the $r \rightarrow e$ channel that exposes the sensitivity function:
 
 \begin{equation}
 	\min_{\lambda \in [\omega_l, \omega_h]} ||G_{er}(\lambda)||_\infty \label{eq:perf}.

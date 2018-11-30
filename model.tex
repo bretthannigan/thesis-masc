@@ -4,7 +4,7 @@
 \chapter{Modelling the Sigma Delta Modulator}
 \label{ch:Modelling}
 
-In order to apply an optimization framework to the design of the \gls{LF}, the system from Figures \ref{fig:basic-struct-dt} and \ref{fig:basic-struct-ct} must be placed in a form that allows tractable application of the desired performance and stability targets. This includes omission of blocks that have minimal or no effect on the loop as well as linearization of the quantizer. The \gls{AAF} (when present) can be considered as a pre-filter operating on the input signal. The filter $H_0(\lambda)$ serves as an additional degree of freedom for the \gls{STF} can be set to unity for the purposes of the model. These two filters are not required in stabilitiy analysis, because the \gls{NTF} depends only on $H_1(\lambda)$ as seen in \autoref{eq:t}. After noise rejection performance has been optimized, $H_0(\lambda)$ can be tuned as necessary to ensure that the combined gain of the \gls{AAF} and \gls{LF} is close to unity in the signal band. In a similar way, the \gls{DSP} in the output path serves only to filter out the signal and decimate to the original sampling frequency which may be dealt with separately without impacting loop stability.
+In order to apply an optimization framework to the design of the \gls{LF}, the system from Figures \ref{fig:basic-struct-dt} and \ref{fig:basic-struct-ct} must be placed in a form that allows tractable application of the desired performance and stability targets. This includes omission of blocks that have minimal or no effect on the loop as well as linearization of the quantizer. The \gls{AAF} (when present) can be considered as a pre-filter operating on the input signal. The filter $H_0(\lambda)$ that serves as an additional degree of freedom for the \gls{STF} can be set to unity for the purposes of the model. These two filters are not required in stability analysis, because the \gls{NTF} depends only on $H_1(\lambda)$ as seen in \autoref{eq:t}. After noise rejection performance has been optimized, $H_0(\lambda)$ can be tuned as necessary to ensure that the combined gain of the \gls{AAF} and \gls{LF} is close to unity in the signal band. In a similar way, the \gls{DSP} in the output path serves only to filter out the signal and decimate to the original sampling frequency which may be dealt with separately without impacting loop stability.
 
 \section{Linearization of the Quantizer Element}
 \label{sec:model-linq}
@@ -72,7 +72,7 @@ The nonlinear nature of the quantizer must be captured by the model as a way to 
 \section{Well-Posedness and Internal Stability}
 \label{sec:model-wp-is}
 
-The meaningful application of feedback to reduce an uncertainty (in this case, error introduced by the nonlinear quantizer) requires that the system be well-posed in order for a solution to exist. \autoref{fig:sdm-model} can undergo block diagram mainpulation bringing it into the standard feedback form shown in \autoref{fig:sdm-stdf} with signals \gls{r}, \gls{e}, \gls{d}, and \gls{y}.
+The meaningful application of feedback to reduce an uncertainty (in this case, error introduced by the nonlinear quantizer) requires that the system be well-posed in order for a solution to exist. \autoref{fig:sdm-model} can undergo block diagram manipulation bringing it into the standard feedback form shown in \autoref{fig:sdm-stdf} with signals \gls{r}, \gls{e}, \gls{d}, and \gls{y}.
 
 \begin{figure}[h]
 	\centering
@@ -394,4 +394,4 @@ With some algebra, the augmented system \gls{G} from \autoref{fig:sdm-aug} may b
 	\end{bmatrix} \label{eq:aug-ss}
 \end{align}
 
-With the channels of interest exposed and the system in a state-space form, one can express design goals as constraints on these channels. In \autoref{ch:Stability}, various stability measures and performance goals are discussed from which those that are ideal from an optimization perspective are selected. In \autoref{ch:Optimization}, the framework is introduced to allow the these goals to be applied to the augmented system in a way that allows the optimization problem to be efficiently solved.
+With the channels of interest exposed and the system in a state-space form, one can express design goals as constraints on these channels. In \autoref{ch:Stability}, various stability measures and performance goals are discussed from which those that are ideal from an optimization perspective are selected. In \autoref{ch:Optimization}, the framework is introduced to allow these goals to be applied to the augmented system in a way that allows the optimization problem to be efficiently solved.
