@@ -144,7 +144,7 @@ Sigma delta modulation is a widely used method for \gls{A/D} and \gls{D/A} conve
 \section{Oversampling and Noise Shaping}
 \label{sec:in-os-ns}
 
-Oversampling is simply the process where the analog signal is sampled at a rate higher than what the sampling theorem would dictate for perfect reconstruction, expressed as an \gls{OSR} relative to the Nyquist frequency. It may seem that this does not have a direct benefit \emph{per se}, but it allows a less demanding analog \gls{AAF} to be used, saving circuit area. It also permits the quantization error to be spread across a larger bandwidth to increase resolution. Assuming quantization error can be modelled by white noise, oversampling reduces the in-band quantization noise power \gls{pq} by a factor inversely proportional to \gls{OSR} \cite{DeLaRosa2011} as seen in \autoref{eq:pq-osr}, where \gls{delta} is the difference between quantization levels. These two advantages --- reducing analog circuit complexity and increasing resolution --- are common goals in sigma delta modulator design.
+Oversampling is simply the process where the analog signal is sampled at a rate higher than what the sampling theorem would dictate for perfect reconstruction, expressed as an \gls{OSR} relative to the Nyquist frequency. It may seem that this does not have a direct benefit \emph{per se}, but it allows a less demanding analog \gls{AAF} to be used, saving circuit area. It also permits the quantization error to be spread across a larger bandwidth to increase resolution. Assuming quantization error can be modelled by white noise, oversampling reduces the in-band quantization noise power \gls{pq} by a factor inversely proportional to \gls{OSR} \cite{DeLaRosa2011} as seen in \autoref{eq:pq-osr}, where \gls{delta} is the difference between quantization levels. These two advantages --- reducing analog circuit complexity and increasing resolution --- are common goals in sigma delta modulator design as the sigma delta architecture is known to perform well under non-ideal conditions \cite{Daubechies2010}.
 
 \begin{equation}
 	P_Q = \frac{\Delta^2}{12 \cdot OSR} \label{eq:pq-osr}
@@ -156,10 +156,11 @@ It may appear that oversampling alone quickly becomes impractical because one mu
 	P_Q = \frac{\Delta^2\pi^{2n}}{12\left(2n + 1\right) \cdot OSR^{2n + 1}} \label{eq:pq-osr-ns}
 \end{equation}
 
+\begin{landscape}
 \begin{figure}
-\noindent\makebox[\textwidth]{
-	\centering
-	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+%\makebox[\textwidth]{
+	\begin{center}
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.7, every node/.style={scale=0.7}]
 		\node[coordinate] (g1) at (-2,2.5) {};
 		% Place nodes using a matrix
 		\matrix (m0) at (0,5) [row sep=0mm, column sep=5mm, matrix anchor=north west]
@@ -365,10 +366,12 @@ It may appear that oversampling alone quickly becomes impractical because one mu
 			\addplot[solid,black] table [x=t, y=y, col sep=comma] {data/comparison-y2.csv};
 		\end{axis}
 		
-	\end{tikzpicture}}
+	\end{tikzpicture}
+	\end{center}
 	\caption{A comparison between na\"{i}ve quantization (top), 10 times oversampled quantization (middle), and first order sigma delta modulation (bottom). The graphs on the right show the increasing quality of an \glsentryshort{EEG} signal \cite{Blankertz2007} sampled to a final rate of \SI{100}{\hertz} and quantized by Q with 5 bits by each scheme.}
 	\label{fig:os-ns-compare}
 \end{figure}
+\end{landscape}
 
 \section{Basic Structure}
 \label{sec:in-bs}
@@ -382,7 +385,7 @@ The basic block diagram of a sigma delta modulator and nomenclature that will be
 \noindent\makebox[\textwidth]{
 	\centering
 	% DT Sigma Delta Modulator
-	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.68, every node/.style={scale=0.68}]
 	
 		% Place nodes using a matrix
 		\matrix (m1) [row sep=2.5mm, column sep=5mm]
@@ -392,39 +395,34 @@ The basic block diagram of a sigma delta modulator and nomenclature that will be
 			\node[coordinate]								(m0-01) {};				\&
 			\node[coordinate,label={above:\PulseHigh \ $OSR \cdot f_s$}]	(m0-02) {};				\& \\
 			%------------------------------------------------------------------------------------------------------------------------
-			\node[dspnodeopen,dsp/label=left]					(m1-00) {$r_0(t)$};			\&
+			\node[dspnodeopen,dsp/label=above]					(m1-00) {$r_0(t)$};			\&
 			\node[dspsquare,label={above:AAF}]					(m1-01) {};				\&
 			\node[dspsquare]								(m1-02) {S/H};			\&
-			\node[coordinate,label={above:$r[k]$}]				(m1-03) {};				\&
+			%\node[coordinate,label={above:$r[k]$}]				(m1-03) {};				\&
 			\node[dspfilter]								(m1-04) {$H_0(z)$};		\&
 			\node[coordinate]								(m1-05) {};				\&
-			\node[coordinate]								(m1-06) {};				\&
 			\node[coordinate]								(m1-07) {};				\& \\
 			%------------------------------------------------------------------------------------------------------------------------
 			\node[coordinate]								(m2-00) {};				\&
 			\node[coordinate]								(m2-01) {};				\&
 			\node[coordinate]								(m2-02) {};				\&
-			\node[coordinate]								(m2-03) {};				\&
 			\node[dspadder,label={below left:$-$}]				(m2-04) {};				\&
 			\node[dspfilter]								(m2-05) {$H_1(z)$};		\&
-			\node[coordinate,label={$u[k]$}]					(m2-06) {};				\&
 			\node[dspsquare,label={below:Quantizer}]				(m2-07) {\RaisingEdge};		\&
-			\node[dspnodefull]								(m2-08) {};				\&
-			\node[coordinate,label={above:$y[k]$}]				(m2-09) {};				\&
+			\node[dspnodefull,label={above:$y[k]$}]				(m2-08) {};				\&
+			%\node[coordinate,label={above:$y[k]$}]				(m2-09) {};				\&
 			\node[dspsquare,label={above:DRF}]					(m2-10) {};				\& 
 			\node[dspfilter]								(m2-11) {$\downarrow OSR$};	\&
-			\node[dspnodeopen,dsp/label=right]					(m2-12) {$y[m]$};			\& \\
+			\node[dspnodeopen,dsp/label=above]					(m2-12) {$y[m]$};			\& \\
 			%------------------------------------------------------------------------------------------------------------------------
 			\node[coordinate]								(m3-00) {};				\&
 			\node[coordinate]								(m3-01) {};				\&
 			\node[coordinate]								(m3-02) {};				\&
-			\node[coordinate]								(m3-03) {};				\&
 			\node[coordinate]								(m3-04) {};				\& 
 			\node[coordinate]								(m3-05) {};				\& 
-			\node[coordinate]								(m3-06) {};				\& 
 			\node[coordinate]								(m3-07) {};				\& 
-			\node[coordinate]								(m3-08) {};				\& 
-			\node[coordinate]								(m3-09) {};				\& \\
+			\node[coordinate]								(m3-08) {};				\& \\
+			%\node[coordinate]								(m3-09) {};				\& \\
 			%------------------------------------------------------------------------------------------------------------------------
 		};
 	
@@ -434,21 +432,21 @@ The basic block diagram of a sigma delta modulator and nomenclature that will be
 		\draw[->]		(m0-02) -- (m1-02);
 		\draw[dspconn]	(m1-00) -- (m1-01);
 		\draw[dspconn]	(m1-01) to node[midway,above] {$r(t)$} (m1-02);
-		\draw[dspconn] 	(m1-02) -- (m1-04);
+		\draw[dspconn] 	(m1-02) to node[midway,above,xshift=-4pt] {$r[k]$} (m1-04);
 		\draw[dspconn] 	(m1-04) -- (m2-04);
 		\draw[dspline] 	(m2-05) -- (m2-07);
-		\draw[dspconn] 	($(m2-06.east)+(6pt, 0)$) -- (m2-07);
+		%\draw[dspconn] 	($(m2-06.east)+(6pt, 0)$) -- (m2-07);
 		\draw[dspline]	(m2-07) -- (m2-08);
 		\draw[dspconn] 	(m2-08) -- (m2-10);
 		\draw[dspline] 	(m2-08) -- (m3-08);
-		\draw[dspline] 	(m3-08) -- (m3-03);
-		\draw[dspline]	(m3-03) -- (m2-03);
-		\draw[dspconn] 	(m2-03) -- (m2-04);
+		\draw[dspline] 	(m3-08) -- (m3-02);
+		\draw[dspline]	(m3-02) -- (m2-02);
+		\draw[dspconn] 	(m2-02) -- (m2-04);
 		\draw[dspconn] 	(m2-04) to node[midway,above] {$e[k]$} (m2-05);
 		%\draw[dspconn] 	(m1-07) -- (m2-07);
 		\draw[dspconn]	(m2-10) -- (m2-11);
 		\draw[dspconn]	(m2-11) -- (m2-12);
-		\draw[Gray, ->, out=30, in=105, looseness=0.85] ($(m1-03)+(0, 0.8)$) to node[below, xshift=-22pt] {$T(z)$} ($(m2-09)+(0.1, 0.8)$);
+		\draw[Gray, ->, out=45, in=105, looseness=0.85] ($(m1-02)+(1, 0.8)$) to node[above, xshift=-22pt] {$T(z)$} ($(m2-08)+(0.1, 0.8)$);
 		\draw[Gray, ->, out=0, in=90, looseness=1] ($(m1-04)+(0.2, -0.6)$) to node[right, xshift=5pt] {$S(z)$} ($(m2-04)+(0.8, 0.75)$);
 		
 		\pgfplotsset{width=2.25cm,height=2.25cm,xmin=0.1,xmax=1000000,ymin=0.0001,ymax=10}
@@ -485,13 +483,13 @@ From a control systems perspective, there are a couple of transfer functions tha
 \noindent\makebox[\textwidth]{
 	\centering
 	% CT Sigma Delta Modulator
-	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	\begin{tikzpicture}[ampersand replacement=\&,scale=0.68, every node/.style={scale=0.68}]
 	
 		% Place nodes using a matrix
 		\matrix (m1) [row sep=2.5mm, column sep=5mm]
 		{
 			%------------------------------------------------------------------------------------------------------------------------
-			\node[dspnodeopen,label={left:$r(t)$}]				(m1-02) {};				\&
+			\node[dspnodeopen,label={above:$r(t)$}]				(m1-02) {};				\&
 			\node[coordinate]								(m1-03) {};				\&
 			\node[dspfilter]								(m1-04) {$H_0(s)$};		\&
 			\node[coordinate]								(m1-05) {};				\&
@@ -504,11 +502,11 @@ From a control systems perspective, there are a couple of transfer functions tha
 			\node[dspfilter]								(m2-05) {$H_1(s)$};		\&
 			\node[dspsquare]								(m2-06) {S/H};			\&
 			\node[dspsquare,label={below:Quantizer}]				(m2-07) {\RaisingEdge};		\&
-			\node[dspnodefull]								(m2-08) {};				\&
-			\node[coordinate,label={above:$y[k]$}]				(m2-09) {};				\&
+			\node[dspnodefull,label={above:$y[k]$}]				(m2-08) {};				\&
+			%\node[coordinate,label={above:$y[k]$}]				(m2-09) {};				\&
 			\node[dspsquare,label={above:DRF}]					(m2-10) {};				\& 
 			\node[dspfilter]								(m2-11) {$\downarrow OSR$};	\&
-			\node[dspnodeopen,dsp/label=right]					(m2-12) {$y[m]$};			\& \\
+			\node[dspnodeopen,dsp/label=above]					(m2-12) {$y[m]$};			\& \\
 			%------------------------------------------------------------------------------------------------------------------------
 			\node[coordinate]								(m3-02) {};				\&
 			\node[coordinate]								(m3-03) {};				\&
@@ -516,8 +514,8 @@ From a control systems perspective, there are a couple of transfer functions tha
 			\node[coordinate]								(m3-05) {};				\& 
 			\node[dspadc]								(m3-06) {$P(s)$};			\& 
 			\node[coordinate]								(m3-07) {};				\& 
-			\node[coordinate]								(m3-08) {};				\& 
-			\node[coordinate]								(m3-09) {};				\& \\
+			\node[coordinate]								(m3-08) {};				\& \\
+			%\node[coordinate]								(m3-09) {};				\& \\
 			%------------------------------------------------------------------------------------------------------------------------
 		};
 	
@@ -541,7 +539,7 @@ From a control systems perspective, there are a couple of transfer functions tha
 		%\draw[dspconn] 	(m1-07) -- (m2-07);
 		\draw[dspconn]	(m2-10) -- (m2-11);
 		\draw[dspconn]	(m2-11) -- (m2-12);
-		\draw[Gray, ->, out=30, in=105, looseness=0.85] ($(m1-02)+(-0.4, 0.4)$) to node[below, xshift=-22pt] {$T(s)$} ($(m2-09)+(0.1, 0.8)$);
+		\draw[Gray, ->, out=30, in=105, looseness=0.85] ($(m1-02)+(0, 0.8)$) to node[below, xshift=-22pt] {$T(s)$} ($(m2-08)+(0.1, 0.8)$);
 		%\draw[RedOrange, ->, out=-45, in=135, looseness=1] ($(m1-07)+(0.35, 0.25)$) to node[above, xshift=5pt] {$S(s)$} ($(m2-09)+(0, 0.75)$);
 		%\draw[Gray, ->, out=-45, in=135, looseness=1] ($(m1-02)+(-0.4, -0.3)$) to node[below, xshift=5pt] {$S(z)$} ($(m2-04)+(0.7, 0.7)$);
 		\draw[Gray, ->, out=0, in=90, looseness=1] ($(m1-04)+(0.2, -0.6)$) to node[right, xshift=5pt] {$S(z)$} ($(m2-04)+(0.8, 0.75)$);

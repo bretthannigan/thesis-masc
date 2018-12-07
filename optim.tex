@@ -11,7 +11,7 @@ In this chapter, the model of the sigma delta modulator system developed in \aut
 
 It is common in control systems to design based on constraints in the frequency domain. The KYP lemma establishes an equivalence between these frequency domain inequalities and \gls{LMI} expressions on the state-space matrices of the system. Frequency domain inequalities defined with the KYP lemma are valid across all frequencies and this necessitates the use of weighting filters or frequency gridding to target a specific frequency band. The generalized KYP lemma allows criteria to be applied to specific subsets of the system's Nyquist plot. In the design of sigma delta loop filters, the \gls{GKYP} lemma will primarily be used as a performance goal by setting constraints on the signal band, but may also be used in the design of \gls{CT} modulators and those satisfying the stability criteria presented in \autoref{sec:stab-nl}. The \gls{GKYP} lemma is presented in Lemma~\ref{lem:gkyp} below.
 
-\begin{lem}[GKYP lemma \cite{Iwasaki2005}] \label{lem:gkyp}
+\begin{lem}[GKYP lemma, as presented in \cite{Iwasaki2005}] \label{lem:gkyp}
 Given state-space matrices $\mathcal{A} \in \mathbb{R}^{n \times n}$, $\mathcal{B}_p \in \mathbb{R}^{n \times 1}$, $\mathcal{C}_q \in \mathbb{R}^{1 \times n}$, $\mathcal{D}_{qp} \in \mathbb{R}^{1 \times 1}$ of system $G_{qp}(\lambda)$, frequency range $[\omega_l, \omega_h]$, and symmetric matrix variables $P, Q \in \mathbb{R}^{n \times n}$, the finite frequency condition:
 
 	\begin{equation*}

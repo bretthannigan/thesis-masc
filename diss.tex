@@ -209,6 +209,7 @@
 \usepackage{fancyhdr}
 \usepackage{ragged2e}
 \usepackage{varwidth}
+\usepackage{afterpage}
 % Graphics and Drawing
 \usepackage[dvipsnames]{xcolor}
 \graphicspath{ {img/} }	
@@ -226,8 +227,8 @@
 \usepackage{filecontents}
 
 % To correct error due to unicode characters in .bib file from Mendeley.
-\DeclareUnicodeCharacter{2206}{$\Delta$}
-\DeclareUnicodeCharacter{221E}{$\infty$}
+%\DeclareUnicodeCharacter{2206}{$\Delta$}
+%\DeclareUnicodeCharacter{221E}{$\infty$}
 
 % https://tex.stackexchange.com/questions/348714/customization-of-theorem-lemma-definition-in-ieeeconf
 \newtheorem{thm}{Theorem}[section]
@@ -539,8 +540,8 @@
 \raggedright
 \bibliographystyle{ieeetr}
 \
-%\bibliography{C:/Users/bhannigan/Documents/Mendel\string~1/library} % Windows
-\bibliography{/Users/brett/Documents/Mendeley_Desktop/BibTeX/library} % OS X
+\bibliography{C:/Users/bhannigan/Documents/Mendel\string~1/library} % Windows
+%\bibliography{/Users/brett/Documents/Mendeley_Desktop/BibTeX/library} % OS X
 \end{singlespace}
 
 %\renewcommand\chaptername{Appendix}
