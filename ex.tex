@@ -130,6 +130,20 @@ The robustness and sensitivity channels are shown in Figure~\ref{fig:ntf-rl}. Th
 	\caption{A subset of the complex plane showing the root locus of the filter from Example~\ref{sec:ex-rl} across quantizer gains.} \label{fig:rl-rl}
 \end{figure}
 
+The time-varying gain linear model of the quantizer from \autoref{fig:sdm-model} is exact if the instantaneous quantizer gain remains lower bounded. To verify that this condition on the linear model is appropriate, the system was simulated with a sinusoidal input and compared to a linear system for which the quantizer gain was bounded and calculated at each sampling instant. \autoref{fig:rl-sim-lin-compare} shows the simulation results of these two systems which agree down to numerical precision. \autoref{fig:qgain-hist} shows the histogram of quantizer gain values. The lowest quantizer gain observed across the \SI{10}{\second} simulation window was 0.398, confirming that the linear model may be considered reasonable under this input.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=3.45in]{rl_sim_lin_compare_2}
+	\caption{The simulation of the modulator design from \autoref{sec:ex-rl} compared with a linearized model of the same system. The \SI{20}{\hertz} sinusoidal input is shown (top) along with the quantized output signal for both the simulated system and linearized model (middle) and their associated quantization errors (bottom). Note that the traces of the two systems overlap.} \label{fig:rl-sim-lin-compare}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=3.45in]{rl_sim_lin_compare_1}
+	\caption{A histogram of instantaneous quantizer gain values for the simulation performed in \autoref{fig:rl-sim-lin-compare} shows that the gain never falls below 0.1 in this simulation.} \label{fig:qgain-hist}
+\end{figure}
+
 \section{Design Using \gls{H2} Stability Criterion}
 \label{sec:ex-h2}
 
