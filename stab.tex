@@ -17,7 +17,7 @@ An early theoretical treatment of nonlinear control is the circle criterion, whi
 \begin{figure}
 	\centering
 	% Augmented Plant
-	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	\begin{tikzpicture}[ampersand replacement=\&,scale=1, every node/.style={scale=1}]
 	
 		% Place nodes using a matrix
 		\matrix (m1) at (0,0) [row sep=2.5mm, column sep=5mm, matrix anchor=center]
@@ -43,8 +43,8 @@ An early theoretical treatment of nonlinear control is the circle criterion, whi
 		\draw[dspline] 	(m12) -- (m11);
 		\draw[dspconn]	(m11) to node[midway,left] {$y$} (m01);
 		
-		\node[coordinate,label={left:$\psi(\cdot)$:}] (g0) at (4.6,0) {};
-		\node[coordinate] 	(g1) at (6,-0.5) {};
+		\node[coordinate,label={left:$\psi(\cdot)$:}] (g0) at (3.75,0) {};
+		\node[coordinate] 	(g1) at (6,0) {};
 		
 		\begin{axis}[
 			at={(g1)},
@@ -286,7 +286,7 @@ The root locus stability criterion may be used in robust control fashion by choo
  \begin{figure}
 	\centering
 	% Augmented Plant
-	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	\begin{tikzpicture}[ampersand replacement=\&,scale=1, every node/.style={scale=1}]
 	
 		% Place nodes using a matrix
 		\matrix (m1) at (0,0) [row sep=2.5mm, column sep=5mm, matrix anchor=center]
@@ -331,7 +331,7 @@ The root locus stability criterion may be used in robust control fashion by choo
 		\draw[dspconn] 	(m06) -- (m16);
 		\draw[dspconn] 	(m10) -- (m11);
 		\draw[dspconn]	(m11) to node[midway,above] {$e[k]$} (m12);
-		\draw[dspconn] 	(m12) to node[midway,above] {$u[k]$} (m13);
+		\draw[dspconn] 	(m12) to node[midway,above,xshift=2pt] {$u[k]$} (m13);
 		\draw[dspconn] 	(m13) -- (m14);
 		\draw[dspconn] 	(m14) -- (m15);
 		\draw[dspconn] 	(m15) -- (m16);
@@ -390,7 +390,7 @@ The \gls{l1} stability criterion (also known as Anastassiou's stability criterio
  \begin{figure}
  	\centering
 	% Error Feedback Sigma Delta Modulator
-	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	\begin{tikzpicture}[ampersand replacement=\&,scale=1, every node/.style={scale=1}]
 	
 		% Place nodes using a matrix
 		\matrix (m1) [row sep=2.5mm, column sep=5mm]

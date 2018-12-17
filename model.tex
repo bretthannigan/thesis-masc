@@ -269,7 +269,7 @@ Finally, the model is abstracted into an augmented form where all desired input 
 \begin{figure}
 	\centering
 	% Augmented Plant
-	\begin{tikzpicture}[ampersand replacement=\&,scale=0.75, every node/.style={scale=0.75}]
+	\begin{tikzpicture}[ampersand replacement=\&,scale=1, every node/.style={scale=1}]
 	
 		% Place nodes using a matrix
 		\matrix (m1) [row sep=2.5mm, column sep=5mm]
@@ -302,7 +302,7 @@ Finally, the model is abstracted into an augmented form where all desired input 
 			%-----------------------------------------------------------------------------------------------
 		};
 		
-		\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m10) + (0,0.6)$) ($(m16)+(0.85, -1)$)},label={[align=center]below:Augmented System $G(\lambda)$}] {};
+		\node[draw,inner xsep=15pt,inner ysep=10pt,dashed,fit={($(m10) + (0.95,0.4)$) ($(m16)+(-0.3, -0.75)$)},label={[align=center]below:Augmented System $G(\lambda)$}] {};
 	
 		\draw[dspconn] (m10) -- (m11);
 		\draw[dspconn] (m11) -- (m13);
