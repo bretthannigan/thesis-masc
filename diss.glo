@@ -1,3 +1,26 @@
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{iii}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{iii}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{iii}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{vii}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{vii}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{vii}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{vii}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{vii}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{vii}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{viii}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{viii}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{viii}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{viii}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{viii}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{xi}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{xi}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{xii}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{xii}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{xii}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{xiii}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{xiii}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{xiii}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{xiii}
 \glossaryentry{$P_Q$?\glossentry{pq}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{$\Delta _Q$?\glossentry{delta}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{$n$?\glossentry{order}|setentrycounter[]{page}\glsnumberformat}{3}
@@ -40,137 +63,139 @@
 \glossaryentry{$y$?\glossentry{y}|setentrycounter[]{page}\glsnumberformat}{13}
 \glossaryentry{$\Delta _Q$?\glossentry{delta}|setentrycounter[]{page}\glsnumberformat}{15}
 \glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{$w$?\glossentry{w}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{$z$?\glossentry{z}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{$w$?\glossentry{w}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{$z$?\glossentry{z}|setentrycounter[]{page}\glsnumberformat}{16}
 \glossaryentry{$r$?\glossentry{r}|setentrycounter[]{page}\glsnumberformat}{16}
 \glossaryentry{$e$?\glossentry{e}|setentrycounter[]{page}\glsnumberformat}{16}
 \glossaryentry{$u$?\glossentry{u}|setentrycounter[]{page}\glsnumberformat}{16}
 \glossaryentry{$y$?\glossentry{y}|setentrycounter[]{page}\glsnumberformat}{16}
 \glossaryentry{$G(\lambda )$?\glossentry{G}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{$n$?\glossentry{order}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{$\lambda $?\glossentry{sorz}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{$\lambda $?\glossentry{sorz}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{$n$?\glossentry{order}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{$\lambda $?\glossentry{sorz}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{$\lambda $?\glossentry{sorz}|setentrycounter[]{page}\glsnumberformat}{17}
 \glossaryentry{$M$?\glossentry{M}|setentrycounter[]{page}\glsnumberformat}{17}
 \glossaryentry{$G(\lambda )$?\glossentry{G}|setentrycounter[]{page}\glsnumberformat}{17}
 \glossaryentry{$n$?\glossentry{order}|setentrycounter[]{page}\glsnumberformat}{17}
 \glossaryentry{$G(\lambda )$?\glossentry{G}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{21}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{21}
 \glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{22}
 \glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{22}
-\glossaryentry{$K$?\glossentry{K}|setentrycounter[]{page}\glsnumberformat}{22}
-\glossaryentry{$K(A)$?\glossentry{K(A)}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{$\mu _u$?\glossentry{meanu}|setentrycounter[]{page}\glsnumberformat}{24}
-\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{24}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{24}
-\glossaryentry{$M$?\glossentry{M}|setentrycounter[]{page}\glsnumberformat}{24}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{24}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\Delta _Q$?\glossentry{delta}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$K$?\glossentry{K}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$K$?\glossentry{K}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$u$?\glossentry{u}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\sigma _d^2$?\glossentry{vard}|setentrycounter[]{page}\glsnumberformat}{25}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{$K$?\glossentry{K}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{$K(A)$?\glossentry{K(A)}|setentrycounter[]{page}\glsnumberformat}{24}
+\glossaryentry{$\mu _u$?\glossentry{meanu}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\sigma _d^2$?\glossentry{vard}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\sigma _y^2$?\glossentry{vary}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{25}
-\glossaryentry{$\sigma _d^2$?\glossentry{vard}|setentrycounter[]{page}\glsnumberformat}{25}
+\glossaryentry{$M$?\glossentry{M}|setentrycounter[]{page}\glsnumberformat}{25}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$\Delta _Q$?\glossentry{delta}|setentrycounter[]{page}\glsnumberformat}{26}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{26}
 \glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$K$?\glossentry{K}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$K$?\glossentry{K}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$u$?\glossentry{u}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$\sigma _d^2$?\glossentry{vard}|setentrycounter[]{page}\glsnumberformat}{26}
 \glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{26}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{$\Delta _Q$?\glossentry{delta}|setentrycounter[]{page}\glsnumberformat}{28}
+\glossaryentry{$\sigma _d^2$?\glossentry{vard}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$\sigma _y^2$?\glossentry{vary}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$\sigma _d^2$?\glossentry{vard}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{$\mu _y$?\glossentry{meany}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{27}
 \glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{28}
 \glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{28}
 \glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{28}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{28}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{28}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{28}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{28}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{28}
-\glossaryentry{$n$?\glossentry{order}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{$\Delta _Q$?\glossentry{delta}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{29}
 \glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{29}
 \glossaryentry{$n$?\glossentry{order}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{$n$?\glossentry{order}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{$n$?\glossentry{order}|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{$n$?\glossentry{order}|setentrycounter[]{page}\glsnumberformat}{31}
 \glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{32}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{32}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{34}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{34}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{34}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{35}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{33}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{33}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{35}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{35}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{35}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{36}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{36}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{36}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{36}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{36}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{36}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{36}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{38}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{40}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{40}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{36}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{37}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{37}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{41}
 \glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{41}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{42}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{44}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{44}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{42}
 \glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{44}
 \glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{46}
 \glossaryentry{$K$?\glossentry{K}|setentrycounter[]{page}\glsnumberformat}{46}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{47}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{48}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{48}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{48}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{50}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{48}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{51}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{52}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{52}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{52}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{52}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{53}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{52}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{53}
 \glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{54}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{53}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{53}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{53}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{53}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{56}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{56}
 \glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{56}
 \glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{56}
 \glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{56}
 \glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{56}
-\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{57}
-\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{57}
-\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{59}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{56}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{56}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{56}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{57}
 \glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{59}
 \glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{59}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{59}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{59}
+\glossaryentry{$\star $-norm?\glossentry{starnorm}|setentrycounter[]{page}\glsnumberformat}{59}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{60}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{60}
+\glossaryentry{$\mathcal {H}_\infty $?\glossentry{Hinf}|setentrycounter[]{page}\glsnumberformat}{62}
+\glossaryentry{$\mathcal {H}_2$?\glossentry{H2}|setentrycounter[]{page}\glsnumberformat}{62}
+\glossaryentry{$\ell _1$?\glossentry{l1}|setentrycounter[]{page}\glsnumberformat}{62}

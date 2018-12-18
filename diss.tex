@@ -227,8 +227,8 @@
 \usepackage{filecontents}
 
 % To correct error due to unicode characters in .bib file from Mendeley.
-%\DeclareUnicodeCharacter{2206}{$\Delta$}
-%\DeclareUnicodeCharacter{221E}{$\infty$}
+\DeclareUnicodeCharacter{2206}{$\Delta$}
+\DeclareUnicodeCharacter{221E}{$\infty$}
 
 % https://tex.stackexchange.com/questions/348714/customization-of-theorem-lemma-definition-in-ieeeconf
 \newtheorem{thm}{Theorem}[section]
@@ -401,7 +401,7 @@
 %%
 %% Document meta-data: be sure to also change the \hypersetup information
 %%
-
+ 
 \title{On the Design of Stable, High Performance Sigma Delta Modulators}
 %\subtitle{If you want a subtitle}
 
@@ -436,7 +436,7 @@
 %% hyperref package provides support for embedding meta-data in .PDF
 %% files
 \hypersetup{
-  pdftitle={On the Design of Stable, High Performance Sigma Delta Modulators  (DRAFT: \today)},
+  pdftitle={On the Design of Stable, High Performance Sigma Delta Modulators},
   pdfauthor={Brett Christopher Hannigan},
   pdfkeywords={sigma delta modulator, optimization, control theory}
 }
@@ -541,8 +541,8 @@
 \raggedright
 \bibliographystyle{ieeetr}
 \
-\bibliography{C:/Users/bhannigan/Documents/Mendel\string~1/library} % Windows
-%\bibliography{/Users/brett/Documents/Mendeley_Desktop/BibTeX/library} % OS X
+%\bibliography{C:/Users/bhannigan/Documents/Mendel\string~1/library} % Windows
+\bibliography{/Users/brett/Documents/Mendeley_Desktop/BibTeX/library} % OS X
 \end{singlespace}
 
 %\renewcommand\chaptername{Appendix}

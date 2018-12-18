@@ -1,0 +1,288 @@
+\begin{thebibliography}{10}
+
+\bibitem{Blankertz2007}
+B.~Blankertz, G.~Dornhege, M.~Krauledat, K.~R. M{\"{u}}ller, and G.~Curio,
+  ``{The non-invasive Berlin Brain-Computer Interface: Fast acquisition of
+  effective performance in untrained subjects},'' {\em NeuroImage}, vol.~37,
+  no.~2, pp.~539--550, 2007.
+
+\bibitem{Risbo1994}
+L.~Risbo, {\em {Sigma Delta Modulators - Stability Analysis and Optimization}}.
+\newblock Doctor of philosophy, Technical University of Denmark, 1994.
+
+\bibitem{Nagpal1994}
+K.~Nagpal, J.~Abedor, and K.~Poolla, ``{An LMI approach to peak-to-peak gain
+  minimisation: filtering and control},'' {\em Proc. of the American Control
+  Conference}, vol.~1, pp.~742--746, 1994.
+
+\bibitem{DeLaRosa2011}
+J.~M. {De La Rosa}, ``{Sigma-delta modulators: Tutorial overview, design guide,
+  and state-of-the-art survey},'' {\em IEEE Transactions on Circuits and
+  Systems I: Regular Papers}, vol.~58, no.~1, pp.~1--21, 2011.
+
+\bibitem{Daubechies2010}
+I.~Daubechies, C.~S. G{\"{u}}nt{\"{u}}rk, Y.~Wang, and {\"{O}}.~Yilmaz, ``{The
+  golden ratio encoder},'' {\em IEEE Transactions on Information Theory},
+  vol.~56, no.~10, pp.~5097--5110, 2010.
+
+\bibitem{Ortmanns2005}
+M.~Ortmanns and F.~Gerfers, {\em {Continuous-Time Sigma-Delta A/D Conversion}}.
+\newblock 2005.
+
+\bibitem{Schreier1997}
+R.~Schreier and G.~C. Temes, {\em {Understanding Delta-Sigma Data Converters}},
+  vol.~53.
+\newblock Wiley, 1997.
+
+\bibitem{Hein1993}
+S.~Hein and A.~Zakhor, ``{On the Stability of Sigma Delta Modulators},'' {\em
+  IEEE Transactions on Signal Processing}, vol.~41, no.~7, pp.~2322--2348,
+  1993.
+
+\bibitem{Wong2004}
+N.~Wong and T.-s. Ng, ``{Fast detection of instability in sigma-delta
+  modulators based on unstable embedded limit cycles},'' {\em IEEE Transactions
+  on Circuits and Systems II}, vol.~51, no.~8, pp.~442--449, 2004.
+
+\bibitem{Sooch1989}
+N.~S. Sooch, ``{Gain Scaling of Oversampled Analog-to-Digital Converters},''
+  1989.
+
+\bibitem{Moussavi1994}
+S.~M. Moussavi and B.~H. Leung, ``{High-Order Single-Stage Single-Bit
+  Oversampling A/D Converter Stabilized with Local Feedback Loops},'' {\em IEEE
+  Transactions on Circuits and Systems}, vol.~41, no.~1, pp.~19--25, 1994.
+
+\bibitem{Eynde1991}
+F.~O. Eynde, G.~M. Yin, and W.~Sansen, ``{A CMOS Fourth-order 14b 500k-sample/s
+  Sigma-delta ADC Converter},'' 1991.
+
+\bibitem{Kenney1988}
+J.~Kenney and L.~Carley, ``{CLANS: a high-level synthesis tool for high
+  resolution data converters},'' in {\em IEEE International Conference on
+  Computer-Aided Design (ICCAD-89) Digest of Technical Papers}, (Pittsburgh),
+  pp.~496--499, 1988.
+
+\bibitem{Oberoi2004}
+A.~Oberoi, {\em {A Convex Optimization Approach to the Design of Multiobjective
+  Discrete Time Systems}}.
+\newblock Master of science, Rochester Institute of Technology, 2004.
+
+\bibitem{Ohno2017b}
+S.~Ohno and M.~{Rizwan Tariq}, ``{Optimization of Noise Shaping Filter for
+  Quantizer with Error Feedback},'' {\em IEEE Transactions on Circuits and
+  Systems I: Regular Papers}, vol.~64, no.~4, pp.~918--930, 2017.
+
+\bibitem{Osqui2007}
+M.~M. Osqui and A.~Megretski, ``{Semidefinite Programming in Analysis and
+  Optimization of Performance of Sigma-Delta Modulators for Low Frequencies},''
+  in {\em Proceedings of the 2007 American Control Conference}, no.~6,
+  pp.~3582--3587, 2007.
+
+\bibitem{Nagahara2012}
+M.~Nagahara and Y.~Yamamoto, ``{Frequency Domain Min-Max Optimization of
+  Noise-Shaping Delta-Sigma Modulators},'' {\em IEEE Transactions on Signal
+  Processing}, vol.~60, no.~6, pp.~1--12, 2012.
+
+\bibitem{Tariq2016}
+M.~R. Tariq and S.~Ohno, ``{Unified LMI-based design of $\Delta$$\Sigma$
+  modulators},'' {\em EURASIP Journal on Advances in Signal Processing},
+  vol.~2016, no.~1, p.~29, 2016.
+
+\bibitem{Tariq2017}
+M.~R. Tariq, S.~Ohno, and M.~Nagahara, ``{Synthesis of IIR error feedback
+  filters for $\Delta$$\Sigma$ modulators using approximation},'' in {\em 2016
+  Asia-Pacific Signal and Information Processing Association Annual Summit and
+  Conference, APSIPA 2016}, (Jeju), pp.~7--11, 2017.
+
+\bibitem{Derpich2008}
+M.~S. Derpich, E.~I. Silva, D.~E. Quevedo, and G.~C. Goodwin, ``{On optimal
+  perfect reconstruction feedback quantizers},'' {\em IEEE Transactions on
+  Signal Processing}, vol.~56, pp.~3871--3890, aug 2008.
+
+\bibitem{Callegari2015}
+S.~Callegari and F.~Bizzarri, ``{Optimal design of the noise transfer function
+  of $\Delta$$\Sigma$ modulators: IIR strategies, FIR strategies, FIR
+  strategies with preassigned poles},'' {\em Signal Processing}, vol.~114,
+  pp.~117--130, 2015.
+
+\bibitem{Li2014}
+X.~Li, C.~Yu, and H.~Gao, ``{Design of delta-sigma modulators via generalized
+  Kalman-Yakubovich-Popov lemma},'' {\em Automatica}, vol.~50, no.~10,
+  pp.~2700--2708, 2014.
+
+\bibitem{Khalil2002}
+H.~K. Khalil, {\em {Nonlinear Systems}}.
+\newblock Upper Saddle River, NJ: Prentice Hall, 3~ed., 2002.
+
+\bibitem{Tsypkin1984}
+Y.~Z. Tsypkin, ``{Relay control systems},'' 1984.
+
+\bibitem{Chao1990}
+K.~C.~H. Chao, S.~Nadeem, W.~L. Lee, and C.~G. Sodini, ``{A Higher Order
+  Topology for Interpolative Modulators for Oversampling A/D Converters},''
+  {\em IEEE Transactions on Circuits and Systems}, vol.~37, no.~3,
+  pp.~309--318, 1990.
+
+\bibitem{Zhao2015}
+Y.~Zhao and V.~Gupta, ``{A Bode-Like Integral for Discrete Linear Time-Periodic
+  Systems},'' {\em IEEE Transactions on Automatic Control}, vol.~60, no.~9,
+  pp.~2494--2499, 2015.
+
+\bibitem{Schreier1993}
+R.~Schreier, ``{An Empirical Study of High-Order Single-Bit Delta-Sigma
+  Modulators},'' {\em IEEE Transactions on Circuits and Systems II: Analog and
+  Digital Signal Processing}, vol.~40, no.~8, pp.~461--466, 1993.
+
+\bibitem{Neitola2017}
+M.~Neitola, ``{Lee's Rule Extended},'' {\em IEEE Transactions on Circuits and
+  Systems II: Express Briefs}, vol.~64, no.~4, pp.~382--386, 2017.
+
+\bibitem{Taylor1999}
+J.~H. Taylor, ``{Describing functions},'' {\em Electrical Engineering
+  Encyclopedia}, no.~April, pp.~1--35, 1999.
+
+\bibitem{Engelen1999}
+J.~A. E.~P. Engelen, {\em {Stability analysis and design of bandpass sigma
+  delta modulators}}.
+\newblock 1999.
+
+\bibitem{VanEngelen1999a}
+J.~A. {Van Engelen}, R.~J. {Van De Plassche}, E.~Stikvoort, and A.~G. Venes,
+  ``{Sixth-order continuous-time bandpass sigma-delta modulator for digital
+  radio IF},'' {\em IEEE Journal of Solid-State Circuits}, vol.~34, no.~12,
+  pp.~1753--1764, 1999.
+
+\bibitem{Yang2002}
+C.-c. Yang, K.-d. Chen, W.-C. Wang, and T.-h. Kuo, ``{Transfer function design
+  of stable high-order sigma-delta modulators with root locus inside unit
+  circle},'' in {\em Proceedings. IEEE Asia-Pacific Conference on ASIC},
+  pp.~5--8, 2002.
+
+\bibitem{Kuo2006}
+T.-H. Kuo, C.-C. Yang, K.-D. Chen, and W.~C. Wang, ``{Design Method for
+  High-Order Sigma Delta Modulator Stabilized by Departure Angles Designed to
+  Keep Root Loci in Unit Circle},'' {\em IEEE Transactions on Circuits and
+  Systems II: Express Briefs}, vol.~53, no.~10, pp.~1083--1087, 2006.
+
+\bibitem{Kang2014}
+K.~Kang, {\em {Simulation, and Overload and Stability Analysis of Continuous
+  Time Sigma Delta Modulator}}.
+\newblock PhD thesis, University of Nevada, 2014.
+
+\bibitem{Gray1990}
+R.~M. Gray, {\em {Source Coding Theory}}.
+\newblock Stanford, CA: Kluwer Academic Publishers, 1~ed., 1990.
+
+\bibitem{Ardalan1987}
+S.~Ardalan and J.~Paulos, ``{An analysis of nonlinear behavior in delta - sigma
+  modulators},'' {\em IEEE Transactions on Circuits and Systems}, vol.~34,
+  no.~6, pp.~593--603, 1987.
+
+\bibitem{Anastassiou1989}
+D.~Anastassiou, ``{Error Diffusion Coding for A/D Conversion},'' {\em IEEE
+  Transactions on Circuits and Systems}, vol.~36, no.~9, pp.~1175--1186, 1989.
+
+\bibitem{Yagyu2004a}
+M.~Yagyu and A.~Nishihara, ``{Stability Analysis of 1-Bit $\Sigma$∆
+  Modulators by Covering State Vector Transition with Hyper Cube for Specified
+  Input Peak Amplitudes and Auto-Correlations},'' {\em IEICE Transactions on
+  Fundamentals of Electronics, Communications and Computer Sciences},
+  vol.~E87-A, no.~8, pp.~1855--1862, 2004.
+
+\bibitem{Steiner1997}
+P.~Steiner and W.~Yang, ``{A Framework For Analysis of High-Order Sigma-Delta
+  Modulators},'' {\em IEEE Transactions on Circuits and Systems II: Analog and
+  Digital Signal Processing}, vol.~44, no.~1, pp.~1--10, 1997.
+
+\bibitem{Steiner1996}
+P.~Steiner and W.~Yang, ``{Stability of High Order Sigma-Delta Modulators},''
+  {\em IEEE International Symposium on Circuits and Systems}, vol.~3, no.~2,
+  pp.~52--55, 1996.
+
+\bibitem{Mladenov2013}
+V.~Mladenov, ``{Stability Analysis and Limit Cycles of High Order Sigma-Delta
+  Modulators},'' in {\em Selected Topics in Nonlinear Dynamics and Theoretical
+  Electrical Engineering} (K.~Kyamakya, W.~A. Halang, W.~Mathis, J.~C. Chedjou,
+  and Z.~Li, eds.), vol.~483, ch.~17, pp.~305--327, Berlin: Springer, 2013.
+
+\bibitem{Plekhanov2003}
+S.~Plekhanov, I.~Shkolnikov, and Y.~Shtessel, ``{High order sigma-delta
+  modulator design via sliding mode control},'' {\em Proceedings of the 2003
+  American Control Conference, 2003.}, vol.~1, pp.~897--902, 2003.
+
+\bibitem{Yu2006}
+S.~H. Yu, ``{Analysis and design of single-bit sigma-delta modulators using the
+  theory of sliding modes},'' {\em IEEE Transactions on Control Systems
+  Technology}, vol.~14, no.~2, pp.~336--345, 2006.
+
+\bibitem{Su2006}
+J.-P. Su and C.~C. Ho, ``{Oversampling Sigma-Delta Modulator Stabilized by
+  Linear Sliding Mode Control Technique},'' in {\em Proceedings of the 25th
+  Chinese Control Conference}, (Harbin, Heilongjiang), pp.~878--881, 2006.
+
+\bibitem{Iwasaki2005}
+T.~Iwasaki and S.~Hara, ``{Generalized KYP Lemma: Unified Frequency Domain
+  Inequalities with Design Applications},'' {\em IEEE Trans. Autom. Control},
+  vol.~50, no.~1, pp.~41--59, 2005.
+
+\bibitem{Iwasaki2003a}
+T.~Iwasaki and S.~Hara, ``{Generalized KYP Lemma: Unified Characterization of
+  Frequency Domain Inequalities with Applications to System Design}.'' 2003.
+
+\bibitem{Scherer1997}
+C.~W. Scherer, P.~Gahinet, and M.~Chilali, ``{Multiobjective output-feedback
+  control via LMI optimization},'' {\em IEEE Transactions on Automatic
+  Control}, vol.~42, no.~7, pp.~896--911, 1997.
+
+\bibitem{Masubuchi1998}
+I.~Masubuchi, A.~Ohara, and N.~Suda, ``{LMI-based controller synthesis: a
+  unified formulation and solution},'' {\em Robust and Nonlinear Control},
+  vol.~8, no.~9, pp.~669--686, 1998.
+
+\bibitem{Venkatesh1995}
+S.~Venkatesh and M.~Dahleh, ``{Does star norm capture L{\_}1 norm?},'' in {\em
+  Proceedings of the American Control Conference (ACC), 1995}, (Seattle, WA),
+  pp.~944--945, 1995.
+
+\bibitem{Bu2000}
+J.~Bu and M.~Sznaier, ``{Linear matrix inequality approach to synthesizing
+  low-order suboptimal mixed l1/Hp controllers},'' {\em Automatica}, vol.~36,
+  no.~7, pp.~957--963, 2000.
+
+\bibitem{Oberoi2005}
+A.~Oberoi and J.~C. Cockburn, ``{A simplified LMI approach to l1 Controller
+  Design},'' in {\em Proceedings of the 2005 American Control Conference},
+  (Portland), pp.~1788--1792, 2005.
+
+\bibitem{Shishkin2017}
+S.~L. Shishkin, ``{Optimization under non-convex Quadratic Matrix Inequality
+  constraints with application to design of optimal sparse controller},'' {\em
+  IFAC-PapersOnLine}, vol.~50, no.~1, pp.~10754--10759, 2017.
+
+\bibitem{DeOliveira2002}
+M.~C. {De Oliveira}, J.~C. Geromel, and J.~Bernussou, ``{Extended H2 and H∞
+  norm characterizations and controller parameterizations for discrete-time
+  systems},'' {\em International Journal of Control}, vol.~75, no.~9,
+  pp.~666--679, 2002.
+
+\bibitem{Lofberg2004}
+J.~L{\"{o}}fberg, ``{YALMIP: A Toolbox for Modeling and Optimization in
+  MATLAB},'' 2004.
+
+\bibitem{Gahinet1995}
+P.~Gahinet, A.~Nemirovski, A.~J. Laub, and M.~Chilali, {\em {LMI Control
+  Toolbox For Use with MATLAB}}.
+\newblock The Mathworks, Inc., 1~ed., 1995.
+
+\bibitem{Nelder1965}
+J.~A. Nelder and R.~Mead, ``{A simplex method for function minimization},''
+  {\em The Computer Journal}, vol.~7, pp.~308--313, 1965.
+
+\bibitem{Boyd1997}
+S.~Boyd and L.~Vandenberghe, ``{Semidefinite Programming Relaxations of
+  Non-Convex Problems in Control and Combinatorial Optimization},'' {\em
+  Communications, Computation, Control and Signal Processing: A Tribute to
+  Thomas Kailath}, pp.~279--288, 1997.
+
+\end{thebibliography}

@@ -2,9 +2,11 @@
 \contentsline {chapter}{Lay Summary}{iv}{chapter*.2}
 \contentsline {chapter}{Preface}{v}{chapter*.3}
 \contentsline {chapter}{Table of Contents}{vi}{chapter*.4}
-\contentsline {chapter}{List of Tables}{vii}{chapter*.5}
-\contentsline {chapter}{List of Figures}{viii}{chapter*.6}
-\contentsline {chapter}{Acknowledgments}{x}{chapter*.7}
+\contentsline {chapter}{List of Tables}{ix}{chapter*.5}
+\contentsline {chapter}{List of Figures}{x}{chapter*.6}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }List of Symbols}{xiv}{chapter*.7}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }Glossary}{xvi}{chapter*.8}
+\contentsline {chapter}{Acknowledgments}{xviii}{chapter*.9}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Oversampling and Noise Shaping}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Basic Structure}{5}{section.1.2}
@@ -20,43 +22,44 @@
 \contentsline {section}{\numberline {2.2}Well-Posedness and Internal Stability}{13}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Constraints on the \titlecap {noise transfer function}}{14}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Modelling Uncertain Quantizer Gain}{15}{section.2.3}
-\contentsline {section}{\numberline {2.4}Derivation of Augmented System}{15}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Extraction of Performance and Stability Channels}{15}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.4}Derivation of Augmented System}{16}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Extraction of Performance and Stability Channels}{16}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Derivation of State-Space Model}{16}{subsection.2.4.2}
-\contentsline {chapter}{\numberline {3}Stability Criteria and Performance Goals}{18}{chapter.3}
-\contentsline {section}{\numberline {3.1}Stability Criteria Used by this Optimization Framework}{19}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Ideas from Nonlinear Control}{19}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}\gls {Hinf} Stability Criterion}{21}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Describing Function Approximation and Root Locus Stability}{22}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}\gls {H2} Stability Criterion}{25}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}\gls {l1} Stability Criterion}{27}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Scale Invariance of the Single-Bit Quantizer}{29}{subsection.3.1.6}
-\contentsline {section}{\numberline {3.2}Stability Concepts Not Used by this Optimization Framework}{29}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Methods Ensuring Bounded States}{29}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Diagonal Modulators and Nonlinear Approaches}{30}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Performance Goals}{30}{section.3.3}
-\contentsline {chapter}{\numberline {4}Optimization of Loop Filter Design}{32}{chapter.4}
-\contentsline {section}{\numberline {4.1}GKYP Lemma}{32}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}\gls {Hinf} Minimization Across All Frequencies}{34}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Positive Real Constraints}{34}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}\gls {H2} Semidefinite Expression}{35}{section.4.2}
-\contentsline {section}{\numberline {4.3}\gls {l1} Semidefinite Expression}{36}{section.4.3}
-\contentsline {section}{\numberline {4.4}Convexification}{37}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Change of Variables}{39}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Sensitivity Shaping}{39}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}\gls {H2}, \gls {l1} Optimization}{40}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Iterative Procedure}{40}{subsection.4.4.4}
-\contentsline {chapter}{\numberline {5}Design Examples}{44}{chapter.5}
-\contentsline {section}{\numberline {5.1}Design Using \gls {Hinf} Stability Criterion}{44}{section.5.1}
+\contentsline {chapter}{\numberline {3}Stability Criteria and Performance Goals}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Stability Criteria Used by this Optimization Framework}{20}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Ideas from Nonlinear Control}{20}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}\gls {Hinf} Stability Criterion}{22}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Describing Function Approximation and Root Locus Stability}{23}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}\gls {H2} Stability Criterion}{26}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}\gls {l1} Stability Criterion}{28}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Scale Invariance of the Single-Bit Quantizer}{30}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}Stability Concepts Not Used by this Optimization Framework}{30}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Methods Ensuring Bounded States}{30}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Diagonal Modulators and Nonlinear Approaches}{31}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Performance Goals}{31}{section.3.3}
+\contentsline {chapter}{\numberline {4}Optimization of Loop Filter Design}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}GKYP Lemma}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}\gls {Hinf} Minimization Across All Frequencies}{35}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Positive Real Constraints}{35}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}\gls {H2} Semidefinite Expression}{36}{section.4.2}
+\contentsline {section}{\numberline {4.3}\gls {l1} Semidefinite Expression}{38}{section.4.3}
+\contentsline {section}{\numberline {4.4}Convexification}{39}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Change of Variables}{40}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Sensitivity Shaping}{41}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}\gls {H2}, \gls {l1} Optimization}{41}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Iterative Procedure}{41}{subsection.4.4.4}
+\contentsline {chapter}{\numberline {5}Design Examples}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Design Using \gls {Hinf} Stability Criterion}{45}{section.5.1}
 \contentsline {section}{\numberline {5.2}Design Using Root Locus Stability Criterion}{46}{section.5.2}
-\contentsline {section}{\numberline {5.3}Design Using \gls {H2} Stability Criterion}{48}{section.5.3}
-\contentsline {section}{\numberline {5.4}Design Using \gls {l1} Stability Criterion}{51}{section.5.4}
-\contentsline {section}{\numberline {5.5}Discussion of the Above Examples}{52}{section.5.5}
-\contentsline {section}{\numberline {5.6}\titlecap {continuous-time} Design}{53}{section.5.6}
-\contentsline {section}{\numberline {5.7}Summary of Design Examples}{54}{section.5.7}
-\contentsline {chapter}{\numberline {6}Conclusions}{57}{chapter.6}
-\contentsline {section}{\numberline {6.1}Limitations}{58}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Work}{59}{section.6.2}
-\contentsline {chapter}{\numberline {A}Derivation of Matrix Inequalities with One Quadratic Term}{62}{appendix.A}
-\contentsline {section}{\numberline {A.1}Derivation of GKYP Inequality with Arbitrary $\mathcal {D}$}{62}{section.A.1}
-\contentsline {section}{\numberline {A.2}Derivation of $\mathcal {H}_2$ and $\ell _1$ Inequalities}{64}{section.A.2}
+\contentsline {section}{\numberline {5.3}Design Using \gls {H2} Stability Criterion}{51}{section.5.3}
+\contentsline {section}{\numberline {5.4}Design Using \gls {l1} Stability Criterion}{53}{section.5.4}
+\contentsline {section}{\numberline {5.5}Discussion of the Above Examples}{55}{section.5.5}
+\contentsline {section}{\numberline {5.6}\titlecap {continuous-time} Design}{56}{section.5.6}
+\contentsline {section}{\numberline {5.7}Summary of Design Examples}{57}{section.5.7}
+\contentsline {chapter}{\numberline {6}Conclusions}{60}{chapter.6}
+\contentsline {section}{\numberline {6.1}Limitations}{61}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Work}{62}{section.6.2}
+\contentsline {chapter}{Bibliography}{65}{chapter*.42}
+\contentsline {chapter}{\numberline {A}Derivation of Matrix Inequalities with One Quadratic Term}{71}{appendix.A}
+\contentsline {section}{\numberline {A.1}Derivation of GKYP Inequality with Arbitrary $\mathcal {D}$}{71}{section.A.1}
+\contentsline {section}{\numberline {A.2}Derivation of $\mathcal {H}_2$ and $\ell _1$ Inequalities}{73}{section.A.2}
